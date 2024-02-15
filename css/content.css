@@ -5,20 +5,20 @@
 .main {
   grid-column-start: 3;
   grid-column-end: 10;
-  min-height: 1500px;
-  background-color: rgba(245,245,245, 10)
+  background-color: rgba(245, 245, 245, 10);
+  margin-bottom: 1000px;
+}
+
+.main__2 {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  margin-bottom: 1000px;
 }
 
 .main__block-1 {
   display: flex;
   flex-direction: column;
   gap: 17px;
-}
-
-.main__courses-catalog {
-  grid-column-start: 1;
-  grid-column-end: 10;
-  min-height: 1000px;
 }
 
 .main__h2 {
@@ -32,7 +32,7 @@
   padding: 15px 30px 15px 30px;
   font-weight: bold;
   background-color: red;
-  background-color: rgba(139,190,27, 0.4);
+  background-color: rgba(139, 190, 27, 0.4);
 }
 
 .main__p {
