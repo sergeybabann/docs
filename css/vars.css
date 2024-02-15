@@ -1,0 +1,5 @@
+:root {
+    /*----- transition -----*/
+  --transition-color-1: color 0.3s;
+  --transition-bg-color-1: background-color 0.3s;
+}

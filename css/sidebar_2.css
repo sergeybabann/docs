@@ -1,0 +1,33 @@
+.aside-2 {
+  display: grid;
+  grid-column-start: 10;
+  grid-column-end: -1;
+  background-color: rgb(220,220,220, 0.7);
+}
+
+.aside-2__index-search-list {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: start;
+  align-items: start;
+  justify-content: start;
+  align-content: start;
+  list-style: none;
+  line-height: 30px;
+  text-decoration: none;
+  padding: 20px 20px;
+}
+
+.aside-2__index-search-item {
+  color: #000;
+}
+
+.aside-2__index-search-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+.aside-2__index-search-link:hover {
+  color: #ff0000;
+}

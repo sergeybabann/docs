@@ -1,0 +1,34 @@
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+li,
+a,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  line-height: 23px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px 10px;
+}
+
+.general__area-1 {
+  border: 1px solid #c0c0c0;
+  background-color: ;
+}

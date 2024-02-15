@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Настройка окружения</title>
+    <link rel="stylesheet" href="../../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vars.css">
+    <link rel="stylesheet" href="../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/content.css">
+    <link rel="stylesheet" href="../../../../css/sidebar_1.css">
+    <link rel="stylesheet" href="../../../../css/sidebar_2.css">
+    <link rel="stylesheet" href="../../../../css/footer.css">
+    <link rel="stylesheet" href="../../../../css/templates.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!----- HEADER ----->
+        <div class="header general__area-1">
+            <a name="HEADER"></a>
+            <div class="header__space">
+                <div class="header__descr">
+                    <h1 class="header__h1">
+                        Обучающий<br> курс
+                    </h1>
+                    <span class="header__descr-1">JavaScript. Стань Senior Frontend Разработчиком<br> (2020)
+                    </span>
+                    <ul class="header__descr-2">
+                        <li>Источник: rutracker</li>
+                        <li>Автор: Владилен Минин</li>
+                        <li>Спецификация: JavaScript</li>
+                    </ul>
+                </div><!--tutorial__descr-->
+                <ul class="header__navmenu-list">
+                    <li class="header__navmenu-item">
+                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../../../javascript.html" class="header__navmenu-link">Курсы JavaScript</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../excel-course-original.babann.html" class="header__navmenu-link">Главная
+                            страница курса</a>
+                    </li>
+            </div><!--header__space-->
+        </div><!--header-->
+
+
+
+
+        <!----- ASIDE-1 ----->
+        <div class="aside-1 general__area-1">
+            <ul class="aside-1__index-search-list">
+                <div class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">1 Настройка
+                        окружения</a>
+                </div>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../02_верстка_опционально/02.html">2 Верстка
+                        (Опционально)</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../03_создание_фреймворка/">3 Создание
+                        фреймворка</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../04_ресайз_таблицы/">4 Ресайз таблицы</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../05_логика_excel/">5 Логика Excel</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../06_состояние_приложения/">6 Состояние
+                        приложения</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../07_роутинг_и_новые_страницы/">7 Роутинг и новые
+                        страницы</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../08_бонус.тестирование/">8 Бонус.
+                        Тестирование</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../09_бонус.применение_solid/">9 Бонус. Применение
+                        SOLID</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../10_заключение/">10 Заключение</a>
+                </li>
+            </ul><!--aside-1__index-search-list-->
+        </div><!--aside-1-->
+
+
+
+
+
+
+        <!----- CONTENT ----->
+        <div class="main general__area-1">
+            <h2 class="main__h2">1 Настройка окружения</h2>
+
+            <!----- Требования для проекта ----->
+            <div class="main__block-1">
+                <a name="ASIDE-1_REQUIREMENTS_FOR_PROJECT"></a>
+                <div class="main__title-1">Требования для проекта</div>
+                <p class="main__p">
+                    В корневом каталоге проекта лежит файл requirements.txt в котором прописаны необходимые требования
+                    для работы с проектом.
+                    Это будет приложение Single Page Application, работающее в основном на языке JavaScript.
+                </p>
+
+                <p class="main__p">
+                    Будем работать со следующими технологиями:
+                <ul class="main__list">
+                    <li class=main__list-item>Webpack (Babel, SCSS, Eslint)</li>
+                    <li class=main__list-item>Существует 2 режима разработки:
+                        <ul>
+                            <li>dev mode (Dev Server, Source Maps, Eslint, Not Minified JS & CSS</li>
+                            <li>prod mode (Minified Code)</li>
+                        </ul>
+                    </li>
+
+                    <li class=main__list-item>GIT</li>
+                    <li class=main__list-item>Существует 2 версии приложения:
+                        <ul>
+                            <li>Production</li>
+                            <li>Development</li>
+                        </ul>
+                        Develoment - версия прокта где ведется разработка<br>
+                        Production - версия, которую видит пользователь<br>
+                        Подробное описание о версиях в video start: 9.47
+                    </li>
+                </ul>
+                </p><!--main__p-->
+            </div><!--main__block-1-->
+
+
+
+
+
+
+            <!----- Настройка и работа с GIT ----->
+            <div class="main__block-1">
+                <a name="ASIDE-1_SETTING_UP_ABD_WORGING_WITH_GIT"></a>
+                <div class="main__title-1">Настройка и работа с GIT</div>
+                <ul class="main__list">
+                    <li class="main__list-item">Создаем в корневом каталоге проекта файл .gitignore
+                        Отмечаем в нем директории и файлы, которые не будут отслеживаться системой GIT.
+
+                        Отмеченные директории:
+                        <ul>
+                            <li>dist</li>
+                            <li>node_modules</li>
+                        </ul>
+                    </li>
+
+                    <li class="main__list-item">
+                        Связываем внешний и локальный репозитории по стандартной схеме представленной в github.
+                        Добавляем все файлы в отслеживание и делаем push на ветке main.
+                    </li>
+
+                    <li class="main__list-item">
+                        Создаем отдельную ветку для работы с Webpack. Ввводим в консоли команду:
+                        git checkout -b "webpack" и нажимаем клавишу enter, (в консоли должно появиться сообщение
+                        "Переключено на новую ветку «webpack»"), если оно появилось, то переключение прошло успешно,
+                        и мы переключились на ветку webpack.
+
+                    </li>
+                </ul>
+            </div><!--main__block-1-->
+
+
+
+
+
+            <!----- Настройка и работа с GIT ----->
+            <div class="main__block-1">
+                <a name="ASIDE-1_SETTING_UP_ABD_WORGING_WITH_GIT"></a>
+                <div class="main__title-1">Заголовок</div>
+                <p class="main__p"></p>
+                <p class="main__p">
+                <ul class="main__list">
+                    <li class="main__list-item">
+                    </li>
+                </ul>
+                </p>
+                <a class="main__link"></a>
+            </div><!--main__block-1-->
+        </div><!--main-->
+
+
+
+
+
+
+        <!----- ASIDE-2 ----->
+        <div class="aside-2 general__area-1">
+            <ul class="aside-2__index-search-list">
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#ASIDE-1_REQUIREMENTS_FOR_PROJECT">Требования для
+                        проекта</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#ASIDE-1_SETTING_UP_ABD_WORGING_WITH_GIT">Настройка
+                        GIT</a>
+                </li>
+            </ul><!--aside-2__index-search-list-->
+        </div><!--aside_2-->
+
+
+
+
+
+
+
+
+
+
+
+        <!----- FOOTER ----->
+        <a name="FOOTER"></a>
+        <div class="footer general__area-1">Footer
+        </div>
+
+    </div><!--wrapper-->
+
+
+
+</body>
+
+</html>
