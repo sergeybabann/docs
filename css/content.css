@@ -83,3 +83,9 @@
   color: red;
   text-decoration: none;
 }
+
+.code__block {
+  padding: 0 20px 0 40px;
+  line-height: 25px;
+  font-size: 20px;
+}
