@@ -112,23 +112,22 @@
 
 .code__block-code {
   grid-column-start: 1;
-  grid-column-end: 5;
-  padding: 10px 20px;
+  grid-column-end: 6;
+  padding: 10px;
   line-height: 25px;
-  font-size: 20px;
+  font-size: 19px;
   background-color: rgba(229, 228, 226, 0.3);
   border-radius: 3px;
   border: 1px solid rgba(192, 192, 192, 0.4);
-  letter-spacing: 0.1cqmin;
 }
 
 .code__block-descr {
   display: grid;
-  grid-column-start: 5;
+  grid-column-start: 6;
   grid-column-end: -1;
-  padding: 10px 20px;
+  padding: 10px;
   line-height: 25px;
-  font-size: 20px;
+  font-size: 19px;
   background-color: rgba(229, 228, 226, 0.3);
   border-radius: 3px;
   border: 1px solid rgba(192, 192, 192, 0.4);
