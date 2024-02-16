@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding: 0;
-  background-color: rgba(85,93,80, 10);
+  background-color: rgba(85, 93, 80, 10);
 }
 
 .header__navmenu-list {
@@ -45,7 +45,7 @@
 .header__navmenu-link:hover {
   color: #000;
   cursor: pointer;
-  background-color: rgba(139,190,27, 10);
+  background-color: rgba(139, 190, 27, 10);
   transition: var(--transition-color-1);
   transition: var(--transition-bg-color-1);
 }
@@ -56,11 +56,12 @@
   grid-column-end: 7;
   padding: 0;
   gap: 20px;
-  border-right: 1px solid black;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
 }
 
-.header__descr .header__h1, .header__descr-1, .header__descr-2 {
+.header__descr .header__h1,
+.header__descr-1,
+.header__descr-2 {
   color: #fff;
 }
 
@@ -74,11 +75,10 @@
   font-size: 20px;
   display: flex;
   justify-content: start;
-
 }
 
 .header__descr-2 {
-  font-size: 16px;;
+  font-size: 16px;
   display: flex;
   justify-content: start;
   flex-direction: column;

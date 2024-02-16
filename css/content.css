@@ -7,6 +7,7 @@
   grid-column-end: 10;
   background-color: rgba(245, 245, 245, 10);
   margin-bottom: 1000px;
+  padding: 10px 10px;
 }
 
 .main__2 {
@@ -15,30 +16,46 @@
   margin-bottom: 1000px;
 }
 
-.main__block-1 {
+.main__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  row-gap: 5px;
 }
 
 .main__h2 {
   display: flex;
   justify-content: center;
   padding: 40px;
+  background-color: rgba(169, 169, 169, 0.7);
+  border-radius: 3px;
 }
 
 .main__title-1 {
   font-size: 20px;
   padding: 15px 30px 15px 30px;
   font-weight: bold;
-  background-color: red;
   background-color: rgba(139, 190, 27, 0.4);
+  border-radius: 3px;
+}
+
+.main__subtitle-1 {
+  font-size: 20px;
+  padding: 10px 10px;
+  line-height: 23px;
+  background-color: rgba(169, 169, 169, 0.3);
+  border: 1px solid rgba(192, 192, 192, 0.4);
+  border-radius: 3px;
 }
 
 .main__p {
+  display: flex;
+  flex-direction: column;
   font-size: 20px;
-  padding: 0 30px;
+  padding: 10px 10px;
   line-height: 23px;
+  background-color: rgba(169, 169, 169, 0.1);
+  border: 1px solid rgba(192, 192, 192, 0.4);
+  border-radius: 3px;
 }
 
 .main__link {
@@ -53,16 +70,18 @@
 .main__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin: 0 50px;
   list-style: none;
   font-size: 20px;
+  padding: 20px 0;
 }
 
 .main__list-item {
   list-style-position: inside;
   list-style-type: square;
-  line-height: 30px;
+  line-height: 25px;
+  font-size: 20px;
 }
 
 .main__list-link {
@@ -84,8 +103,33 @@
   text-decoration: none;
 }
 
-.code__block {
-  padding: 0 20px 0 40px;
+.code__block-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+  grid-auto-flow: row dense;
+}
+
+.code__block-code {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  padding: 10px 20px;
   line-height: 25px;
   font-size: 20px;
+  background-color: rgba(229, 228, 226, 0.3);
+  border-radius: 3px;
+  border: 1px solid rgba(192, 192, 192, 0.4);
+  letter-spacing: 0.1cqmin;
+}
+
+.code__block-descr {
+  display: grid;
+  grid-column-start: 5;
+  grid-column-end: -1;
+  padding: 10px 20px;
+  line-height: 25px;
+  font-size: 20px;
+  background-color: rgba(229, 228, 226, 0.3);
+  border-radius: 3px;
+  border: 1px solid rgba(192, 192, 192, 0.4);
 }

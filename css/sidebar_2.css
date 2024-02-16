@@ -2,7 +2,7 @@
   display: grid;
   grid-column-start: 10;
   grid-column-end: -1;
-  background-color: rgb(220,220,220, 0.7);
+  background-color: rgb(220, 220, 220, 0.7);
 }
 
 .aside-2__index-search-list {

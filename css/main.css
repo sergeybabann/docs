@@ -22,6 +22,11 @@ ul {
   line-height: 23px;
 }
 
+li {
+  text-decoration: none;
+  list-style-position: inside;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -30,5 +35,5 @@ ul {
 
 .general__area-1 {
   border: 1px solid #c0c0c0;
-  background-color: ;
+  background-color: rgba(245, 245, 245, 10);
 }

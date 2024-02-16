@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01</title>
+    <title>01 Основы</title>
     <link rel="stylesheet" href="../../../../css/normalize.css">
     <link rel="stylesheet" href="../../../../css/vars.css">
     <link rel="stylesheet" href="../../../../css/main.css">
@@ -58,8 +58,6 @@
                 <li class="aside-1__index-search-item">
                     <a class="aside-1__index-search-link" href="#">1 Основы</a>
                 </li>
-
-
             </ul><!--aside-1__index-search-list-->
         </div><!--aside-1-->
 
@@ -71,49 +69,267 @@
         <!----- CONTENT ----->
         <div class="main general__area-1">
             <h2 class="main__h2">1 Основы</h2>
-
-            <!----- 01 Поиск ----->
-            <div class="main__block-1">
+            <div class="main__wrapper">
+                <!----- Переменные ----->
                 <a name="VARIABLES"></a>
                 <div class="main__title-1">Переменные</div>
-                <p class="main__p">
+                <p class="main__subtitle-1">
                     Самый простой способ узнать значение переменной это вывести ее в консоль:
-                <div class="code__block">
-                    let userName = 'Марк';<br>
-                    console.log('userName');
-                </div>
                 </p><!--main__p-->
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let userName = 'Марк';<br>
+                        console.log('userName');
+                    </div>
+                    <div class="code__block-descr">
+                        Объявление переменной, присвоение ей значения. Вывод переменной в консоль.
+                    </div>
+                </div><!--code__block-wrapper-->
+
+                <p class="main__subtitle-1">
+                    Объявление и переопределение значения переменной:
+                </p><!--main__p-->
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let userName = 'Марк';<br>
+                        console.log(userName);<br>
+                        userName = 'Егор';<br>
+                        console.log(userName);<br>
+                        userName = 'Анжела';<br>
+                        console.log(userName);
+                    </div>
+                    <div class="code__block-descr">
+                        Объявление переменной userName и присвоение ей значения Марк.<br>
+                        Затем присвоение ей других значений:
+                        <ul>
+                            <li>Егор</li>
+                            <li>Анжела</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <!----- Типы переменных ----->
+                <a name="VARIABLES_TYPES"></a>
+                <div class="main__title-1">Типы переменных</div>
+                <span class="main__subtitle-1">
+                    Существует 3 типа переменных: let, const, var
+                </span>
+                <p class="main__p">
+                    Переменная var уже используется редко, только на старых проектах,
+                    где остался код со старых времен. В старой версии es5 языка javascript
+                    применялся синтаксис перемнной var.<br>
+                    Переменная let это новый синтаксис, который применяется в следующей версии
+                    языка javascript es6.<br>
+                    Переменная const это константа, ей нельзя назначить новое значение внутри программы,
+                    так как она по умолчанию неизменна.
+                </p><!--main__p-->
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let userName = 'Марк';<br>
+                        console.log('userName');
+                    </div>
+                    <div class="code__block-descr">
+                        переменная let
+                    </div>
+                    <div class="code__block-code">
+                        var userName = 'Петр';<br>
+                        console.log('userName');
+                    </div>
+                    <div class="code__block-descr">
+                        переменная var
+                    </div>
+                    <div class="code__block-code">
+                        const yearOfBirth = 1990;<br>
+                        console.log('yearOfBirth');
+                    </div>
+                    <div class="code__block-descr">
+                        переменная const
+                    </div>
+                    <div class="code__block-code">
+                        const yearOfBirth = 1990;<br>
+                        yearOfBirth = 2000;
+                    </div>
+                    <div class="code__block-descr">
+                        Попытка присвоения нового значения перемнной типа const.<br>
+                        Консоль выдаст ошибку с текстом:<br>
+                        Uncaught TypeError: Assignment to constant variable
+                    </div>
+                </div><!--code__block-wrapper-->
 
                 <p class="main__p">
-                    Переопределение значения переменной:
-                <div class="code__block">
-                    let userName = 'Марк';<br>
-                    console.log(userName);
-                </div>
-                <div class="code__block">
-                    userName = 'Егор';<br>
-                    console.log(userName);
-                </div>
-                <div class="code__block">
-                    userName = 'Анжела';<br>
-                    console.log(userName);
-                </div>
+                    Переменной типа const после ее объявления сразу нужно присвоить значение.
+                    Переменная типа let может объявляться без присвоения значений,
+                    эти значения могут быть присвоены ей позже.
                 </p>
-            </div><!--main__block-1-->
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let name, age;<br>
+                        name = 'Юрий';<br>
+                        age = '29';
+                    </div>
+                    <div class="code__block-descr">
+                        Объявление переменных без присвоения значений.
+                        Присвоение значений производится следующим шагом.
+                    </div>
+                </div><!--code__block-wrapper-->
 
-
-
-
-            <!----- 01 Поиск ----->
-            <div class="main__block-1">
-                <a name="#"></a>
-                <div class="main__title-1">02 Поиск</div>
                 <p class="main__p">
-                    Параграф
-                </p><!--main__p-->
-            </div><!--main__block-1-->
+                    var - старый формат объявления переменной
+                    в отличие от let и const имеет функциональную область видимости, а не блочную.
+                    Будет рассмотрен в отдельном уроке по нюансам работы JS
+                    не рекомендуется к использованию.
+                    Может менять значение на протяжении работы программы
+                </p>
 
-        </div><!--main-->
+
+
+                <!----- Область видимости ----->
+                <a name="AREA_OF_VISIBILITY"></a>
+                <div class="main__title-1">Область видимости</div>
+                <span class="main__subtitle-1">
+                    Область видимости внутри блока кода
+                </span>
+                <p class="main__p">
+                    Переменные типа let и const имеют область видимости внутри блока кода.
+                </p>
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        {<br>
+                        let userName = "Bob"<br>
+                        console.log(userName)<br>
+                        }<br>
+                        console.log(userName)
+                    </div>
+                    <div class="code__block-descr">
+                        Переменная userName выводится в консоль только когда она находится внутри блока кода,
+                        блок кода это фигурные скобки. Все что внутри фигурных скобок, все это блок кода.
+                        Переменная userName, которая вынесена за пределы блока кода не выводится в консоль.
+                        Консоль выдает ошибку с текстом Uncaught ReferenceError: userName is not defined
+                    </div>
+                </div><!--code__block-wrapper-->
+
+                <span class="main__subtitle-1">
+                    Подзаголовок
+                </span>
+                <p class="main__p">
+                    Параграф с текстом
+                </p>
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        программный код
+                    </div>
+                    <div class="code__block-descr">
+                        описание программного кода
+                    </div>
+                </div><!--code__block-wrapper-->
+
+
+                <!----- Заголовок ----->
+                <a name="DATA_TYPES"></a>
+                <div class=" main__title-1">Типы данных</div>
+                <span class="main__subtitle-1">
+                    Существует несколько типов данных
+                </span>
+                <div class="main__p">
+                    Перечислим эти типы:
+
+                    <ul class="main__list">
+                        <li class="main__list-item">string (строка)</li>
+                        <li class="main__list-item">number (число)</li>
+                        <li class="main__list-item">boolean (логический)</li>
+                        <li class="main__list-item">null (ничего, не известно)</li>
+                        <li class="main__list-item">undefined (не определено)</li>
+                    </ul>
+                </div>
+
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let userName = 'Mark'<br>
+                        let age = '30'
+                    </div>
+                    <div class="code__block-descr">
+                        string (тип данных строка) любой текст, любой набор символов внутри кавычек
+                    </div>
+                    <div class="code__block-code">
+                        let age = 30
+                    </div>
+                    <div class="code__block-descr">
+                        number (тип данных число) любое число без кавычек
+                    </div>
+                    <div class="code__block-code">
+                        let isMarried = false
+                    </div>
+                    <div class="code__block-descr">
+                        boolean (тип данных логический) всего 2 значения true и false
+                    </div>
+
+                    <div class="code__block-code">
+                        let height = null
+                    </div>
+                    <div class="code__block-descr">
+                        null (тип данных не известно) пусто, ничего
+                    </div>
+                    <div class="code__block-code">
+                        let userName2;
+                    </div>
+                    <div class="code__block-descr">
+                        undefined (тип данных не определено) переменная объявлена, но ее значение не определено.<br>
+                    </div>
+                </div><!--code__block-wrapper-->
+
+
+                <span class="main__subtitle-1">
+                    Возможности языка javascript (динамическая типизация)
+                </span>
+                <p class="main__p">
+                    Возможности языка javascript позволяют на лету переопределять один тип данных на другой
+                    без длительных операций. Переменная someVariable из типа данных string мгновенно становится
+                    типом данных number, затем boolean. Достаточно применения одного оператора =<br>
+                    Но не стоит этим злоупотреблять. Резко менять тип данных одной переменной без лишней
+                    необходимости не нужно, лучше создать новую переменную и присвоить ей свой тип.
+                </p>
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        let someVariable = 'Some value'<br>
+                        someVariable = 50<br>
+                        someVariable = true
+                    </div>
+
+                    <div class="code__block-descr">
+                        1-ая строка тип данных string<br>
+                        2-ая строка тип данных number<br>
+                        3-я строка тип данных boolean
+                    </div>
+                </div><!--code__block-wrapper-->
+                <p class="main__p">
+                    А также наименование переменных долно быть понятным. Не стоит давать имена переменным
+                    которые не отображают смысли сущность самой переменной. Так как потом можно забыть
+                    к чему эта переменная относится.
+                </p>
+                <span class="main__subtitle-1">Оператор typeof</span>
+                <p class="main__p">
+                    Оператор typeof позволяет определить тип переменной
+                </p>
+
+                <div class="code__block-wrapper">
+                    <div class="code__block-code">
+                        const someName = 44<br>
+                        const someName2 = 'Bob'<br>
+                        console.log(typeof someName)<br>
+                        console.log(typeof someName2)
+                    </div>
+
+                    <div class="code__block-descr">
+                        Две переменные выводятся в консоль. Оператор typeoff в методе condole.log
+                        показывает тип данных в консоли.<br>
+                        Переменная someName - number<br>
+                        Переменная someName2 - string
+                    </div>
+                </div><!--code__block-wrapper-->
+            </div><!---------------main__wrapper--------------->
+        </div><!--------------------main-------------------->
 
 
 
@@ -125,6 +341,15 @@
             <ul class="aside-2__index-search-list">
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#VARIABLES">Переменные</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#VARIABLES_TYPES">Типы переменных</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#AREA_OF_VISIBILITY">Область видимости</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#DATA_TYPES">Типы данных</a>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
