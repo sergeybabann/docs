@@ -1,8 +1,17 @@
+/*.wrapper__aside-2 {
+  position: relative;
+}
+*/
+
 .aside-2 {
   display: grid;
   grid-column-start: 10;
   grid-column-end: -1;
   background-color: rgb(220, 220, 220, 0.7);
+  position: fixed;
+  left: 1410px;
+  top: 102px;
+  width: 458px;
 }
 
 .aside-2__index-search-list {

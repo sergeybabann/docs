@@ -18,6 +18,16 @@ div {
   padding: 0;
 }
 
+pre,
+code {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 18px;
+  background-color: rgba(52, 52, 52, 10);
+  color: #fff;
+}
+
 ul {
   line-height: 23px;
 }

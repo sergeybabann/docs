@@ -103,9 +103,8 @@
         <!----- CONTENT ----->
         <div class="main general__area-1">
             <h2 class="main__h2">1 Настройка окружения</h2>
-
-            <!----- Требования для проекта ----->
-            <div class="main__block-1">
+            <div class="main__wrapper">
+                <!----- Требования для проекта ----->
                 <a name="REQUIREMENTS_FOR_PROJECT"></a>
                 <div class="main__title-1">Требования для проекта</div>
                 <p class="main__p">
@@ -114,82 +113,109 @@
                     Это будет приложение Single Page Application, работающее в основном на языке JavaScript.
                 </p>
 
-                <p class="main__p">
+                <div class="main__p">
                     Будем работать со следующими технологиями:
-                <ul class="main__list">
-                    <li class=main__list-item>Webpack (Babel, SCSS, Eslint)</li>
-                    <li class=main__list-item>Существует 2 режима разработки:
-                        <ul>
-                            <li>dev mode (Dev Server, Source Maps, Eslint, Not Minified JS & CSS</li>
-                            <li>prod mode (Minified Code)</li>
-                        </ul>
-                    </li>
+                    <ul class="main__list">
+                        <li class=main__list-item>Webpack (Babel, SCSS, Eslint)</li>
+                        <li class=main__list-item>Существует 2 режима разработки:
+                            <ul>
+                                <li>dev mode (Dev Server, Source Maps, Eslint, Not Minified JS & CSS</li>
+                                <li>prod mode (Minified Code)</li>
+                            </ul>
+                        </li>
 
-                    <li class=main__list-item>GIT</li>
-                    <li class=main__list-item>Существует 2 версии приложения:
-                        <ul>
-                            <li>Production</li>
-                            <li>Development</li>
-                        </ul>
-                        Develoment - версия прокта где ведется разработка<br>
-                        Production - версия, которую видит пользователь<br>
-                        Подробное описание о версиях в video start: 9.47
-                    </li>
-                </ul>
-                </p><!--main__p-->
-            </div><!--main__block-1-->
-
+                        <li class=main__list-item>GIT</li>
+                        <li class=main__list-item>Существует 2 версии приложения:
+                            <ul>
+                                <li>Production</li>
+                                <li>Development</li>
+                            </ul>
+                            Develoment - версия прокта где ведется разработка<br>
+                            Production - версия, которую видит пользователь<br>
+                            Подробное описание о версиях в video start: 9.47
+                        </li>
+                    </ul>
+                </div><!--main__p-->
 
 
 
 
 
-            <!----- Настройка и работа с GIT ----->
-            <div class="main__block-1">
+
+
+                <!----- Настройка и работа с GIT ----->
                 <a name="SETTING_UP_AND_WORGING_WITH_GIT"></a>
                 <div class="main__title-1">Настройка и работа с GIT</div>
-                <ul class="main__list">
-                    <li class="main__list-item">Создаем в корневом каталоге проекта файл .gitignore
-                        Отмечаем в нем директории и файлы, которые не будут отслеживаться системой GIT.
+                <div class="main__p">
+                    <ul class="main__list">
+                        <li class="main__list-item">Инициализируем локальный репозиторий git init<br>
+                            Создаем в корневом каталоге проекта файл .gitignore и
+                            отмечаем в нем директории и файлы, которые не будут отслеживаться системой GIT.<br>
+                            Отмеченные файлы и директории:
+                            <ul>
+                                <li>excel-course-original.babann.code-workspace</li>
+                                <li>dist</li>
+                                <li>node_modules</li>
+                            </ul>
+                        </li>
 
-                        Отмеченные директории:
-                        <ul>
-                            <li>dist</li>
-                            <li>node_modules</li>
-                        </ul>
-                    </li>
+                        <li class="main__list-item">
+                            Связываем внешний и локальный репозитории по стандартной схеме представленной в github.
+                            Добавляем все файлы в отслеживание и делаем push на ветке main.
+                        </li>
 
-                    <li class="main__list-item">
-                        Связываем внешний и локальный репозитории по стандартной схеме представленной в github.
-                        Добавляем все файлы в отслеживание и делаем push на ветке main.
-                    </li>
+                        <li class="main__list-item">
+                            Создаем отдельную ветку для работы с Webpack. Ввводим в консоли команду:
+                            git checkout -b "webpack" и нажимаем клавишу enter, (в консоли должно появиться сообщение
+                            "Переключено на новую ветку «webpack»"), если оно появилось, то создание и переключение
+                            прошло успешно.
+                            Создана еще одна ветка webpack, мы на нее переключились.
+                        </li>
+                        <li class="main__list-item">
+                            Создаем в корневом каталоге проекта пустой файл webpack.config.js<br>
+                            В консоли вводим команду git add . (добавить все файлы в отслеживание)<br>
+                            Далее в консоли вводим команду git commit -m "create webpack config" (создаем коммит)<br>
+                        </li>
+                        <li class="main__list-item">
+                            Делаем push на ветку webpack. Команда git push -u origin webpack. Смотрим результат.
+                        </li>
+                        </li>
+                    </ul>
+                </div><!--main__p-->
 
-                    <li class="main__list-item">
-                        Создаем отдельную ветку для работы с Webpack. Ввводим в консоли команду:
-                        git checkout -b "webpack" и нажимаем клавишу enter, (в консоли должно появиться сообщение
-                        "Переключено на новую ветку «webpack»"), если оно появилось, то переключение прошло успешно,
-                        и мы переключились на ветку webpack. Делаем push на ветку webpack.
-                    </li>
-                </ul>
-            </div><!--main__block-1-->
 
 
 
 
 
-            <!----- Настройка и работа с GIT ----->
-            <div class="main__block-1">
+                <!----- Настройка и работа с GIT ----->
+
                 <a name="SETTING_UP_WEBPACK"></a>
                 <div class="main__title-1">Настройка сборщика Webpack</div>
-                <p class="main__p"></p>
-                <p class="main__p">
-                <ul class="main__list">
-                    <li class="main__list-item">
-                    </li>
-                </ul>
-                </p>
-                <a class="main__link"></a>
-            </div><!--main__block-1-->
+                <div class="main__p">
+                    <ul class="main__list">
+                        <li class="main__list-item">
+                            Переключаемся на ветку webpack и продолжаем следующие действия на этой ветке:
+                        </li>
+                        <li class="main__list-item">
+                            В корневом каталоге проекта в консоли вводим команду npm init -y (появился файл
+                            package.json)<br>
+                            У нас есть уже информация для редактирования файла package.json (файл сохранен в яндекс
+                            диске рядом с архивом successfull case)<br>
+                            Берем все настройки оттуда и вносим изменения в файле package.json.
+                        </li>
+                        <li class="main__list-item">
+                            Вводим команду git add package.json (добавляем файл в отслеживание)<br>
+
+                        </li>
+                        <li class="main__list-item">
+                            На официальном сайте webpack находим как его установить. На дату февраль 2024
+                            актуальная информация по установке:<br>
+                            npm install webpack webpack-cli --save-dev
+                        </li>
+                    </ul>
+                </div>
+            </div><!--main__wrapper-->
         </div><!--main-->
 
 

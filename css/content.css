@@ -32,15 +32,23 @@
 
 .main__title-1 {
   font-size: 20px;
-  padding: 15px 30px 15px 30px;
+  padding: 20px 50px;
   font-weight: bold;
   background-color: rgba(139, 190, 27, 0.4);
   border-radius: 3px;
 }
 
+.main__title-2 {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 400;
+  background-color: rgba(195, 176, 145, 0.7);
+  border-radius: 3px;
+}
+
 .main__subtitle-1 {
   font-size: 20px;
-  padding: 10px 10px;
+  padding: 10px;
   line-height: 23px;
   background-color: rgba(169, 169, 169, 0.3);
   border: 1px solid rgba(192, 192, 192, 0.4);
@@ -51,11 +59,8 @@
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  padding: 10px 10px;
+  padding: 5px 10px;
   line-height: 23px;
-  background-color: rgba(169, 169, 169, 0.1);
-  border: 1px solid rgba(192, 192, 192, 0.4);
-  border-radius: 3px;
 }
 
 .main__link {
@@ -128,7 +133,8 @@
   padding: 10px;
   line-height: 25px;
   font-size: 19px;
-  background-color: rgba(229, 228, 226, 0.3);
-  border-radius: 3px;
-  border: 1px solid rgba(192, 192, 192, 0.4);
+}
+
+.danger {
+  background-color: var(--bg-color-danger);
 }

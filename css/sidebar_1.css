@@ -1,8 +1,15 @@
+.wrapper__aside-1 {
+  position: relative;
+}
 .aside-1 {
   display: grid;
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: rgb(220,220,220, 0.7);
+  background-color: rgb(220, 220, 220, 0.7);
+  top: 105;
+  position: fixed;
+  top: 102px;
+  width: 302px;
 }
 
 .aside-1__index-search-list {
@@ -25,7 +32,7 @@
 .aside-1__index-search-link {
   text-decoration: none;
   color: #000;
-  font-size: 18px;;
+  font-size: 18px;
 }
 
 .aside-1__index-search-link:hover {

@@ -70,44 +70,46 @@
         <div class="main general__area-1">
             <h2 class="main__h2">1 Основы</h2>
             <div class="main__wrapper">
+
                 <!----- Переменные ----->
                 <a name="VARIABLES"></a>
                 <div class="main__title-1">Переменные</div>
-                <p class="main__subtitle-1">
+                <div class="main__subtitle-1">
                     Самый простой способ узнать значение переменной это вывести ее в консоль:
-                </p><!--main__p-->
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let userName = 'Марк';<br>
+                </div><!--main__p-->
+
+                <div class="code__block-descr">
+                    Объявление переменной userName, присвоение ей значения 'Марк'.
+                    Вывод переменной в консоль.
+                </div>
+                <pre>
+                    <code>
+                        let userName = 'Марк';
                         console.log('userName');
-                    </div>
-                    <div class="code__block-descr">
-                        Объявление переменной, присвоение ей значения. Вывод переменной в консоль.
-                    </div>
-                </div><!--code__block-wrapper-->
+                    </code>
+                </pre>
 
                 <p class="main__subtitle-1">
                     Объявление и переопределение значения переменной:
                 </p><!--main__p-->
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let userName = 'Марк';<br>
-                        console.log(userName);<br>
-                        userName = 'Егор';<br>
-                        console.log(userName);<br>
-                        userName = 'Анжела';<br>
-                        console.log(userName);
-                    </div>
-                    <div class="code__block-descr">
-                        Объявление переменной userName и присвоение ей значения Марк.<br>
-                        Затем присвоение ей других значений:
-                        <ul>
-                            <li>Егор</li>
-                            <li>Анжела</li>
-                        </ul>
-                    </div>
+                <div class="code__block-descr">
+                    Объявление переменной userName и присвоение ей значения Марк.<br>
+                    Затем присвоение ей других значений:
+                    <ul>
+                        <li>Егор</li>
+                        <li>Анжела</li>
+                    </ul>
                 </div>
-
+                <pre>
+                    <code>
+                    let userName = 'Марк';
+                    console.log(userName);
+                    userName = 'Егор';
+                    console.log(userName);
+                    userName = 'Анжела';
+                    console.log(userName);
+                    </code>
+                </pre>
 
 
                 <!----- Типы переменных ----->
@@ -125,64 +127,81 @@
                     Переменная const это константа, ей нельзя назначить новое значение внутри программы,
                     так как она по умолчанию неизменна.
                 </p><!--main__p-->
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let userName = 'Марк';<br>
-                        console.log('userName');
-                    </div>
-                    <div class="code__block-descr">
-                        переменная let
-                    </div>
-                    <div class="code__block-code">
-                        var userName = 'Петр';<br>
-                        console.log('userName');
-                    </div>
-                    <div class="code__block-descr">
-                        переменная var
-                    </div>
-                    <div class="code__block-code">
-                        const yearOfBirth = 1990;<br>
+
+                <div class="code__block-descr">
+                    переменная let
+                </div>
+                <pre>
+                    <code>
+                    let userName = 'Марк';
+                    console.log('userName');
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    переменная var
+                </div>
+                <pre>
+                    <code>
+                    var userName = 'Петр';
+                    console.log('userName');
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    переменная const
+                </div>
+                <pre>
+                    <code>
+                        const yearOfBirth = 1990;
                         console.log('yearOfBirth');
-                    </div>
-                    <div class="code__block-descr">
-                        переменная const
-                    </div>
-                    <div class="code__block-code">
-                        const yearOfBirth = 1990;<br>
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    Попытка присвоения нового значения перемнной типа const.<br>
+                    Консоль выдаст ошибку с текстом:<br>
+                    Uncaught TypeError: Assignment to constant variable
+                </div>
+                <pre>
+                    <code>
+                        const yearOfBirth = 1990;
                         yearOfBirth = 2000;
-                    </div>
-                    <div class="code__block-descr">
-                        Попытка присвоения нового значения перемнной типа const.<br>
-                        Консоль выдаст ошибку с текстом:<br>
-                        Uncaught TypeError: Assignment to constant variable
-                    </div>
-                </div><!--code__block-wrapper-->
+                    </code>
+                </pre>
+
+                <div class="main__subtitle-1">
+                    Переменная типа let может объявляться без присвоения значений,
+                    эти значения могут быть присвоены ей позже.
+                </div>
+                <div class="code__block-descr">
+                    Объявление переменных без присвоения значений.
+                    Присвоение значений производится следующим шагом.
+                </div>
+                <pre>
+                    <code>
+                        let name, age;
+                        name = 'Юрий';
+                        age = '29';
+                    </code>
+                </pre>
 
                 <p class="main__p">
                     Переменной типа const после ее объявления сразу нужно присвоить значение.
-                    Переменная типа let может объявляться без присвоения значений,
-                    эти значения могут быть присвоены ей позже.
                 </p>
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let name, age;<br>
-                        name = 'Юрий';<br>
-                        age = '29';
-                    </div>
-                    <div class="code__block-descr">
-                        Объявление переменных без присвоения значений.
-                        Присвоение значений производится следующим шагом.
-                    </div>
-                </div><!--code__block-wrapper-->
+                <pre>
+                    <code>
+                        const height = 180; 
+                    </code>
+                </pre>
 
                 <p class="main__p">
-                    var - старый формат объявления переменной
-                    в отличие от let и const имеет функциональную область видимости, а не блочную.
+                    var - старый формат объявления переменной.
+                    В отличие от let и const имеет функциональную область видимости, а не блочную.
                     Будет рассмотрен в отдельном уроке по нюансам работы JS
                     не рекомендуется к использованию.
-                    Может менять значение на протяжении работы программы
+                    Может менять значение на протяжении работы программы.
                 </p>
-
 
 
                 <!----- Область видимости ----->
@@ -194,36 +213,21 @@
                 <p class="main__p">
                     Переменные типа let и const имеют область видимости внутри блока кода.
                 </p>
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        {<br>
-                        let userName = "Bob"<br>
-                        console.log(userName)<br>
-                        }<br>
-                        console.log(userName)
-                    </div>
-                    <div class="code__block-descr">
-                        Переменная userName выводится в консоль только когда она находится внутри блока кода,
-                        блок кода это фигурные скобки. Все что внутри фигурных скобок, все это блок кода.
-                        Переменная userName, которая вынесена за пределы блока кода не выводится в консоль.
-                        Консоль выдает ошибку с текстом Uncaught ReferenceError: userName is not defined
-                    </div>
-                </div><!--code__block-wrapper-->
-
-                <span class="main__subtitle-1">
-                    Подзаголовок
-                </span>
-                <p class="main__p">
-                    Параграф с текстом
-                </p>
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        программный код
-                    </div>
-                    <div class="code__block-descr">
-                        описание программного кода
-                    </div>
-                </div><!--code__block-wrapper-->
+                <div class="code__block-descr">
+                    Переменная userName выводится в консоль только когда она находится внутри блока кода.
+                    блок кода - это все то, что находится внутри фигурных скобок.
+                    Переменная userName, которая вынесена за пределы блока кода не выводится в консоль.
+                    Консоль выдает ошибку с текстом Uncaught ReferenceError: userName is not defined
+                </div>
+                <pre>
+                    <code>
+                        {
+                            let userName = "Bob"
+                            console.log(userName)
+                        }
+                            console.log(userName)
+                    </code>
+                </pre>
 
 
                 <!----- Заголовок ----->
@@ -247,63 +251,79 @@
                     </ul>
                 </div>
 
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let userName = 'Mark'<br>
+                <div class="code__block-descr">
+                    string (тип данных строка)<br>
+                    Любой текст, любой набор символов внутри кавычек.
+                </div>
+                <pre>
+                    <code>
+                        let userName = 'Mark'
                         let age = '30'
-                    </div>
-                    <div class="code__block-descr">
-                        string (тип данных строка) любой текст, любой набор символов внутри кавычек
-                    </div>
-                    <div class="code__block-code">
-                        let age = 30
-                    </div>
-                    <div class="code__block-descr">
-                        number (тип данных число) любое число без кавычек
-                    </div>
-                    <div class="code__block-code">
-                        let isMarried = false
-                    </div>
-                    <div class="code__block-descr">
-                        boolean (тип данных логический) всего 2 значения true и false
-                    </div>
+                    </code>
+                </pre>
 
-                    <div class="code__block-code">
+                <div class="code__block-descr">
+                    number (тип данных число)<br>
+                    Любое число без кавычек.
+                </div>
+                <pre>
+                    <code>
+                        let age = 30
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    boolean (тип данных логический)<br>
+                    Всего 2 значения - true и false
+                </div>
+                <pre>
+                    <code>
+                        let isMarried = true 
+                        let devorced = false
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    null (тип данных не известно)<br>
+                    Пусто, ничего.
+                </div>
+                <pre>
+                    <code>
                         let height = null
-                    </div>
-                    <div class="code__block-descr">
-                        null (тип данных не известно) пусто, ничего
-                    </div>
-                    <div class="code__block-code">
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    undefined (тип данных не определено) переменная объявлена, но ее значение не определено.<br>
+                </div>
+                <pre>
+                    <code>
                         let userName2;
-                    </div>
-                    <div class="code__block-descr">
-                        undefined (тип данных не определено) переменная объявлена, но ее значение не определено.<br>
-                    </div>
-                    <div class="code__block-code">
+                    </code>
+                </pre>
+
+                <div class="code__block-descr">
+                    BigInt (тип данных для работы с большими числами)<br>
+                    В первой строке метода console.log консоль выводит максимально большое число, c которым может
+                    работать тип number.<br>
+                    Во второй строке к числу дописывается символ n, это преобразовывает число в тип данных
+                    BigInt.<br>
+                    Тип BigInt не может работать в связке с типом number, поэтому все операции по взаимодействию
+                    больших чисел необходимо соовершать только в рамках одного типа - BigInt
+                </div>
+                <pre>
+                    <code>
                         console.log(Number.MAX_SAFE_INTEGER)
                         console.log(90071992547409919007199254740991n);
-                    </div>
-                    <div class="code__block-descr">
-                        BigInt (тип данных для работы с большими числами)<br>
-                        В первой строке метода console.log консоль выводит максимально большое число, c которым может
-                        работать тип number.<br>
-                        Во второй строке к числу дописывается символ n, это преобразовывает число в тип данных
-                        BigInt.<br>
-                        Тип BigInt не может работать в связке с типом number, поэтому все операции по взаимодействию
-                        больших чисел необходимо соовершать только в рамках одного типа - BigInt
-                    </div>
-                    <div class="code__block-code">
+                    </code>
+                </pre>
 
-                    </div>
-                    <div class="code__block-descr">
-                        тип Symbol - это уникальное примитивное значение.
-                        Оно позволяет добавлять уникальное свойство к объекту
-                        с увереностью, что он не перезапишет никакое другое свойство,
-                        уже существующее у объекта.
-                    </div>
-                </div><!--code__block-wrapper-->
-
+                <div class="code__block-descr">
+                    тип Symbol - это уникальное примитивное значение.
+                    Оно позволяет добавлять уникальное свойство к объекту
+                    с увереностью, что он не перезапишет никакое другое свойство,
+                    уже существующее у объекта.
+                </div>
 
                 <span class="main__subtitle-1">
                     Возможности языка javascript (динамическая типизация)
@@ -315,19 +335,20 @@
                     Но не стоит этим злоупотреблять. Резко менять тип данных одной переменной без лишней
                     необходимости не нужно, лучше создать новую переменную и присвоить ей свой тип.
                 </p>
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        let someVariable = 'Some value'<br>
-                        someVariable = 50<br>
-                        someVariable = true
-                    </div>
 
-                    <div class="code__block-descr">
-                        1-ая строка тип данных string<br>
-                        2-ая строка тип данных number<br>
-                        3-я строка тип данных boolean
-                    </div>
-                </div><!--code__block-wrapper-->
+                <pre>
+                    <code>
+                        let someVariable = 'Some value';
+                        someVariable = 50;
+                        someVariable = true;
+                    </code>
+                    </pre>
+                <div class="code__block-descr">
+                    1-ая строка тип данных string. Объявление переменной и присвоение ей значения.<br>
+                    2-ая строка тип данных number. Присвоение переменной нового значения типа данных number.<br>
+                    3-я строка тип данных boolean. Присвоение переменной нового значения типа данных boolean.
+                </div>
+
                 <p class="main__p">
                     А также наименование переменных должно быть понятным. Не стоит давать имена переменным
                     которые не отображают смысл и сущность самой переменной. Так как потом можно забыть
@@ -338,23 +359,154 @@
                     Оператор typeof позволяет определить тип переменной
                 </p>
 
-                <div class="code__block-wrapper">
-                    <div class="code__block-code">
-                        const someName = 44<br>
-                        const someName2 = 'Bob'<br>
-                        console.log(typeof someName)<br>
-                        console.log(typeof someName2)
-                    </div>
+                <div class="code__block-descr">
+                    Две переменные выводятся в консоль. Оператор typeoff в методе condole.log
+                    показывает тип данных в консоли.<br>
+                    Переменная someName - number<br>
+                    Переменная someName2 - string
+                </div>
+                <pre>
+                    <code>
+                        const someName = 44;
+                        const someName2 = 'Bob';
+                        console.log(typeof someName);
+                        console.log(typeof someName2);
+                    </code>
+                </pre>
 
-                    <div class="code__block-descr">
-                        Две переменные выводятся в консоль. Оператор typeoff в методе condole.log
-                        показывает тип данных в консоли.<br>
-                        Переменная someName - number<br>
-                        Переменная someName2 - string
-                    </div>
-                </div><!--code__block-wrapper-->
+
+                <!----- Операторы ----->
+                <a name="COMPARISON_OPERATORS"></a>
+                <div class=" main__title-1">Операторы сравнения и условия</div>
+                <span class="main__subtitle-1">
+                    Подзаголовок
+                </span>
+                <div class="main__p">
+                    Два примера сравнения чисел. Операторы сравнения производят сравнение чисел.
+                    10 больше 5? Да 10 больше 5. Javascript сравнил эти два числа, и вернул результат сравнения.
+                    Результат сравнения true(истина).<br>
+                    Во втором сравнении результат false(ложь), так как 20 не больше 80.
+                </div>
+                <pre>
+                    <code>
+                        console.log(10 > 5) // true
+                        console.log(20 > 80) // false
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    Объявлена переменная let result2, ей присвоено значение false.
+                    Оно присвоено в результате вычисления операции сранения двух чисел.<br>
+                    Операция сравнения - 10 равно 5. Результат сранения false (ложь).
+                    Почему ложь? Потому, что 10 не равно 5. Результат возвращается в переменную,
+                    записывается в нее, и в методе console.log выводится в консоль.<br>
+                    Таким образом переменная result2 имеет булевое значение false
+                </div>
+                <pre>
+                    <code>
+                        let result2 = 10 == 5 // 10 равно 5 ? нет 
+                        console.log(result2) // false
+                    </code>
+                </pre>
+
+                <span class="main__subtitle-1">
+                    Динамическое приведение типов
+                </span>
+                <div class="main__p">
+                    По-скольку Javascript не строго типизированный язык, то в нем сущеествует
+                    динамическое приведение типов. Например, если мы сравним 5-ку в виде строки
+                    с 5-кой в виде числа, при этом применим оператор сравнения == (не строгое сравнение),
+                    то произойдет приведение типов и результат будет true
+                </div>
+
+                <pre>
+                    <code>
+                        console.log('5' == 5) // true
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    Второй такой же пример, но здесь мы применяем оператор сравнения
+                    === (строгое сравнение). Результат false<br>
+                    Этот оператор сравнения не приведет разные типы данных к приведению.
+                    То есть 5 число не равно 5 строке. Разные типы данных. Результат сравнения false<br>
+                    Строгое сравнение ===
+                </div>
+
+                <pre>
+                    <code>
+                        console.log('5' === 5) // true
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    Операция присвоения. В данном случае консоль выведет следующий результат:<br>
+                    Uncaught SyntaxError: Invalid left-hand side in assignmen<br>
+                    Консоль выводит ошибку потому, что операция присвоения написана некорректно.
+                </div>
+
+                <pre>
+                    <code>
+                        console.log('5' = 5) // true
+                    </code>
+                </pre>
+
+                <div class="main__p danger">
+                    !!!Внимание Нельзя путать операторы == и оператор =<br>
+                    Это разные операторы.<br>
+                    == оператор сравнения<br>
+                    = оператор присваивания
+                </div>
 
 
+                <!----- Оператор присвоения ----->
+                <span class="main__subtitle-1">
+                    Оператор присвоения
+                </span>
+                <div class="main__p">
+                    Оператор присвоения ( = ) выполняет присвоение значения. Например переменной number
+                    было присвено значение 5, а затем присвоено значение 10. Этот оператор выполнил
+                    операцию присвоения нового значения типа данных number. Было 5 стало 10.
+                </div>
+                <pre>
+                    <code>
+                        let number = 5
+                        number = 10
+                        console.log(number) // 10
+                    </code>
+                </pre>
+
+                <!----- Условие ----->
+                <span class="main__subtitle-1">
+                    Условие
+                </span>
+                <div class="main__p">
+                    Если время(переменная time) меньше 12, то выводим в консоль Доброе утро.
+                </div>
+                <pre>
+                    <code>
+                        const time = 10;
+
+                        if (time < 12) {
+                        console.log('Доброе утро');
+                        } 
+                    </code>
+                </pre>
+
+                <!----- Комментарий ----->
+                <a name="#"></a>
+                <div class=" main__title-1">Заголовок</div>
+                <span class="main__subtitle-1">
+                    Подзаголовок
+                </span>
+                <div class="main__p">
+                    Параграф
+                </div>
+                <pre>
+                     <code>
+                         programm code
+                     </code>
+                 </pre>
             </div><!---------------main__wrapper--------------->
         </div><!--------------------main-------------------->
 
@@ -364,6 +516,7 @@
 
 
         <!----- ASIDE-2 ----->
+
         <div class="aside-2 general__area-1">
             <ul class="aside-2__index-search-list">
                 <li class="aside-2__index-search-item">
@@ -378,6 +531,9 @@
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#DATA_TYPES">Типы данных</a>
                 </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#COMPARISON_OPERATORS">Операторы сравнения и условия</a>
+                </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
 
@@ -391,11 +547,11 @@
 
 
 
+
+
         <!----- FOOTER ----->
         <a name="FOOTER"></a>
-        <div class="footer general__area-1">Footer
-        </div>
-
+        <div class="footer general__area-1">Footer</div>
     </div><!--wrapper-->
 
 

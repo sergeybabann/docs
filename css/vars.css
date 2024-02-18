@@ -1,5 +1,8 @@
 :root {
-    /*----- transition -----*/
+  /*----- background-color -----*/
+  --bg-color-danger: rgba(255, 0, 0, 0.5);
+
+  /*----- transition -----*/
   --transition-color-1: color 0.3s;
   --transition-bg-color-1: background-color 0.3s;
 }
