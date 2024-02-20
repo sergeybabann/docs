@@ -23,9 +23,11 @@ code {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: start;
   font-size: 18px;
   background-color: rgba(52, 52, 52, 10);
   color: #fff;
+  max-width: 1063px;
 }
 
 ul {

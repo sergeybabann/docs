@@ -1,6 +1,7 @@
 :root {
   /*----- background-color -----*/
   --bg-color-danger: rgba(255, 0, 0, 0.5);
+  --bg-color-note: rgba(255, 165, 0, 0.7);
 
   /*----- transition -----*/
   --transition-color-1: color 0.3s;

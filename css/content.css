@@ -138,3 +138,7 @@
 .danger {
   background-color: var(--bg-color-danger);
 }
+
+.note {
+  background-color: var(--bg-color-note);
+}

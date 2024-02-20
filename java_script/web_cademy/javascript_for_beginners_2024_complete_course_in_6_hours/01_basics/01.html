@@ -58,6 +58,9 @@
                 <li class="aside-1__index-search-item">
                     <a class="aside-1__index-search-link" href="#">1 Основы</a>
                 </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../02_functions/02.html">2 Функции</a>
+                </li>
             </ul><!--aside-1__index-search-list-->
         </div><!--aside-1-->
 
@@ -377,9 +380,9 @@
 
                 <!----- Операторы ----->
                 <a name="COMPARISON_OPERATORS"></a>
-                <div class=" main__title-1">Операторы сравнения и условия</div>
+                <div class=" main__title-1">Операторы сравнения</div>
                 <span class="main__subtitle-1">
-                    Подзаголовок
+                    Операция сравнения чисел
                 </span>
                 <div class="main__p">
                     Два примера сравнения чисел. Операторы сравнения производят сравнение чисел.
@@ -452,8 +455,9 @@
                 </pre>
 
                 <div class="main__p danger">
-                    !!!Внимание Нельзя путать операторы == и оператор =<br>
-                    Это разные операторы.<br>
+                    !!!Внимание<br>
+                    Нельзя путать оператор == c оператором =<br>
+                    Это разные операторы!<br>
                     == оператор сравнения<br>
                     = оператор присваивания
                 </div>
@@ -477,36 +481,249 @@
                 </pre>
 
                 <!----- Условие ----->
-                <span class="main__subtitle-1">
-                    Условие
-                </span>
+                <a name="IF"></a>
+                <div class="main__title-1">Условие</div>
                 <div class="main__p">
-                    Если время(переменная time) меньше 12, то выводим в консоль Доброе утро.
+                    Условие:<br>
+                    если (переменная time меньше 12),<br>
+                    то выходные данные 'Доброе утро'<br>
+                </div>
+                <pre>
+                <code>
+                    const time = 10;
+
+                    if (time < 12) {
+                        console.log('Доброе утро');
+                    }    const time = 10;
+
+                    if (time < 12) {
+                        console.log('Доброе утро');
+                    } 
+                </code>
+                </pre>
+
+                <div class="main__p">
+                    Условие:<br>
+                    если (переменная time меньше 12), то выходные данные 'Доброе утро'<br>
+                    еще<br>
+                    выходные данные 'Добрый день'
                 </div>
                 <pre>
                     <code>
                         const time = 10;
 
                         if (time < 12) {
-                        console.log('Доброе утро');
-                        } 
+                            console.log('Доброе утро');
+                        } else {
+                            concole.log('Добрый день')
+                        }
                     </code>
                 </pre>
 
-                <!----- Комментарий ----->
-                <a name="#"></a>
-                <div class=" main__title-1">Заголовок</div>
-                <span class="main__subtitle-1">
-                    Подзаголовок
-                </span>
                 <div class="main__p">
-                    Параграф
+                    Условие:<br>
+                    если (переменная time меньше 12), то выходные данные 'Доброе утро'<br>
+                    еще если<br>
+                    (переменная time больше или равно 12 и меньше 18), то добрый день<br>
+                    еще<br>
+                    'Добрый вечер'.<br>
+                    Последнее условие выполняется только в том случае, когда не
+                    выполнилось ни одного условия идущими ранее.
                 </div>
                 <pre>
-                     <code>
-                         programm code
-                     </code>
-                 </pre>
+                    <code>
+                        const time = 18;
+
+                        if (time < 12) {
+                        console.log('Доброе утро');
+                        } else if (time >= 12 && time < 18) {
+                            console.log('Добрый день')
+                        } else {
+                            console.log('Добрый вечер')
+                        }
+                    </code>
+                </pre>
+
+                <!----- Логические операторы ----->
+                <a name="LOGICAL_OPERATORS"></a>
+                <div class=" main__title-1">Логические операторы</div>
+                <div class="main__p">
+                    Логические операторы:
+                    <ul class="main__list">
+                        <li class="main__list-item">
+                            && - и
+                        </li>
+                        <li class="main__list-item">
+                            || - или
+                        </li>
+                        <li class="main__list-item">
+                            !true - не
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!----- Тернарный оператор ----->
+                <a name="TERNARY_OPERATOR"></a>
+                <div class=" main__title-1">Тернарный оператор</div>
+                <span class="main__subtitle-1">
+                    Условие без тернарного оператора
+                </span>
+                <div class="main__p">
+                    Условие:<br>
+                    если 10 меньше 12, то<br>
+                    условие верно<br>
+                    еще<br>
+                    условие НЕ верно
+                </div>
+                <pre>
+                <code>
+                    // условие без применения тернарного оператора
+                    if (10 < 12) {
+                        console.log('условие верно');
+                        } else {
+                            console.log('условие НЕ верно');
+                        }
+                </code>
+                </pre>
+
+                <span class="main__subtitle-1">
+                    Условие с тернарным оператором
+                </span>
+                <div class="main__p">
+                    условие ? (условие верно) : (условие не верно)
+                </div>
+                <pre>
+                <code>
+                    // условие с применением тернарного оператора
+                    10 < 12 ? console.log('условие верно') : console.log('условие НЕ верно');
+                </code>
+                </pre>
+
+                <span class="main__subtitle-1">
+                    Два варианта объявления переменной.<br>
+                    1) в глобальной области видимости<br>
+                    2) внутри условия if(10 < 12)</span>
+                        <div class="main__p note">
+                            !Примечание<br>
+                            Почему переменная greeting не была объявлена внутри блока с условием?
+                            Это связано с его областью блочной видимости. Если переменная greeting будет объявлена
+                            внутри условия, то ее область видимости будет только внутри условияи if и больше нигде.<br>
+                        </div>
+                        <pre>
+                <code>
+                    // 1) вариант 
+                    // область видимости перемнной greeting (глобальная) 
+                    let greeting;
+                    let time = 10;
+                    
+                    if (10 < 12) {
+                        greeting = 'доброе утро';
+                    } else {
+                        greeting = 'добрый день' 
+                    }
+                    console.log(greeting);
+                </code>
+                </pre>
+
+                        <div class="main__p danger">
+                            !!!Внимание<br>
+                            Переменная greeting2 объявлена внутри условия if(10 < 12), поэтому область видимости этой
+                                переменной (не глобальная, только внутри этого условия).<br>
+                                Консоль выводит ошибку в методе console.log(greeting)<br>
+                                Текст ошибки: Uncaught ReferenceError: greeting is not defined<br>
+                                Переменная не определена
+                        </div>
+                        <pre>
+                <code>
+                    // 2) вариант
+                    // область видимости перемнной greeting2 (внутри условия if(10 < 12) ) 
+                    let time2 = 10;
+                    
+                    if (10 < 12) {
+                        let greeting2; // переменная объявлена внутри условия
+                        greeting2 = 'доброе утро';
+                    } else {
+                        greeting2 = 'добрый день' 
+                    }
+                    console.log(greeting2);                   
+                </code>
+                </pre>
+
+                        <div class="main__subtitle-1">
+                            Операция с тернарным оператором
+                        </div>
+                        <div class="main__p">
+
+                        </div>
+                        <pre>
+                        <code>
+                        // область видимости глобальная. операция с тернарным оператором
+                        let time = 10;
+                        let greeting = time < 12 ? 'доброе утро' : 'добрый день';
+                        console.log(greeting);                               
+                        </code>
+                        </pre>
+
+
+
+                        <!----- Конкатенация строк ----->
+                        <a name="STRING_CONCATENATION"></a>
+                        <div class=" main__title-1">Конкатенация строк</div>
+                        <div class="main__p">
+                            В результате сложения двух переменных, переменной sayHai присвоено значение.
+                            Пробел в конкатенации строк реализован в переменной howAreYou
+                        </div>
+                        <pre>
+                <code>
+    let greeting = 'Привет Марк!';
+    let howAreYou = ' Как твои дела'; // добавлен пробел внутри кавычек, и поэтому он появится
+    на выходе
+                    
+    let sayHi = greeting + howAreYou; // присвоение переменной sayHai результата сложения 
+    двух переменных
+                    
+    console.log(sayHi);
+                </code>
+                </pre>
+
+                        <div class="main__p">
+                            Реализована конкатенация:<br>
+                            строка + переменная + строка
+                        </div>
+                        <pre>
+                    <code>
+                        // конкатенация строка + переменная + строка
+                        const userName = 'Марк'
+                        console.log('Привет, ' + userName + '! Как твои дела?')                       
+                    </code>
+                </pre>
+                        <div class="main__p note">
+                            !Примечание<br>
+                            Вместо такой реализации конкатенации можно использовать шаблонные строки.
+                            Так как такой способ конкатенации может повлечьза собой совершение ошибок.
+                        </div>
+
+
+                        <!----- Шаблонные строки ----->
+                        <a name="TEMPLATE_STRINGS"></a>
+                        <div class=" main__title-1">Шаблонные строки</div>
+                        <span class="main__subtitle-1">
+                            Шаблонная строка и интерполяция
+                        </span>
+                        <div class="main__p">
+                            Применение шаблонной строки вместо конкатенации упрощает контроль над
+                            пробелами, так как используются обратные кавычки один раз и потом кавычки не применяются.
+                        </div>
+                        <pre>
+        <code>
+            const userName = 'Марк'
+
+            // шаблонная строка и интерполяция
+            // строка + переменная + строка
+            console.log(`Привет, ${userName}! Как твои дела?`)
+        </code>
+        </pre>
             </div><!---------------main__wrapper--------------->
         </div><!--------------------main-------------------->
 
@@ -516,7 +733,6 @@
 
 
         <!----- ASIDE-2 ----->
-
         <div class="aside-2 general__area-1">
             <ul class="aside-2__index-search-list">
                 <li class="aside-2__index-search-item">
@@ -532,8 +748,25 @@
                     <a class="aside-2__index-search-link" href="#DATA_TYPES">Типы данных</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#COMPARISON_OPERATORS">Операторы сравнения и условия</a>
+                    <a class="aside-2__index-search-link" href="#COMPARISON_OPERATORS">Операторы сравнения</a>
                 </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#IF">Условие</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#LOGICAL_OPERATORS">Логические операторы</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#TERNARY_OPERATOR">Тернарный оператор</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#STRING_CONCATENATION">Конкатенация строк</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#TEMPLATE_STRINGS">Шаблонные строки</a>
+                </li>
+
+
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
 

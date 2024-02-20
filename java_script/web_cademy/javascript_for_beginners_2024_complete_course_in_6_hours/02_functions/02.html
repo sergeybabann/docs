@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 Функции</title>
+    <link rel="stylesheet" href="../../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../../css/vars.css">
+    <link rel="stylesheet" href="../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../css/content.css">
+    <link rel="stylesheet" href="../../../../css/sidebar_1.css">
+    <link rel="stylesheet" href="../../../../css/sidebar_2.css">
+    <link rel="stylesheet" href="../../../../css/footer.css">
+    <link rel="stylesheet" href="../../../../css/templates.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!----- HEADER ----->
+        <div class="header general__area-1">
+            <a name="HEADER"></a>
+            <div class="header__space">
+                <div class="header__descr">
+                    <h1 class="header__h1">
+                        Обучающий<br> курс
+                    </h1>
+                    <span class="header__descr-1">JavaScript для начинающих 2024. Полный курс за 6 часов
+                    </span>
+                    <ul class="header__descr-2">
+                        <li>Источник: youtube</li>
+                        <li>Автор: ВебКадеми</li>
+                        <li>Спецификация: JavaScript</li>
+                    </ul>
+                </div><!--tutorial__descr-->
+                <ul class="header__navmenu-list">
+                    <li class="header__navmenu-item">
+                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../../../javascript.html" class="header__navmenu-link">Курсы JavaScript</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../course.html" class="header__navmenu-link">Главная
+                            страница курса</a>
+                    </li>
+            </div><!--header__space-->
+        </div><!--header-->
+
+
+
+
+        <!----- ASIDE-1 ----->
+        <div class="aside-1 general__area-1">
+            <ul class="aside-1__index-search-list">
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../01_basics/01.html">1 Основы</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">2 Функции</a>
+                </li>
+            </ul><!--aside-1__index-search-list-->
+        </div><!--aside-1-->
+
+
+
+
+
+
+        <!----- CONTENT ----->
+        <div class="main general__area-1">
+            <h2 class="main__h2">2 Функции</h2>
+            <div class="main__wrapper">
+
+                <!----- Объявление функции. 2 способа. ----->
+                <a name="FUNCTION_DECLARATION"></a>
+                <div class="main__title-1">Объявление функции. 2 способа.</div>
+                <div class="main__subtitle-1">
+                    DRY - don't repeat self (не повторяй себя)
+                </div><!--main__p-->
+                <div class="main__p">
+                    Объявление функции и ее вызов в консоли:
+                    <ul>
+                        <li>Объявление функции (в теле функции метод console.log)</li>
+                        <li>вызов функции: имя функции</li>
+                    </ul>
+                </div>
+                <pre>
+                    <code>
+                        function sayHi() {
+                            console.log('Привет, дорогой пользователь!')
+                        }
+                        
+                        sayHi()
+                    </code>
+                </pre>
+
+                <div class="main__subtitle-1">
+                    Существует 2 способа объявления функции:
+                </div>
+                <div class="main__p">
+                    <ul>
+                        <li>function declaration</li>
+                        <li>function expression</li>
+                    </ul>
+                </div>
+
+                <div class="main__subtitle-1">
+                    function declaration
+                </div>
+                <pre>
+                    <code>
+                    // function declaration
+                    function sayHi() {
+                        console.log('Привет')
+                    }
+                    </code>
+                </pre>
+
+                <div class="main__subtitle-1">
+                    function expression
+                </div>
+                <pre>
+                    <code>
+                    // function expression
+
+                    // let
+                    let sayHi = function() {
+                        console.log('Привет')
+                    } 
+
+                    // const
+                    const sayHi2 = function() {
+                        console.log('Здравствуйте')
+                    }
+
+                    // var
+                    var sayHi3 = function() {
+                        console.log('Приветствую')
+                    }
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    function declaration:<br>
+                    Можно вызывать функцию до того момента, как она была объявлена в коде.
+                </div>
+
+                <pre>
+                    <code>
+                        // вызов функции
+                        sayHi() 
+                        
+                        // объявление функции
+                        function sayHi() {
+                            console.log('Приветики')
+                        }                       
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    function expression:<br>
+                    Нельзя вызывать функцию до того момента, как она была объявлена в коде.
+                    Будет ошибка.
+                </div>
+
+                <pre>
+                    <code>
+                        // вызов функции не возможен
+                        sayHi()
+
+                        // объявление функции
+                        const sayHi = function() {
+                            console.log('Привет')
+                        }  
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        // объявление функции
+                        const sayHi = function() {
+                            console.log('Привет')
+                        }  
+
+                        // вызов функции возможен
+                        sayHi()
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    Какие аргументы для того, чтобы использовать function declaration ?
+                    <ul>
+                        <li>Это короче и лаконичней</li>
+                        <li>Мы можем описать работу программы, а потом ниже описать те функции, которые нам нужны</li>
+                    </ul>
+                </div>
+                <div class="main__p">
+                    Какие аргументы для того, чтобы использовать function expression ?
+                    <ul>
+                        <li>Если функция вызывается, то она объявлена где-то выше.
+                            То есть более строгие правила, они и более надежные.
+                            Не объявленная функция ранее в коде, не может быть вызвана.
+                            Это строгое правило.
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!----- Параметры и аргументы для функции ----->
+                <a name="PARAMETERS_AND_ARGUMENTS_FOR_THE_FUNCTION"></a>
+                <div class="main__title-1">Параметры и аргументы для функции</div>
+                <div class="main__p">
+                    Функция sayHi принимает в скобках параметр name.
+                    Параметр name объявлен в функции. Значение параметра функции 'Юрий', которое находится в скобках
+                    передается в параметр name для функции sayHi и далее идет в переменную в шаблонной строке в методе
+                    console.log<br>
+                    Измените значение аргумента функции 'Юрий' и посмотрите результат в консоли.
+                </div>
+                <pre>
+                    <code>
+                        function sayHi(name)// name это параметр функции {
+                            console.log(`Привет, ${name}! Как твои дела?`)
+                        }
+                        
+                        sayHi('Юрий')// Юрий это аргумент функции
+                    </code>
+                </pre>
+
+                <div class="main__p">
+                    Меняем значение в аргументе функции, смотрим результат.
+                </div>
+                <pre>
+                    <code>
+                        function sayHi(name)// name это параметр функции {
+                            console.log(`Привет, ${name}! Как твои дела?`)
+                        }
+                        
+                        sayHi('Юрий')
+                        sayHi('Александр')
+                        sayHi('Павел')
+                    </code>
+                </pre>
+
+
+                <!----- return ----->
+                <a name="RETURN"></a>
+                <div class="main__title-1">
+                    return
+                </div>
+                <div class="main__subtitle-1">
+                    Функция ничего не возвращает. В ней нет return
+                </div>
+                <div class="main__p">
+                    <ul>
+                        <li>функция summ принимает параметры: a, b</li>
+                        <li>константа result присваивает результат сложения этих двух параметров</li>
+                        <li>вывод в консоль значения константы result</li>
+                        <li>summ передает аргументы 10 и 15 в функцию summ
+                            (10 идет на параметр a, 15 идет на параметр b, то есть по порядку)
+                        </li>
+                    </ul>
+                    <div class="main__p">
+                        Функция отработала результат сложения параметров, но ничего не вернула.
+                        Поэтому она undefined
+                    </div>
+                </div>
+                <pre>
+                    <code>
+                        function summ(a, b) {
+                            const result = a + b;
+                            console.log(result)
+                        }
+                        
+                        summ(10, 15) // 10 идет на a, 15 идет на 15,то есть по порядку                        
+                    </code>
+                </pre>
+
+                <div class="main__subtitle-1">
+                    Функция возвращает результат. В ней есть return
+                </div>
+                <div class="main__p">
+                    <ul>
+                        <li>функция summ принимает в свои параметры a, b значения аргументов 10, 15</li>
+                        <li>константа result присваивает результат сложения этих двух параметров</li>
+                        <li>константа result возвращает результат сложения</li>
+                        <li>переменная let присваивает результат сложения аргументов 10, 15, которые
+                            идут на параметры функции</li>
+                        <li>метод console.log выводит результат сложения, который сохраняется в
+                            переменной res</li>
+                    </ul>
+                    <div class="main__p">
+                        Остановка действий функции происходит после того, как она совершила возврат (return).
+                        Поэтому писать код после return бессмысленно. Код находящийся ниже return не работает.
+                    </div>
+                </div>
+                <pre>
+                    <code>
+                        function summ(a, b) {
+                            const result = a + b;
+                            return result;
+                        }
+                        
+                        let res = summ(10, 15);
+                        console.log(res);                                                               
+                    </code>
+                </pre>
+
+                <!----- Функция как аргумент----->
+                <a name="FUNCTION_AS_ARGUMENT"></a>
+                <div class="main__title-1">Функция как аргумент</div>
+                <pre>
+                    <code>
+            // функция как аргумент
+            function summ(a, b) {
+                return a + b
+            }
+                        
+            console.log(summ(15, 15))
+            // выводится функция с результатом сложения аргументов 15, 15
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        // функция как аргумент
+                        function summ(a,b) {
+                            return a + b
+                        }
+                        
+                        const result = summ(summ(15, 15), summ(20, 20))
+                        console.log(result)                       
+                    </code>
+                </pre>
+
+                <pre>
+                    <code>
+                        // функция как аргумент
+                        function summ(a,b) {
+                            return a + b
+                        }
+                        
+                        function diff(a, b) {
+                            return a - b
+                        }
+                        
+                        function doSomething(func) {
+                            let x = 10
+                            let y = 15
+                            let result = func(x, y) 
+                            console.log(result)
+                        }
+                        
+                        doSomething(summ) // 25
+                        doSomething(diff) // -5
+                    </code>
+                </pre>
+
+            </div><!---------------main__wrapper--------------->
+        </div><!--------------------main-------------------->
+
+
+
+
+
+
+        <!----- ASIDE-2 ----->
+        <div class="aside-2 general__area-1">
+            <ul class="aside-2__index-search-list">
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#FUNCTION_DECLARATION">Объявление функции. 2
+                        способа.</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#PARAMETERS_AND_ARGUMENTS_FOR_THE_FUNCTION">Параметры и
+                        аргументы для функции</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#RETURN">return</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#FUNCTION_AS_ARGUMENT">Функция как аргумент</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#">ITEM</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#">ITEM</a>
+                </li>
+            </ul><!--aside-2__index-search-list-->
+        </div><!--aside_2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!----- FOOTER ----->
+        <a name="FOOTER"></a>
+        <div class="footer general__area-1">Footer</div>
+    </div><!--wrapper-->
+
+
+
+</body>
+
+</html>
