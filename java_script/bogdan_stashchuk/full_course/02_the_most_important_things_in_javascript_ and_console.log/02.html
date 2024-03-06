@@ -81,11 +81,106 @@
                 <div class="main__title-1">Самое важное в JavaScript</div>
                 <div class="main__subtitle-1">
                     Самое важное в JavaScript это - функции, выражения, объекты
-                </div><!--main__p-->
-
-                <div class="code__block-descr">
-                    Главная идея в JavaScript в том, что практически все сущности в JavaScript это - объекты
                 </div>
+
+                <p class="main__p">
+                    Главная идея в JavaScript в том, что практически все сущности в JavaScript это - объекты.
+                    Объект это - набор свойств, имя:значение, либо пара имя:значение. Имена еще называют ключами.
+                </p>
+
+                <div class="main__subtitle-1">
+                    Пример объекта
+                </div>
+                <pre>
+                    <code>
+    // example object
+
+    {
+        visible: true,
+        colorDepth: 24,
+        title: 'My image',
+        Orientation: {
+            angle: 0,
+            type: 'landscape'
+        },
+        pixelDepth: 24,
+        width: 1440
+    }
+                    </code>
+                </pre>
+
+                <ul class="main__list">
+                    <li class="main__list-item">Массив это - объект</li>
+                    <li class="main__list-item">Функция это - объект</li>
+                    <li class="main__list-item">Число это - объект</li>
+                    <li class="main__list-item">Строка это - объект</li>
+                </ul>
+
+                <p class="main__p">Числа и строки ведут себя как объекты. Значения такие как число и строка это
+                    примитивные значения.
+                    Объект это набор свойств, и у свойств есть свои значения.
+                </p>
+
+
+
+                <!----- Что такое console.log ? ----->
+                <a name="WHAT_IS_A_CONSOLE"></a>
+                <div class="main__title-1">Что такое console.log ?</div>
+                <div class="main__subtitle-1">
+                    console.log('Hello world') - это выражение
+                </div>
+
+                <pre>
+                    <code>
+                        console.log('Hello world')
+                    </code>
+                </pre>
+
+
+                <ul class="main__list">
+                    <li class="main__list-item">console - это объект. У объекта есть свойства. У каждого
+                        свойства есть пара - ключ:значение.
+                    </li>
+                    <li class="main__list-item">log - это метод. Метод это функция, которая является значением
+                        одного из свойств объекта.</li>
+                    <li class="main__list-item">точка между console и log - это синтаксис JavaScript, который
+                        называется точечная запись. С помощью точечной записи можно получать доступ к свойствам
+                        объектов. В данном случае в console.log('Hello world') мы получаем доступ к методу объекта.
+                        Метод называется log</li>
+                    <li class="main__list-item">Скобки это вызов метода. Это также часть синтаксиса JavaScript.
+                        Поставив скобки после log, мы говорим, что мы хотим вызвать эту функцию, которая является
+                        методом объекта console.
+                    </li>
+                    <li class="main__list-item">('Hello world') - Внутри вызова метода находится аргумент, и в
+                        данном примере это просто значение типа - строка(string)</li>
+                </ul>
+
+
+                <div class="main__subtitle-1">метод dir</div>
+                <pre>
+                    <code>
+                        console.log(dir)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Кроме метода log у объекта console есть такой метод как dir. И с помощью этого метода можно
+                    отобразить в консоли все свойства того или иного объекта. Например с помощью console.dir можно
+                    увидеть, что любая функция в JavaScript это объект, и увидеть все свойства этого объекта.
+                </p>
+
+                <div class="main__subtitle-1">метод table</div>
+                <pre>
+                    <code>
+                        console.log(table)
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    C помощью метода table можно увидеть в консоли все свойства того или иного объекта, который передан
+                    в этот метод как аргумент, который находится внутри скобок в табличном виде. То есть все свойства
+                    объекта будут отображены в виде таблицы.
+                </p>
+
                 <pre>
                     <code>
                         код
@@ -103,10 +198,10 @@
                     Описание
                 </div>
                 <pre>
-                    <code>
-                        код
-                    </code>
-                </pre>
+                     <code>
+                         код
+                     </code>
+                 </pre>
 
 
             </div><!---------------main__wrapper--------------->
@@ -123,6 +218,9 @@
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#THE_MOST_IMPORTANT_THING_IN_JAVASCRIPT">Самое важное в
                         JavaScript</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#WHAT_IS_A_CONSOLE">Что такое console.log ?</a>
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#">Item</a>
