@@ -1,4 +1,5 @@
 html {
+  /* плавный скролл */
   scroll-behavior: smooth;
 }
 
