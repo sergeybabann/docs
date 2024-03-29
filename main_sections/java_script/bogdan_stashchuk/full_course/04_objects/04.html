@@ -252,8 +252,372 @@
                 </p>
 
                 <p class="main__subtitle-1">
-                    Папка 04.
+                    Папка 04. Удаление свойств из объекта
                 </p>
+
+                <pre>
+                    <code>
+                        // объект
+                        const myCity = {
+                            city: 'New York',
+                            popular: true,
+                            country: 'USA'
+                        } 
+                        
+                        delete myCity.country // операция удаления свойства из объекта
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true}                     
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    delete - Оператор удаления<br>
+                    В данном примере в объекте myCity есть 3 свойства.
+                </p>
+
+                <p class="main__p">
+                    Таким образом при помощи оператора delete(оператора удаления) мы удалили из объекта myCity свойство
+                    country<br>
+                    Выводим в консоль объект myCity и увидим, что в объекте осталось всего 2 свойства.
+                    При помощи данной операции мы можем удалять любое свойство из объекта.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Папка 05. Доступ к значению свойства с использованием скобок. bracket notation (скобочная запись)
+                </p>
+
+                <pre>
+                    <code>
+                        const myCity = {
+                            city: 'New York'
+                        }
+                        
+                        myCity['popular'] = true // добавление свойства в объект
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true}
+                        
+                        const countryPropertyName = 'country' 
+                        
+                        myCity[countryPropertyName] = 'USA'
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true, country: 'USA'}
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Кроме точечной записи, вы можете работать со свойствами объекта, используя квадратные скобки.
+                    В данном примере тот же объект myCity
+                </p>
+
+                <pre>
+                    <code>
+                        myCity['popular'] = true // добавление свойства в объект
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    В скобках указывается свойство, которое вы хотите добавить, и оно заключено в кавычки.
+                    Выводим свойство в консоль и видим в объекте 2 свойства.
+                </p>
+                <p class="main__p">
+                    Такой синтаксис с квадратными скобками используется в том случае, если название свойства является
+                    значением той или иной переменной. И это указано в примере ниже:
+                </p>
+
+
+                <pre>
+                    <code>
+                        const countryPropertyName = 'country' 
+                        
+                        myCity [countryPropertyName] = 'USA'
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Допустим вы создаете переменную, которая называется
+                </p>
+                <pre>
+                        <code>
+                            countryPropertyName = country
+                        </code>
+                    </pre>
+                <p class="main__p">
+                    Значение этой переменной - country<br>
+                    И допустим вы хотите добавить новое свойство к объекту myCity , которое будет называться так,
+                    как значение переменной countryPropertyName , и это значение в данном случае - country., и как раз в
+                    этом случае вам подойдет только синтаксис с квадратными скобками.
+                </p>
+
+                <p class="main__p">
+                    Вы не можете написать выражение
+                </p>
+                <pre>
+                    <code>
+                        myCity.countryPropertyName
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Потому, что в таком случае создастся свойство, которое называется countryPropertyName .,
+                    нам же необходимо создать свойство, которое называется country
+                </p>
+
+                <p class="main__p">
+                    И мы пишем нужное нам выражение в котором сначала идет назание объекта, затем в квадратных скобках
+                    идет название переменной:
+                </p>
+
+                <pre>
+                    <code>
+                        myCity[countryPropertyName] = 'USA'
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    JavaScript сначала перед созданием нового свойства посмотрит какое значение у countryPropertyName ,
+                    а значение у нас country (смотрим пример ниже)
+                </p>
+                <pre>
+                    <code>
+                        const countryPropertyName = 'country' 
+                        
+                        myCity[countryPropertyName] = 'USA'
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Именно с именем country создастся новое свойство, значение которого в данном случае будет 'USA'<br>
+                    Выводим этот объект в консоль, и увидим в объекте уже 3 свойства:
+                </p>
+                <pre>
+                    <code>
+                        const myCity = {
+                            city: 'New York'
+                        }
+                        
+                        myCity['popular'] = true // добавление свойства в объект
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true}
+                        
+                        const countryPropertyName = 'country' 
+                        
+                        myCity[countryPropertyName] = 'USA'
+                        
+                        console.log(myCity) 
+                        // {city: 'New York', popular: true, country: 'USA'}
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Скобочная запись отличается от точечной записи тем, что в квадратных скобках вы можете по сути
+                    использовать любое выражение JavaScript ., в данном примере мы просто использовали название
+                    переменной, содержащей строковое значение country, и это же значение мы добавляем уже как название
+                    нового свойства со значением 'USA' ., и все это мы делаем при помощи скобочной записи bracket
+                    notation
+                </p>
+
+
+
+
+
+                <!----- Вложенные свойства ----->
+                <a name="NESTED_PROPERTIES"></a>
+                <div class="main__title-1">Вложенные свойства</div>
+                <p class="main__p">
+                    У объектов JavaScript могут быть вложенные свойства, которые содержат вложенные объекты.
+                    В данном примере у объекта myCity есть свойство info, и значение этого свойства это - объект,
+                    который имеет внутри свои 2 свойства:
+                <ul class="main__list">
+                    <li class="main__list-item">isPopular</li>
+                    <li class="main__list-item">country</li>
+                </ul>
+                </p>
+                <p class="main__subtitle-1">
+                    Папка 06.
+                </p>
+                <pre>
+                    <code>
+                        const myCity = {
+                            city: 'New York',
+                            info: {
+                                isPopular: true,
+                                country: 'USA'
+                            }
+                        }
+                        
+                        console.log(myCity.info.isPopular)
+                        // true
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Такой объект называется вложенным объектом. И у этих свойств также могут быть объекты, как значения.
+                    Тем самым вложенность может быть многоуровневая.
+                </p>
+                <p class="main__p">
+                    Например, если вы хотите получить доступ к свойству isPopular вложенного объекта info,
+                    то вам необходимо использовать теперь 2 точки для того, чтобы дойти по иерархии объекта до нужного
+                    значения. Смотрим пример:
+                </p>
+                <pre>
+                    <code>
+                        console.log(myCity.info.isPopular) 
+                        // true
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И в консоли мы увидим true ., значение свойства isPopular<br>
+                    Точно также можно удалять свойства, используя либо точечную запись, либо скобочную.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Удаление свойства из объекта
+                </p>
+                <p class="main__p">
+                    В примере ниже вы видете как при помощи оператора delete происходит удаление свойства isPopular
+                    , которое находится в объекте info ., К объекту info вы должны дойти через доступ с помощью точки
+                    соответственно, и в квадратных скобках прописать нужное свойство для его удаления, заключенное в
+                    кавычки.
+                </p>
+                <pre>
+                    <code>
+                        delete myCity.info['isPopular']
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    И смотрим весь пример кода:
+                </p>
+                <pre>
+                    <code>
+                        const myCity = {
+                            city: 'New York',
+                            info: {
+                                isPopular: true,
+                                country: 'USA'
+                            }
+                        }
+                        
+                        console.log(myCity.info.isPopular)
+                        // true
+                        
+                        delete myCity.info['isPopular']
+                        
+                        console.log(myCity)
+                        // {city: 'New York', info: {country: 'USA'}} 
+                    </code>
+                </pre>
+
+                <p class="main__p note">
+                    Примечание!<br>
+                    Используйте скобочную запись только тогда, когда в скобках должнобыть какое-то выражение.
+                    Например название переменной.
+                </p>
+
+
+
+
+
+
+                <!----- Сокращенный формат записи свойств ----->
+                <a name="SHORTHAND_FORMAT_FOR_RECORDING_PROPERTIES"></a>
+                <div class="main__title-1">Сокращенный формат записи свойств</div>
+                <p class="main__subtitle-1">
+                    Использование переменных при формировании объекта
+                </p>
+                <pre>
+                    <code>
+                        const name = 'Bogdan'
+                        const postsQty = 23
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В данном примере (выше) у нас есть две переменные: name и postsQty<br>
+                </p>
+                <p class="main__p">
+                    Допустим теперь мы хотим создать новый объект с названием userProfile, и у этого объекта
+                    будут свои свойства.
+                </p>
+                <pre>
+                    <code>
+                        const userProfile = {
+                            name: name,
+                            postsQty: postsQty,
+                            hasSignedAgreement: false 
+                        }
+                    </code>
+                </pre>
+
+                <p class="main__subtitle-1">
+                    Что в итоге мы имеем и о чем нужно сказать?
+                </p>
+                <p class="main__p">
+                    Значения в созданном объекте для свойств name и postsQty сформированы исходя из значений переменных,
+                    объявленных ранее. Вы можете легко использовать переменные в качестве значений для свойств объекта.
+                    И в данном примере эти значения переменных, которые были объявлены ранее выступают в качестве
+                    значений свойств уже нового объекта. Вот полный пример кода:
+                </p>
+                <pre>
+                    <code>
+                        const name = 'Bogdan'
+                        const postsQty = 23
+                        
+                        const userProfile = {
+                            name: name,
+                            postsQty: postsQty,
+                            hasSignedAgreement: false 
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Более того, в качестве значений свойств объекта можно использовать любые выражения. И сначала
+                    JavaScript получит результат того или иного выражения, а после этого этот результат присвоится
+                    тому или иному свойству объекта. В данном случае мы просто используем название переменных как
+                    выражение.
+                </p>
+                <p class="main__p">
+                    Обратите внимание - в данном объекте userProfile свойство name имеет значение переменной name .,
+                    имена совпадают. Совпадает имя свойства с именем переменной. И тоже самое мы видим в переменной
+                    postsQty<br>
+                </p>
+                <p class="main__subtitle-1 note">
+                    Примечание!<br>
+                    Имя свойства совпадает с именем переменной, которую мы используем для получения значения для этого
+                    свойства.
+                </p>
+                <p class="main__p">
+                    В JavaScript есть возможность сокращенной записи при формировании таких объектов. Пример:
+                </p>
+                <p class="main__subtitle-1">
+                    Папка 08. Сокращенный формат записи свойств объекта:
+                </p>
+                <pre>
+                    <code>
+                        const name = 'Bogdan'
+                        const postsQty = 23
+                        
+                        const userProfile = {
+                            name,
+                            postsQty,
+                            hasSignedAgreement: false 
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Сокращенный формат записи свойств можно применять в объекте, если вы формируете те или
+                    иные свойства исходя из переменных, которые были объявлены ранее. Такой формат создания объектов
+                    очень рапространен в JavaScript. Обычно часть значений уже известна до формирования объекта, и эти
+                    значения были присвоены определенным переменным. И при создании объекта вам нужно всего лишь
+                    сослаться на значения этих переменных и использовать их для получения значений свойств объекта.
+                </p>
+                <p class="main__subtitle-1 note">
+                    Примечание!<br>
+                    Сокращенные свойства рекомендуется размещать в начале объекта. Пототму, что так удобнее читать
+                    объект. Чтобы было еще удобнее читать объект, свойства можно сортировать по их длине, короткие
+                    сверху и длинные ниже.
+                </p>
+
+
 
 
 
@@ -275,6 +639,14 @@
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#CREATING_AND_DELETING_OBJECT_PROPERTIES">Создание и
                         удаление свойств объектов</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#NESTED_PROPERTIES">Вложенные свойства</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#SHORTHAND_FORMAT_FOR_RECORDING_PROPERTIES">Сокращенный
+                        формат записи
+                        свойств</a>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
