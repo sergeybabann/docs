@@ -245,6 +245,9 @@
                     объекта, когда вы создаете новый объект?<br>
                     Мы рассмотрим несколько вариантов того, как можно решить такую задачу.
                 </p>
+
+                <!----- Папка 1 ----->
+                <a name="HOW_TO_AVOID_OBJECT_MUTATION.1"></a>
                 <p class="main__subtitle-1">
                     Папка 01. Вариант №1
                 </p>
@@ -362,6 +365,8 @@
                     </code>
                 </pre>
 
+                <!----- Папка 2 ----->
+                <a name="HOW_TO_AVOID_OBJECT_MUTATION.2"></a>
                 <p class="main__subtitle-1">
                     Папка 02. Вариант №2, который позволяет создавать копии объекта.
                 </p>
@@ -429,6 +434,68 @@
                         console.log(person.age) // Bob
                     </code>
                 </pre>
+                <p class="main__p">
+                    Но такой синтаксис также не полностью копирует объект. И здесь та жа проблема. Если у оригинального
+                    объекта есть свойства, которые ссылаются на вложенные объекты, то ссылки сохранятся. И когда вы
+                    будете пытаться в скопированном объекте менять такие вот вложенные объекты, они будут также меняться
+                    и в оригинальном объекте. То есть вы сможете мутировать такие вложенные объекты.
+                </p>
+                <p class="main__p note">
+                    Для данного примера такой вариант копирования объекта вполне подходит, так как здесь нет вложенных
+                    объектов. И он короче предыдущего 1-ого варианта.
+                </p>
+
+                <a name="HOW_TO_AVOID_OBJECT_MUTATION.3"></a>
+                <p class="main__subtitle-1">
+                    Папка 03. Вариант №3
+                </p>
+                <p class="main__p note">
+                    В этом варианте можно создать копию объекта и полностью избежать мутации.
+                </p>
+                <pre>
+                    <code>
+                        const person = {
+                            name: 'Bob',
+                            age: 25
+                        }
+                        
+                        const person2  = JSON.parse(JSON.stringify(person))
+                        person2.name = 'Alice'
+                        
+                        console.log(person2.name) // Alice
+                        console.log(person.name) // Bob
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В этом варианте вы видите уже знакомые вам методы:
+                    <strong>parse</strong> и <strong>stringify</strong>
+                    , а это методы объекта JSON, и что мы делаем? Сначала мы конвертируем объект person в строку (JSON -
+                    это строка), и здесь мы получим строку после вызова метода <strong>stringify</strong>
+                </p>
+                <pre>
+                    <code>
+                        (JSON.stringify(person))
+                    </code>
+                </pre>
+                <p class="main__p">
+                    А потом мы берем эту строку и передаем как аргумент в вызове уже другого метода
+                    <strong>parse</strong>
+                </p>
+                <pre>
+                    <code>
+                        JSON.parse(JSON.stringify(person))
+                    </code>
+                </pre>
+                <p class="main__p">
+                    По сути мы берем строку JSON и конвертируем обратно в объект JavaScript , используя метод
+                    <strong>parse</strong> объекта JSON<br>
+                    По сути происходит двойная конвертация - Объект в JSON , JSON в объект. И тем самым путем такой
+                    двойной конвертации мы получим полностью новый объект, и в этом новом объекте мы можем менять любые
+                    свойства. Также мы добиваемся того, что ссылки на вложенные объекты, если такие объекты в
+                    оригинальном объекте есть, не сохраняются. То есть создается полностью новый объект со всеми новыми
+                    ссылками, включая вложенные, если такие вложенные есть.
+                </p>
+
 
 
 
@@ -454,7 +521,16 @@
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#HOW_TO_AVOID_OBJECT_MUTATION">Как избежать
-                        мутации объектов</a>
+                        мутации объектов
+                    </a>
+                    <ul>
+                        <li><a class="aside-2__index-search-link" href="#HOW_TO_AVOID_OBJECT_MUTATION.1">Папка 1</a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#HOW_TO_AVOID_OBJECT_MUTATION.2">Папка 2</a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#HOW_TO_AVOID_OBJECT_MUTATION.3">Папка 3</a>
+                        </li>
+                    </ul>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
