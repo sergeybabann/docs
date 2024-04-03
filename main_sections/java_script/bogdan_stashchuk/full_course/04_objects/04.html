@@ -71,6 +71,9 @@
                 <li class="aside-1__index-search-item">
                     <a class="aside-1__index-search-link" href="#">4 Объекты</a>
                 </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../05_mutation_object/05.html">5 Мутация объектов</a>
+                </li>
             </ul><!--aside-1__index-search-list-->
         </div><!--aside-1-->
 
@@ -875,6 +878,94 @@
 
 
 
+                <!----- JSON ----->
+                <a name="JSON"></a>
+                <div class="main__title-1">JSON</div>
+                <p class="main__subtitle-1">
+                    JSON - это JavaScript Object Notation
+                </p>
+                <p class="main__p">
+                    JSON - это формат обмена данными между компьютерами в интернете. Обычно, когда вы загружаете
+                    любую веб-страницу, то эта страница обращается к другим серверам для того, чтобы получить данные,
+                    которые будут отображены на экране. Такими данными могут быть таблицы стилей CSS, картинки, либо же
+                    текстовые данные, которые необходимо отобразить на странице. Например, список постов того или иного
+                    пользователя, либо список комментариев, либо профиль пользователя.
+                </p>
+                <p class="main__subtitle-1">
+                    Пример файла JSON:
+                </p>
+                <pre>
+                    <code>
+                        {
+                            "userID": 1,
+                            "id": 1,
+                            "title": "Test title",
+                            "status": {
+                              "completed": false
+                            }
+                          }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В даном примере файла JSON есть набор свойств, и эти свойства очень похожи на свойства в JavaScript
+                    объекте, но все свойства находятся между двойными кавычками. Их значения могут быть разных типов.
+                    Передача данных между компьютерами в файле JSON происходит в виде строки.
+                </p>
+                <p class="main__subtitle-1">
+                    Конвертация JSON в JavaScript объект.
+                </p>
+                <p class="main__p">
+                    Если сервер вам присылает JSON с набором каких-то данных, например, объект, который описывает
+                    пользователя? Вам необходимо распарсить такой JSON и конвертировать его в JavaScript объект для
+                    того, чтобы далее отобразить информацию о пользователе на фронтенд странице. Для этого есть
+                    встроенный метод, который является методом объекта <strong>JSON</strong> Такой метода называется
+                    <strong>parse</strong>
+                </p>
+                <pre>
+                    <code>
+                        JSON.parse()
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Получив JSON в формате строки от сервера, вы можете передать его как аргумент в вызове метода
+                    parse(), и в результате получите JavaScript объект:
+                </p>
+                <pre>
+                    <code>
+                        {
+                            "userID": 1,
+                            "id": 1,
+                            "title": "Test title",
+                            "status": {
+                              "completed": false
+                            }
+                          }
+                    </code>
+                </pre>
+
+                <p class="main__subtitle-1">
+                    Конвертация JavaScript объекта в JSON.
+                </p>
+                <p class="main__p">
+                    Для этого есть обратная функция, которая называется stringify()
+                </p>
+                <pre>
+                    <code>
+                        JSON.stringify()
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Это метод объекта JSON<br>
+
+                </p>
+
+
+
+
+
+
+
+
 
 
             </div><!---------------main__wrapper--------------->
@@ -908,6 +999,9 @@
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#OBJECT_METHODS">Методы объекта</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#JSON">JSON</a>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
