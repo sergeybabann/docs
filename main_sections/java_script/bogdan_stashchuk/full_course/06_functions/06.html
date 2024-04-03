@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 Функции</title>
+    <link rel="stylesheet" href="../../../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../../../css/vars.css">
+    <link rel="stylesheet" href="../../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../../css/content.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_1.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_2.css">
+    <link rel="stylesheet" href="../../../../../css/footer.css">
+    <link rel="stylesheet" href="../../../../../css/templates.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!----- HEADER ----->
+        <div class="header general__area-1">
+            <a name="HEADER"></a>
+            <div class="header__space">
+                <div class="header__descr">
+                    <h1 class="header__h1">
+                        Обучающий<br> курс
+                    </h1>
+                    <span class="header__descr-1">Полный курс JavaScript
+                    </span>
+                    <ul class="header__descr-2">
+                        <li>Источник: rutracker</li>
+                        <li>Автор: Богдан Сташчук</li>
+                        <li>Спецификация: JavaScript</li>
+                    </ul>
+                </div><!--tutorial__descr-->
+                <ul class="header__navmenu-list">
+                    <li class="header__navmenu-item">
+                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../../../javascript.html" class="header__navmenu-link">Курсы JavaScript</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../course.html" class="header__navmenu-link">Главная
+                            страница курса</a>
+                    </li>
+                </ul>
+            </div><!--header__space-->
+        </div><!--header-->
+
+
+
+
+        <!----- ASIDE-1 ----->
+        <div class="aside-1 general__area-1">
+            <ul class="aside-1__index-search-list">
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../01_introduction/01.html">1 Введение</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link"
+                        href="../02_the_most_important_things_in_javascript_ and_console.log/02.html">2 Самое важное в
+                        JavaScript и console.log</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../03_varibles_and_types/03.html">3 Переменные и
+                        типы</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../04_objects/04.html">4 Объекты</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">5 Мутация объектов</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">6 Функции</a>
+                </li>
+            </ul><!--aside-1__index-search-list-->
+        </div><!--aside-1-->
+
+
+
+
+
+
+        <!----- CONTENT ----->
+        <div class="main general__area-1">
+            <h2 class="main__h2">6 Функции</h2>
+            <div class="main__wrapper">
+
+                <!----- Что такое функция? ----->
+                <a name="WHAT_IS_A_FUNCTION"></a>
+                <div class="main__title-1">Что такое функция?</div>
+                <p class="main__p">
+                    Функция - это блок кода, который можно выполнять многократно. Давайте посмотрим на пример:
+                </p>
+
+                <!----- Не опттимизированный код ----->
+                <a name="NOT_OPTIMIZED_CODE"></a>
+                <p class="main__subtitle-1">
+                    Папка 01. Пример неоптимизированного кода с повторяющимися блоками кода:
+                </p>
+                <pre>
+                    <code>
+                        let a = 5
+                        let b = 3
+                        
+                        let c 
+                        
+                        c = a + b
+                        console.log(c) // 8 - одинаковые блоки кода
+                        
+                        a = 8
+                        b = 12
+                        
+                        c = a + b
+                        console.log(c) // 20 - одинаковые блоки кода                     
+                    </code>
+                </pre>
+                <p class="main__p note">
+                    Примечание! Очень рекомендуется избегать повторения блоков кода.
+                </p>
+                <p class="main__p">
+                    В нашем примере кода есть 2 повторения блоков кода, в комментариях написано об этом.
+                    Если присутствуют такие повторения, то это значит, что код написан не оптимально, и его
+                    нужно оптимизировать. И это можно оптимизировать путем создания функции. И в этом примере можно
+                    создать функцию и назвать ее, например, <strong>sum</strong>
+                    Внутри этой функции мы будем суммировать значения двух переменных и печатать в консоль
+                    результат.
+                </p>
+
+                <!----- Оптимизированный код ----->
+                <a name="OPTIMIZED_CODE"></a>
+                <p class="main__subtitle-1">
+                    Папка 02. Пример оптимизированного кода с использованием функции:
+                </p>
+                <pre>
+                    <code>
+                        let a = 5
+                        let b = 3
+                        
+                        // функция 
+                        function sum(a, b) {
+                            const c  = a + b
+                            console.log(c)
+                        }
+                        
+                        sum(a, b) // 8
+                        
+                        a = 10
+                        b = 12 
+                        
+                        sum(a, b) // 20                                              
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Мы перенесли повторяющийся блок внутрь функции.
+                </p>
+                <p class="main__subtitle-1">
+                    Повторяющийся блок:
+                </p>
+                <pre>
+                    <code>
+                        c = a + b
+                        console.log(c) // 8 - одинаковые блоки кода
+                    </code>
+                </pre>
+                <p class="main__subtitle-1">
+                    Оптимизированный код повторяющегося блока кода в функции:
+                </p>
+                <pre>
+                    <code>
+                        const c  = a + b
+                            console.log(c)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И при этом внутри функции мы объявляем переменную <strong>c</strong> при помощи
+                    <strong>const</strong>
+                    Потому, что она нужна только внутри функции. И в результате складывания 2-ух значений мы получаем
+                    новое значение и печатаем его в консоль.
+                </p>
+                <p class="main__p">И теперь мы можем вызвать функцию <strong>sum</strong>
+
+                </p>
+                <pre>
+                    <code>
+                        sum(a, b) // 8 (вызов функции)
+                    </code>
+                </pre>
+
+                <pre>
+                    <code>
+                        let a = 5
+                        let b = 3
+                        
+                        // функция 
+                        function sum(a, b) {
+                            const c  = a + b
+                            console.log(c)
+                        }
+                        
+                        sum(a, b) // 8
+                        
+                        a = 10 
+                        b = 12 
+                        
+                        sum(a, b) // 20                                              
+                    </code>
+                </pre>
+                <p class="main__p">
+                    При повторном вызове функции ее значение будет отличаться от значения первого вызова. Потому,
+                    что переменным a и b были присвоены новые значения, которые при операции сложения дают и новый
+                    результат значения константы <strong>c</strong>
+                </p>
+                <p class="main__p">
+                    Тем самым функция позволяет выполнять одни и те же действия многократно с разными вводными
+                    значениями. Вот для этого как раз в функции и присутствуют параметры.
+                </p>
+                <p class="main__subtitle-1">
+                    параметр a и b
+                </p>
+                <pre>
+                    <code>
+                        function sum(a, b)
+                    </code>
+                </pre>
+
+                <p class="main__subtitle-1">
+                    Какие могут быть функции?
+                </p>
+                <p class="main__p">
+                    Функция может быть:
+                </p>
+                <ul class="main__list">
+                    <li class="main__list-item">именованной</li>
+                    <li class="main__list-item">присвоенна переменной</li>
+                    <li class="main__list-item">анонимной (не иметь имени)</li>
+                    <li class="main__list-item">аргументом при вызове другой функции</li>
+                    <li class="main__list-item">значением свойства объекта - и такое свойство называется метод</li>
+                </ul>
+
+                <p class="main__p">
+                    Функции в JavaScript - это объект. И соответственно как у любого объекта у функции есть свойства.
+                </p>
+
+                <!----- Пример функции ----->
+                <a name="FUNCTION_EXAMPLE"></a>
+                <p class="main__subtitle-1">
+                    Папка 03. Пример функции
+                </p>
+                <pre>
+                    <code>
+                        function myFn(a, b) {
+                            let c
+                            a = a + 1
+                            c = a + b
+                            return c
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Функция myFn , у нее есть параметры a и b , есть тело функции и в ее теле выполняются определенные
+                    действия. Мы здесь объявляем переменную c , потом увеличиваем значение параметра a на единицу, и
+                    потом сумму параметров a и b мы присваиваем переменной c , и в результате еще и возвращаем значение
+                    переменной c
+                </p>
+                <p class="main__p">
+                    Если вы введете в консоли команду console.dir и передадите название этой функции как аргумент
+                </p>
+                <pre>
+                    <code>
+                        console.dir(myFn)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        function myFn(a, b) {
+                            let c
+                            a = a + 1
+                            c = a + b
+                            return c
+                        }
+                        console.dir(myFn)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    , то вы увидите структуру этого объекта. Потому, что любая функция - это объект. И у такого объекта
+                    как myFn есть свойства:
+                </p>
+                <ul class="main__list">
+                    <li class="main__list-item">arguments</li>
+                    <li class="main__list-item">caller</li>
+                    <li class="main__list-item">length - показывает количество параметров, в данном случае их 2 (a, b)
+                    </li>
+                    <li class="main__list-item">name (название функции - myFn)</li>
+                </ul>
+                <p class="main__p">
+                    То есть, используя точечную запись, вы можете получить доступ к названию функции.
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div><!---------------main__wrapper--------------->
+        </div><!--------------------main-------------------->
+
+
+
+
+
+
+        <!----- ASIDE-2 ----->
+        <div class="aside-2 general__area-1">
+            <ul class="aside-2__index-search-list">
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#WHAT_IS_A_FUNCTION">Что такое функция?</a>
+                    <ul>
+                        <li><a class="aside-2__index-search-link" href="#NOT_OPTIMIZED_CODE">Папка 01. Не
+                                оптимизированный код</a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#OPTIMIZED_CODE">Папка 02. Оптимизированный код
+                                с
+                                использованием функции</a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#FUNCTION_EXAMPLE">Папка 03. Пример функции</a>
+                        </li>
+                    </ul>
+                </li>
+        </div><!--aside_2-->
+
+
+
+
+
+
+
+        <!----- FOOTER ----->
+        <a name="FOOTER"></a>
+        <div class="footer general__area-1">Footer</div>
+    </div><!--wrapper-->
+
+
+
+</body>
+
+</html>
