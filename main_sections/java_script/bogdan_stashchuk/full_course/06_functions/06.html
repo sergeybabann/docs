@@ -512,13 +512,330 @@
                 <div class="main__title-1">
                     Передача значения по ссылке
                 </div>
+                <a name="PASSING_AN_OBJECT_AS_AN_ARGUMENT"></a>
+                <p class="main__subtitle-1">
+                    Папка 01. Передача объекта в качестве аргумента.
+                </p>
+                <p class="main__p">
+                    Рассмотрим пример, в котором в качестве аргумента в вызове функции мы передаем объект.
+                </p>
+                <pre>
+                    <code>
+                        const personOne = {
+                            name: 'Bob',
+                            age: 21
+                        }
+                        
+                        function increasePersonAge(person) {
+                            person.age += 1 
+                            return person 
+                        }
+                        
+                        increasePersonAge(personOne) 
+                        console.log(personOne.age)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В этом вызове <span class="strong">personOne</span> - это объект
+                </p>
+                <pre>
+                    <code>
+                        increasePersonAge(personOne)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Объявлена функция <span class="strong">increasePersonAge</span>
+                </p>
+                <pre>
+                    <code>
+                        function increasePersonAge(person) {
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    У этой функции есть параметр <span class="strong">person</span>, и внутри этой функции мы меняем
+                    свойство этого параметра при помощи оператора <span class="strong">+=</span><br>
+                    Это оператор, который увеличивает значение того или иного свойства, либо другой переменной на 1<br>
+                    Мы берем и изменяем значение свойства <span class="strong">age</span> на 1<br>
+                </p>
+                <pre>
+                    <code>
+                        person.age += 1 
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В итоге мы возвращаем <span class="strong">person</span>
+                </p>
+                <pre>
+                    <code>
+                        return person
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Мы подразумеваем, что <span class="strong">person</span> - это объект, который будет передаваться в
+                    функцию при вызове такой функции. И вот мы объявили объект <sppan class="strong">personOne</sppan>
+                    <br>
+                    В объекте есть 2 свойства <span class="strong">name, age</span>
+                </p>
+                <pre>
+                    <code>
+                        const personOne = {
+                            name: 'Bob',
+                            age: 21
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Смотрите что происходит:<br>
+                    Мы передаем в вызове функции аргумент <span class="strong">personOne</span>
+                </p>
+                <pre>
+                    <code>
+                        increasePersonAge(personOne)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Это переменная, которую мы объявили ранее, и значение этой переменной - объект.
+                    Мы помним, что переменная содержит только ссылку на объект. То есть в вызове переменной мы передаем
+                    только ссылку на объект <span class="strong">personOne</span><br>
+                    Тем самым <span class="strong">personOne</span> и <span class="strong">person</span> будут ссылаться
+                    на один объект в памяти.
+                </p>
+                <pre>
+                    <code>
+                        increasePersonAge(personOne) 
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        function increasePersonAge(person)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        const personOne = {
+                            name: 'Bob',
+                            age: 21
+                        }
+                        
+                        function increasePersonAge(person) {
+                            person.age += 1 
+                            return person 
+                        }
+                        
+                        increasePersonAge(personOne) 
+                        console.log(personOne.age)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И этот объект имеет 2 свойста <span class="strong">name, age</span>
+                </p>
+                <p class="main__p note">
+                    Что получается? Получается, что мы мутируем внешний объект, когда меняем одно из его свойств.
+                </p>
+                <pre>
+                    <code>
+                        person.age += 1 // меняем свойство age
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Так как <span class="strong">person</span> и <span class="strong">personOne</span> ссылаются на один
+                    и тот же объект в памяти, то соответственно <span class="strong">personOne</span> также изменится.
+                </p>
+                <p class="main__p">
+                    Получаем доступ к значению <span class="strong">age</span>
+                </p>
+                <pre>
+                    <code>
+                        console.log(personOne.age) // 22
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    и видим его новое значение, было 21 стало
+                    22
+                </p>
+                <p class="main__p note">
+                    Это происходит из-за того, что мы передали объект по ссылке. Копии объекта не было создано.
+                    Внутри функции мы изменили внешний объект.
+                </p>
+                <p class="main__p danger">
+                    !Внимание. Внутри функции не рекомендуется мутировать внешние объекты. Это очень важная
+                    рекомендация. То есть, внутри функции не меняйте внешние объекты, которые передаются как аргументы.
+                </p>
+                <p class="main__p">
+                    Что делать, если вы хотите выполнять какие-то действия внутри функции с объектами?
+                </p>
+
+                <!----- Папка 02 ----->
+                <a name="MAKING_AN_COPY_OF_AN_OBJECT"></a>
+                <p class="main__subtitle-1">
+                    Папка 02. Создание копии объекта.
+                </p>
+                <pre>
+                    <code>
+                        const personOne = {
+                            name: 'Bob',
+                            age: 21
+                        }
+                        
+                        function increasePersonAge(person) {
+                            const updatedPerson = Object.assign({}, person)
+                            updatedPerson.age += 1
+                            return updatedPerson
+                        }
+                        
+                        const updatedPersonOne = increasePersonAge(personOne)
+                        console.log(personOne.age) // 21
+                        console.log(updatedPersonOne.age) // 22
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Вы можете внутри функции создавать копии объекта. То есть все также как и раньше. У нас есть объект
+                    <span class="strong">personOne</span> с двумя свойствами, также мы объявили функцию <span
+                        class="strong">increasePersonAge(person)</span> и у нее есть 1 параметр <span
+                        class="strong">person</span>
+                </p>
+                <pre>
+                    <code>
+                        function increasePersonAge(person)
+                    </code>
+                </pre>
+                <p class="main__p">здесь мы вызываем функцию:</p>
+                <pre>
+                    <code>
+                        const updatedPersonOne = increasePersonAge(personOne) 
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Обратите внимание на то, что результат вызова функции мы присваиваем новой переменной <span
+                        class="strong">updatedPersonOne</span><br>
+                    Почему мы делаем это? Потому что внутри функции <span class="strong">increasePersonAge</span> мы
+                    создаем новый объект, который называется <span class="strong">updatedPerson</span> :
+                </p>
+                <pre>
+                    <code>
+                        const updatedPerson = Object.assign({}, person)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И мы по сути создаем копию объекта на основании того объекта <span class="strong">personOne</span>,
+                    который передан в качестве аргумента (находится в круглых
+                    скобках в вызове):
+                </p>
+                <pre>
+                    <code>
+                        const updatedPersonOne = increasePersonAge(personOne)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    То есть <span class="strong">person</span> на входе в функцию будет ссылаться на объект <span
+                        class="strong">personOne</span> :
+                </p>
+                <pre>
+                    <code>
+                        const updatedPerson = Object.assign({}, person)
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        function increasePersonAge(person) {
+                            const updatedPerson = Object.assign({}, person)
+                            updatedPerson.age += 1
+                            return updatedPerson
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Но с помощью <span class="strong">Object.assign({}, person)</span> мы создаем новый объект, и
+                    формируем его исходя из свойств объекта <span class="strong">person</span> :
+                </p>
+                <pre>
+                    <code>
+                        Object.assign({}, person)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    То есть <span class="strong">updatedPerson</span> теперь будет новым объектом. Это будет новая
+                    ссылка на новый объект:
+                </p>
+                <pre>
+                    <code>
+                        const updatedPerson = Object.assign({}, person)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И дальше мы уже меняем этот новый объект. Мы меняем значение свойства <span
+                        class="strong">age</span> :
+                </p>
+                <pre>
+                    <code>
+                        updatedPerson.age += 1
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И в конце функии мы возвращаем новый объект <span class="strong">updatedPerson</span>
+                    как результат работы функции.
+                </p>
+                <pre>
+                    <code>
+                        return updatedPerson
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И результат такой функции мы присваиваем новой переменной:
+                </p>
+                <pre>
+                    <code>
+                        const updatedPersonOne = increasePersonAge(personOne)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И тем самым мы получаем новый объект, который мы получили в результате вызова функции. И теперь в
+                    этом новом объекте свойство <span class="strong">age</span> будет равняться 22 :
+                </p>
+                <pre>
+                    <code>
+                        console.log(updatedPersonOne.age) // 22
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Но <span class="strong">personOne.age</span> не изменился:
+                </p>
+                <pre>
+                    <code>
+                        console.log(personOne.age) // 21
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Потому что мы не мутируем оригинальный объект.
+                </p>
+                <p class="main__p note">
+                    Вот один вариант из того, как же поступать, если в функцию вы хотите передавать объекты и изменять
+                    их внутри функции, при этом не меняя оригинальный объект. Чтобы не было мутации.
+                </p>
+                <p class="main__p">
+                    Тем самым в итоге объект <span class="strong">personOne</span> не изменится. А мы будем менять
+                    только копию такого объекта.
+                </p>
+                <p class="main__p">
+                    Также нужно обратить внимание на то, что иногда функции создают специально именно таким образом,
+                    чтобы они меняли внешние объекты, хотя это делать не рекомендуется. Но иногда такое делают. В
+                    большинстве случаев рекомендуется создавать копии объектов и работать с ними внутри функции. То есть
+                    функции не должны менять внешние переменные, они должны работать только со своими внутренними
+                    переменными.
+                </p>
 
 
 
 
 
 
-                <!----- Передача значения по ссылке ----->
+
+
+
+                <!-----  Колбэк функции ----->
                 <a name="CALLBACK_FUNCTIONS"></a>
                 <div class="main__title-1">
                     Колбэк функции
@@ -592,6 +909,14 @@
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#PASSING_VALUE_BY_REFERENCE">Передача значения по
                         ссылке</a>
+                    <ul>
+                        <li><a class="aside-2__index-search-link" href="#PASSING_AN_OBJECT_AS_AN_ARGUMENT">Папка 01.
+                                Передача объекта в качестве аргумента.</a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#MAKING_AN_COPY_OF_AN_OBJECT">Папка 02.
+                                Создание копии объекта</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#CALLBACK_FUNCTIONS">Колбэк функции</a>
