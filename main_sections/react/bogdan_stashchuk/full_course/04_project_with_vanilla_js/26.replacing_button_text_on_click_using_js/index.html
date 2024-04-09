@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS</title>
+</head>
+
+<body>
+    <button id="my-button" onclick="changeButtonText('my-button')">Click me</button>
+
+    <script>
+        function changeButtonText(id) {
+            const myButton = document.getElementById(id)
+            myButton.innerHTML = 'Hello from Vanilla JS'
+        } 
+    </script>
+</body>
+
+</html>
