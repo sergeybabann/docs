@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React VS Vanilla.js</title>
+</head>
+
+<body>
+    <div id="react-app"></div>
+    <div id="vanilla-app"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin=""></script>
+    <!----- 01 скрипт React ----->
+    <script>
+        const helloWorldHeading = React.createElement('h1', null, 'Hello from React')
+
+        const container = document.getElementById('react-app')
+        const root = ReactDOM.createRoot(container)
+        root.render(helloWorldHeading)
+    </script>
+
+    <!----- 02 скрипт Vanilla.js ----->
+    <script>
+        const heading = document.createElement('h1')
+        heading.textContent = 'Hello from Vanilla JS'
+        document.getElementById('vanilla-app').appendChild(heading)
+    </script>
+</body>
+
+</html>

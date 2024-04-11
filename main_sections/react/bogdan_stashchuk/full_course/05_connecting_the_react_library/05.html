@@ -175,12 +175,12 @@
                     чтобы отобразить этот элемент React в нашей странице, мы должны подключить библиотеку React-Dom.
                 </p>
                 <p class="main__subtitle-1">
-                    Подключение библиотеки к HTML странице происходит так=же как и подключение библиотеки React, с
+                    Подключение библиотеки к HTML странице происходит так же, как и подключение библиотеки React, с
                     помощью внешней ссылки.
                 </p>
                 <p class="main__p">
                     <button>
-                        <a href="34.connecting_the_react-dom_library/example_1/index.html" class="main__link"
+                        <a href="34.connecting_the_react-dom_library/index.html" class="main__link"
                             target="_blank">посмотреть пример</a>
                     </button>
                 </p>
@@ -199,22 +199,168 @@
                 <!----- 35. Добавление div для монтирования React ----->
                 <a name="ADDING_A_DIV_TO_MOUNT_A_REACT_APPLICATION"></a>
                 <div class="main__title-1">35. Добавление div для монтирования React</div>
+                <p class="main__p">
+                    Теперь с помощью библиотеки React-DOM мы можем поместить этот элемент React, который мы создали с
+                    помощью метода createElement, на нашу HTML страницу. Для этого в HTML документе необходимо место,
+                    куда React-DOM поместит определенный компонент React. Добавим новый div c id сразу после body.
+                    И внутри этого html элемента div мы хотим поместить h1, который мы создаем в скрипте JavaScript в
+                    константе helloWorldHeading
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="35.adding_a_div_to_mount_a_react_application/index.html" target="_blank"
+                            class="main__link">посмотреть пример</a>
+                    </button>
+                </p>
+
 
                 <!----- 36. Монтирование приложения React в DOM с помощью react-dom ----->
                 <a name="MOUNTING_A_REACT_APPLICATION_IN_THE_DOM_USING_REACT-DOM"></a>
                 <div class="main__title-1">36. Монтирование приложения React в DOM с помощью react-dom</div>
+                <p class="main__p">
+                    В нашем html документе удалим console.log и создадим контейнер после константы helloWorldHeading,
+                    и этому контейнеру мы присвоим DOM элемент, который мы найдем по его id.
+                </p>
+                <p class="main__p">
+                    Мы создали контейнер и теперь хотим поместить в него компонент React, который находится в константе
+                    helloWorldHeading. Начиная с 18 версии React-DOM это делается следующим образом:
+                </p>
+                <p class="main__p">
+                    Создается еще одна переменная, обычно ее называют root, и ее значением будет результат вызова
+                    следующего метода. И здесь в вызове этого метода createRoot мы передаем созданный нами контейнер, в
+                    который мы хотим поместить определенный компонент React. В скобках пишем container и после этого нам
+                    необходимо вызвать метод render объекта root, и ему мы уже можем передать компонент React.
+                </p>
+                <p class="main__p">
+                    В нашем случае мы уже создали компонент под названием helloWorldHeading, и его название вставляем в
+                    скобки в render.
+                </p>
+                <p class="main__p">
+                    Таким образом мы нашли html элемент с id="app" , присвоили его переменной container, потом передали
+                    этот контейнер в вызове метода createRoot , который является методом объекта React-DOM, и после
+                    этого вызываем метод render объекта root. И ему уже передаем определенный элемент React.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="36.mounting_a_react_application_in_the_dom_using_react-dom/index.html"
+                            class="main__link" target="_blank">посмотреть пример</a>
+                    </button>
+                </p>
 
                 <!----- 37. Проверка успешного добавления React компонента в DOM ----->
                 <a name="CHECKING_SUCCESSFUL_ADDITION_OF_A_REACT_COMPONENT_TO_THE_DOM"></a>
                 <div class="main__title-1">37. Проверка успешного добавления React компонента в DOM</div>
+                <p class="main__p">Запустим наш html документ, и мы видим текст Hello from React. Это означает, что html
+                    тег h1 был успешно помещен на веб-страницу. </p>
+                <p class="main__p">
+                    <button>
+                        <a href="37.checking_successful_addition_of_a_react_component_to_the_dom/index.html"
+                            class="main__link" target="_blank">запустить html документ</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Перейдем на вкладку elements и
+                    проанализируем то, что видно в теле html документа.
+                </p>
+                <p class="main__p">
+                    Здесь мы видим div с id="app", и внутри него появился дочерний элмент html, тег h1 с текстом Hello
+                    from React. То есть мы успешно с помощью React-DOM смонтировали компонент React, который находится в
+                    переменной
+                    helloWorldHeading, непосредственно в реальный DOM. Для этого мы нашли элемент по id="app", создали
+                    корневой элемент с помощью React-DOM, и после этого выполнили render компонента React внутри этого
+                    корневого элемента.
+                </p>
 
                 <!----- 38. Проект по добавлению h1 с помощью Vanilla JS ----->
                 <a name="PROJECT_TO_ADD_H1_USING_VANILLA_JS"></a>
                 <div class="main__title-1">38. Проект по добавлению h1 с помощью Vanilla JS</div>
+                <p class="main__p">Давайте здесь выполним ту же самую операцию, то есть добавим тег html h1 внутри div,
+                    но с помощью vanilla javascript, без React-DOM. Сделаем это в отдельном примере, создадим новый файл
+                    index.html и скопируем в него все содержимое нашего html документа.
+                </p>
+                <p class="main__p">
+                    В директории, где хранятся все наши проекты React, создадим новую директорию с названием
+                    03_react_vs_vanilla-js, и откроем этот проект.
+                </p>
+                <p class="main__p">
+                    Переименуем div id="app" на div id="react-app", также это нужно сделать в скрипте в том месте, где
+                    мы находим html элемент по id. То есть в константе container в вызове метода getElementById объекта
+                    document. Добавим еще один div с id , где название id будет vanilla-app. Теперь наша задача добавить
+                    h1 внутри этого div, но без использования React, а с помощью vanilla.js
+                </p>
+                <p class="main__p">
+                    И сделаем мы это в отдельном скрипте javascript. Добавляем еще один скрипт сразу после существующего
+                    скрипта, и здесь создадим новый элемент html.
+                </p>
+                <p class="main__p">
+                    Объявим переменную с названием heading и присвоим ей результат вызова метода createElement объекта
+                    document. Таким образом можно создавать любые html элементы. В скобках мы пишем название html
+                    элемента, который мы хотим создать. И это в данном случае h1. Далее нам необходимо добавить текст
+                    внутри этого html элемента. Делаем это при помощи метода textContent объекта heading.
+                </p>
+                <p class="main__p">
+                    И так мы создали html элемент h1 с текстом, и теперь его необходимо поместить внутри элемента div.
+                    Для этого мы можем воспользоваться методом appendChild. После того как мы нашли html элемент по его
+                    id с помощью метода getElementById объекта document, мы обращаемся через точку к методу appendChild.
+                    Методу appendChild передаем элемент heading , который мы хотим добавить внутри элемента vanilla-app.
+                </p>
+                <p class="main__p">
+                    Вот и все! Можем запустить наш пример. И мы должны увидеть здесь еще одну строчку текста, которая
+                    создается при помощи нашего скрипта без применения React, а чистого Vanilla.js. И эта строчка -
+                    Hello from Vanilla JS
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="38.project_to_add_h1_using_vanilla_js/index.html" class="main__link"
+                            target="_blank">запустить пример</a>
+                    </button>
+                </p>
 
                 <!----- 39. Сравнения результатов добавления h1 с React и без него ----->
                 <a name="COMPARISON_OF_THE_RESULTS_OF_ADDING_H1_WITH_AND_WITHOUT_REACT"></a>
                 <div class="main__title-1">39. Сравнения результатов добавления h1 с React и без него</div>
+                <p class="main__p"></p>
+                <p class="main__p">
+                    Откроем наш html документ и в скрипте который работает с помощью React переименуем переменную
+                    helloWorldHeading на reactHeading, также мы
+                    должны это сделать в вызове метода render объекта root.
+                </p>
+                <p class="main__p">
+                    В скрипте, где используется Vanilla.js переименуем переменную heading на vanillaJsHeading, также
+                    делаем это во всех местах где это необходимо. Пропишем в этом скрипте команду console.log, где мы
+                    выведем в консоль vanillaJsHeading. Также выведем в консоль переменную reactHeading в скрипте React.
+                    Сохраним изменения и перейдем на вкладку console в веб-браузере.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="39.comparison_of_the_results_of_adding_h1_with_and_without_react/index.html"
+                            class="main__link" target="_blank">посмотреть пример</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Здесь я вижу объект, как результат вывода в консоль переменной reactHeading, то есть тот объект
+                    который вернул метод createElement. Развернем структуру объекта и видим,что у этого объекта есть
+                    type: "h1", а также свойства(props). За пределами описания структуры объекта мы видим элемент h1 с
+                    текстом Hello from Vanilla JS. Это тот текст с которым мы работаем в скрипте.
+                </p>
+                <p class="main__subtitle-1">
+                    Назовем отличие этих двух элементов.
+                </p>
+                <p class="main__p">
+                    В случае, где скрипт c помощью React, мы видим компонент React.
+                    И для того чтобы показать его на html странице нам понадобилась библиотека React-DOM, которая
+                    сконвертировала получается этот объект в html. Далее выполнился рендеринг компонента React
+                    непосредственно в реальном DOM.
+                </p>
+                <p class="main__p">
+                    В скрипте Vanilla.js мы создали html элемент напрямую. И конечно же такой элемент мы можем добавить
+                    на html страницу непосредственно, с помощью вызова метода appendChild, если мы хотим добавить такой
+                    элемент внутри другого родительского элемента.
+                </p>
+                <p class="main__p">
+                    И так : в случае со скриптом React в консоли виден объект JavaScript , а в случае со скриптом
+                    Vanilla.js виден непосредственно элемент html.
+                </p>
 
 
 
