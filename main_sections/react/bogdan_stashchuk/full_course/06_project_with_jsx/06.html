@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 Проект с JSX</title>
+    <link rel="stylesheet" href="../../../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../../../css/vars.css">
+    <link rel="stylesheet" href="../../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../../css/content.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_1.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_2.css">
+    <link rel="stylesheet" href="../../../../../css/footer.css">
+    <link rel="stylesheet" href="../../../../../css/templates.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!----- HEADER ----->
+        <div class="header general__area-1">
+            <a name="HEADER"></a>
+            <div class="header__space">
+                <div class="header__descr">
+                    <h1 class="header__h1">
+                        Обучающий<br> курс
+                    </h1>
+                    <span class="header__descr-1">Полный курс React
+                    </span>
+                    <ul class="header__descr-2">
+                        <li>Источник: Udemy</li>
+                        <li>Автор: Богдан Сташчук</li>
+                        <li>Спецификация: React</li>
+                    </ul>
+                </div><!--tutorial__descr-->
+                <ul class="header__navmenu-list">
+                    <li class="header__navmenu-item">
+                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../../../react.html" class="header__navmenu-link">Курсы React</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../course.html" class="header__navmenu-link">Главная
+                            страница курса</a>
+                    </li>
+                </ul>
+            </div><!--header__space-->
+        </div><!--header-->
+
+
+
+
+        <!----- ASIDE-1 ----->
+        <div class="aside-1 general__area-1">
+            <ul class="aside-1__index-search-list">
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../01_introduction_to_react/01.html">1 Введение в
+                        React</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../02_basics_and_key_concepts_in_react/02.html">2 Основы
+                        и ключевые понятия в React</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../03_course_programs/03.html">3 Программы для курса</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../04_project_with_vanilla_js/04.html">4 Проект с
+                        Vanilla JS</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="../05_connecting_the_react_library/05.html">5
+                        Подключение библиотеки React</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">6 Проект c
+                        JSX</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link"
+                        href="../07.react_project_with_button_changing on_click/07.html">7 Проект React с изменением
+                        кнопки при нажатии</a>
+                </li>
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link"
+                        href="../08.adding_state_a_properties_for_a_component/08.html">8 Добавление состояния и свойств
+                        для компонента</a>
+                </li>
+            </ul><!--aside-1__index-search-list-->
+        </div><!--aside-1-->
+
+
+
+
+
+
+        <!----- CONTENT ----->
+        <div class="main general__area-1">
+            <h2 class="main__h2">6 Проект с JSX</h2>
+            <div class="main__wrapper">
+
+                <!----- 40. Проект с использованием JSX ----->
+                <a name="PROJECT_USING_JSX"></a>
+                <div class="main__title-1">40. Проект с использованием JSX</div>
+                <p class="main__subtitle-1">
+                    Создаем в папке с проектами новую папку с названием 04_jsx_hello_world
+                </p>
+                <p class="main__p">
+                    Из проекта 02_react_hello_world копируем код из документа html в документ html проекта
+                    04_jsx_hello_world. В заголовке документа переименуем на JSX Hello World. В скрипте, где мы
+                    создавали компонент React с помощью вызова createElement, вместо функции createElement мы здесь
+                    напишем код JSX. Удаляем правую часть от знака присваивания, и внутри тега h1 пишем текст Hello from
+                    React. Теперь запустим пример кода в веб-браузере.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="40.project_using_jsx/index.html" class="main__link" target="_blank">запустить
+                            пример</a>
+                    </button>
+                </p>
+
+                <!----- 41. Почему код JSX не запустился в веб браузере ----->
+                <a name="WHY_DIDN'T_THE_JSX__CODE_RUN_IN_THE_WEB_BROWSER"></a>
+                <div class="main__title-1">41. Почему код JSX не запустился в веб браузере</div>
+                <p class="main__p">
+                    Приложение запустилось в веб-браузере, но не видно заголовка h1, и это означает, что возникла
+                    ошибка.
+                    Откроем инструменты разработчика в веб-браузере и посмотрим в чем проблема. Здесь мы видим текст
+                    ошибки:<br>
+                    Uncaught SyntaxError: Unexpected token '<' (at index.html:16:35) </p>
+                        <p class="main__p">
+                            Это означает, что веб-браузер не смог выполнить код, в котором мы использовали JSX
+                            синтаксис. И это вполне логично. Мы написали этот JSX код в блоке script, подразумевая, что
+                            мы используем язык JavaScript. Но такая конструкция, которая видна справа от знака
+                            присваивания не является частью языка JavaScript.
+                        </p>
+                        <p class="main__p">
+                            JSX - это всего лишь надстройка, синтаксическая надстройка над JavaScript. И поэтому
+                            веб-браузеры не понимают как выполнять такой код, в котором присутствует JSX. А как же тогда
+                            веб-браузеры выполняют код, написанный на JSX? Как React приложения работают в
+                            веб-браузерах?
+                        </p>
+
+                        <p class="main__p">
+                            Очень просто - код сначала трансформируется с помощью компайлера JavaScript кода. А
+                            компайлером для JavaScript кода является Babel.
+                        </p>
+
+                        <!----- 42. Для чего нужен Babel ----->
+                        <a name="WHAT_IS_BABEL_FOR"></a>
+                        <div class="main__title-1">42. Для чего нужен Babel</div>
+                        <p class="main__p">
+                            Перейдем на официальный сайт Babel по ссылке <button><a href="https://babeljs.io"
+                                    class="main__link" target="_blank">https://babeljs.io</a></button>
+                            На официальном сайте Babel можно найти документацию описывающую все подробности с этим
+                            инструментом.
+                        </p>
+                        <p class="main__p">
+                            При помощи Babel код JSX компилируется в JavaScript код , так как веб-браузеры не понимают
+                            JSX код и не могут его прочесть.
+                        </p>
+                        <p class="main__p">
+                            На официальном сайте Babel перейдем на вкладку Try it out, и здесь можно попробовать
+                            функционал Babel. В левом окне нужно писать код JavaScript, а в правом окне вы увидите во
+                            что этот код превращается с помощью этого компилятора.
+                        </p>
+
+                        <p class="main__p">
+                            И так напишем в левом окне пример кода. Создадим переменную <span class="strong">a</span> со
+                            свойством <span class="strong">b</span>, значение которого будет число 10. Ниже мы хотим
+                            получить значение свойства <span class="strong">b</span> объекта <span
+                                class="strong">a</span> , и выведем в консоль команду.
+                        </p>
+                        <p class="main__p">
+                            <button>
+                                <a href="42.what_is_babel_for/01_code_example/script.js" class="main__link"
+                                    target="_blank">посмотреть пример кода</a>
+                            </button>
+                        </p>
+                        <p class="main__p">
+                            В этом примере мы видим абсолютно корректный код JavaScipt , и в правом окне мы видим тот же
+                            код, что и слева. То есть Babel не выполнил никакие модификации кода.
+                        </p>
+                        <p class="main__subtitle-1">
+                            Переменная <span class="strong">a</span> со значением undefined
+                        </p>
+                        <p class="main__p">
+                            Создадим пример кода. В этом примере мы объявляем переменную <span class="strong">a</span>
+                            без присваивания ей значения, и в таком случае у этой переменной
+                            значение будет undefined. И здесь мы пытаемся получить доступ к свойству <span
+                                class="strong">b</span> от undefined.
+                        </p>
+                        <p class="main__p">
+                            <button>
+                                <a href="42.what_is_babel_for/02_example_code/script.js" class="main__link"
+                                    target="_blank">посмотреть пример кода</a>
+                            </button>
+                        </p>
+                        <p class="main__p">
+                            Скопируем этот код и вставим в консоль веб-браузера, нажимаем enter. Мы видим ошибку:<br>
+                            Uncaught TypeError: Cannot read properties of undefined (reading 'b')
+                        </p>
+                        <p class="main__p">
+                            Именно для таких случаев придумали оператор Optional Chaning, он позволяет в вызове
+                            console.log
+                            написать знак вопроса сразу после переменной <span class="strong">a</span> в скобках
+                        </p>
+
+                        <p class="main__p">
+                            <button>
+                                <a href="42.what_is_babel_for/03_code_example/script.js" class="main__link"
+                                    target="_blank">посмотреть пример кода</a>
+                            </button>
+                        </p>
+                        <p class="main__p">
+                            Запустим в консоли веб-браузера этот пример кода.
+                        </p>
+                        <p class="main__p">
+                            В данном случае, когда <span class="strong">a</span> не является объектом, мы получим
+                            undefined, а не ошибку. Вот для этого придумали такой оператор - Optional Chaning
+                        </p>
+                        <p class="main__p">
+                            В данном случае вы видите, что Babel выполнил трансформацию данного кода. (на официальном
+                            сайте Babel), и заменил выражение к скобках console.log на другое выражение. Здесь
+                            используется тернарный оператор со знаком вопроса и двоеточия, который является частью
+                            синтаксиса, и здесь уже оператор Optional Chaning не используется. Вот что делает Babel - он
+                            трансформирует код с относительно новыми функциями, которые еще не поддерживаются всеми
+                            веб-браузерами, на код, который понятен большинству веб-браузеров. И точно также
+                            Babel поступает с кодом JSX.
+                        </p>
+
+                        <!----- 43. Трансформация кода JSX с помощью Babel ----->
+                        <a name="TRANSFORMING_JSX_CODE_WITH_BABEL"></a>
+                        <div class="main__title-1">43. Трансформация кода JSX с помощью Babel</div>
+                        <p class="main__p">
+                            Возьмем строку из нашего примера проекта 04_jsx_hello_world , где мы присваиваем JSX
+                            какой-то переменной, и вставим в левое окно на сайте Babel в разделе Try it out
+                        </p>
+                        <p class="main__p">
+                            <button>
+                                <a href="43.transforming_jsx_code_with_babel/01_example/code__jsx_for_copy_paste.txt"
+                                    class="main__link" target="_blank">строка кода JSX для копипаст</a>
+                            </button>
+                        </p>
+                        <p class="main__p">
+                            <button>
+                                <a href="43.transforming_jsx_code_with_babel/01_example/index.html" class="main__link"
+                                    target="_blank">посмотреть код проекта</a>
+                            </button>
+                        </p>
+                        <p class="main__p">И как видно Babel выполнил трансформацию этого кода. Вместо JSX справа вы
+                            видите JavaScript синтаксис. Это то, о чем мы говорили в теоретической части курса - JSX это
+                            надстройка над JavaScript. И когда вы видите JSX теги, как в данном случае, это на самом
+                            деле конвертируется в вызов метода createElement объекта React.
+                        </p>
+
+                        <p class="main__p">
+                            Переменной helloWorldHeading присваивается результат вызова метода createElement, который
+                            является методом объекта React. И ему передается 3 агрумента:
+                        <ul class="main__list">
+                            <li class="main__list-item">1) аргумент h1 - это название
+                                React элемента, который мы хотим создать, (в JSX это h1);</li>
+                            <li class="main__list-item">2) аргумент здесь null, потому что
+                                в данном примере мы не передаем какие-то свойства компоненту h1 JSX;</li>
+                            <li class="main__list-item">3) аргумент - это то,
+                                что будет находиться внутри этого элемента. И здесь находится просто текст.</li>
+                        </ul>
+                </p>
+                <p class="main__p">
+                    И так берем получившийся JavaScript код, который трансформировал Babel из JSX в JavaScript, и
+                    вставляем его в нашем проекте после знака присваивания переменной helloWorldHeading. Запускаем код и
+                    видим, что теперь приложение работает. Мы видим текст отображается.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="43.transforming_jsx_code_with_babel/02_example/index.html" class="main__link"
+                            target="_blank">запустить приложение</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Вот именно для этого и нужен
+                    Babel. Компилятор для JavaScript кода.
+                </p>
+                <p class="main__p">
+                    Сейчас в нашем приложении Babel отсутствует, то есть мы не выполняем какую-либо трансформацию кода.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Продолжаем знакомство с Babel
+                </p>
+                <p class="main__p">
+                    На сайте Babel слева, дополнительно к компоненту React укажем также какое-то свойство.
+                    Например свойство type со значением large:<br>
+                    type="large"
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="43.transforming_jsx_code_with_babel/03_example/code_for_copypaste.txt"
+                            class="main__link" target="_blank">скопировать
+                            код для Babel</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    И теперь мы видим, что появился 2-ой аргумент в вызове функции createElement, и у этого аргумента
+                    есть одно свойство - type. Вот именно таким образом и передаются свойства в какой-то компонент.
+                </p>
+                <p class="main__subtitle-1">
+                    Напишем теперь JSX, в котором будет вложенный компонент в другой.
+                </p>
+                <p class="main__p">
+                    Напишем JSX без присваивания его переменной. Внутри div добавим другие компоненты React. Например
+                    h1 с текстом. Копируем вставляем смотрим результат.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="43.transforming_jsx_code_with_babel/04_example/code_for_copypaste.txt"
+                            class="main__link" target="_blank">скопировать код</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    После такой вложенной структуры JSX видно, что JavaScript код достаточно усложнился. Здесь мы видим,
+                    что на месте 3-его аргумента в 1-ом вызове функции createElement появился еще один вызов
+                    createElemet. Это из-за того, что компонент h1 находится внутри компонента div. Следовательно
+                    необходимо создать еще один элемент React с помощью вызова метода createElement, и передать его как
+                    дочерний элемент div элементу. Потому, что h1 вложен в div.
+                </p>
+                <p class="main__p">
+                    В левом окне Babel добавим h2 c текстом Hello again from React, сразу после элемента h1. И сейчас мы
+                    видим, что появился еще один вызов метода createElement, и здесь первым аргументом передается h2. И
+                    в сумме у нас получается уже 4 аргумента в вызове метода createElement для корневого элемента div.
+                </p>
+                <p class="main__p">
+                    Давайте вложим h2 еще в один div. И мы видим, что код React еще больше усложнился. Мы имеем
+                    несколько вызовов
+                    метода createElement, и некоторые из них вложены в другие вызовы, из-за того, что у нас есть четкая
+                    иерархическая структура компонентов React.
+                </p>
+
+
+
+
+
+                <!----- 44. Попытка сконвертировать код JSX без общего корневого тега ----->
+                <a name="TRYING_TO_CONVERT_JSX_CODE_WITHOUT_A_COMMON_ROOT_TAG"></a>
+                <div class="main__title-1">44. Попытка сконвертировать код JSX без общего корневого тега</div>
+                <p class="main__p">
+                    Мы помним о том, что есть правило - В любом JSX коде должен быть один корневой элемент. В нашем
+                    примере коневым элементом является элемент div.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="44.trying_to_convert_jsx_code_without_a_common_root_tag/01_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть пример кода</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    Уберем этот корневой div в примере кода в Babel и посмотрим, что произойдет. И мы видим ошибку, в
+                    которой говорится о том, что соседние элементы JSX должны находиться в одном родительском теге. И
+                    здесь вопрос - Хотите ли вы использовать JSX фрагменты, то есть пустые JSX теги. Babel не может
+                    конвертировать этот JSX код в JavaScript код. Потому, что этот JSX код не валидный. А почему он не
+                    валидный? Потому, что необходима четкая иерархическая вложенность вызовов метода createElement.
+                </p>
+                <p class="main__p">
+                    Вернем обратно в пример кода корневой компонент div. И мы видим в правом окне снова четкую
+                    иерархическую структуру вложенности вызовов метода createElement. То есть один вызов и внутри него в
+                    блоке аргументов вы видите другие вызовы метода createElement.
+                </p>
+                <p class="main__p">
+                    Мы помним о том, что JSX код в React возвращается, либо из функциональных компонент, которые
+                    являются по сути функциями, либо же из классовых компонент из их методов render. И сейчас мы
+                    попробуем что-же произойдет в случае, если нет корневого элемента JSX.
+                </p>
+                <p class="main__p">
+                    Напишем функцию без параметров, и в теле функции вернем JSX.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="44.trying_to_convert_jsx_code_without_a_common_root_tag/02_example/example_code_for_copypaste.txt"
+                            class="main__link" target="_blank">вставить пример кода в Babel</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    В данном случае такая функция является полностью корректной. JSX код был трансформирован в вызов
+                    метода createElement. Для лучшей читабельности в JSX можно добавлять круглые скобки, вот так
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="44.trying_to_convert_jsx_code_without_a_common_root_tag/03_example/example_code_jsx.txt"
+                            class="main__link" target="_blank">посмотреть круглые скобки</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    И можно разбивать JSX на несколько строк для удобства чтения. Вот так
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="44.trying_to_convert_jsx_code_without_a_common_root_tag/04_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть пример</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    В таком случае JSX читается намного лучше. Круглые скобки это просто оператор группирования в
+                    JavaScipt. Если мы из нашего примера уберем круглые скобки, то в правом окне в Babel функция вернет
+                    undefined. То есть здесь написано return и точка с запятой. А вызов createElement идет уже после
+                    того, как функция возвращает результат.
+                </p>
+                <p class="main__p">
+                    Так вот это по сути код, который вернет undefined, и следовательно, для того чтобы мы все таки
+                    вернули результат вызова метода createElement, здесь необходимо добавлять круглые скобки - оператор
+                    группирования в JavaScript.
+                </p>
+                <p class="main__p">
+                    В данном примере в JSX есть один корневой элемент h1, и если мы попытаемся добавить еще один h1
+                    сразу следом ниже, то возникнет ошибка - Соседние элементы JSX должны находиться в одном общем
+                    родительском элементе.
+                </p>
+                <p class="main__p">
+                    Уберем второй h1 и скопируем весь код в правом окне в буфер обмена. В нашем проекте создадим
+                    временный файл test.js , и вставляем в него наш код из буфера. Уберем комментарий, добавим
+                    круглыескобки(оператор группирования), разобьем код на несколько строк, и здесь добавим еще один
+                    вызов метода createElement. То, что мы сделали - это не валидный код JavaScript, и VSCode
+                    это явно показывает.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="44.trying_to_convert_jsx_code_without_a_common_root_tag/05_example/no_valid_js.txt"
+                            class="main__link" target="_blank">посмотреть не валидный JavaScript</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Мы возвращаем 2 вызова метода createElement один за другим. Это не является ни выражением
+                    JavaScript, ни инструкцией.
+                </p>
+                <p class="main__p">
+                    Скопируем и вставим весь этот не валидный код JavaScript в консоль веб-браузера и запустим его.
+                    Получаем ошибку:<br>
+                    Uncaught SyntaxError: Unexpected identifier 'React'
+                </p>
+                <p class="main__p">
+                    Именно потому в JSX коде должен быть один корневой элемент. Удалим этот тестовый файл из проекта.
+                </p>
+
+
+
+
+
+
+                <!----- 45. Подведение итогов по Babel ----->
+                <a name="SUMMARY_OF_BABEL"></a>
+                <div class="main__title-1">45. Подведение итогов по Babel</div>
+                <p class="main__p">
+                    Babel - это компилятор кода JavaScript. Babel выполняет не только трансформацию JSX кода, но также
+                    выполняет трансформацию другого функционала Java Script, который скорее всего недоступен во всех
+                    браузерах на данный момент. И сейчас наш код в этом примере никак не трансформируется. Мы подключили
+                    только 2 библиотеки: React и React-DOM. Для того, чтобы JSX код в нашем проекте трансформировался в
+                    JavaScript мы должны также подключить и Babel в проекте. Потому, что JSX - это расширение синтаксиса
+                    JavaScript.
+                </p>
+
+
+
+
+
+
+                <!----- 46. Подключение Babel в файле HTML ----->
+                <a name="CONNECTING_BABEL_IN_AN_HTML_FILE"></a>
+                <div class="main__title-1">46. Подключение Babel в файле HTML</div>
+                <p class="main__subtitle-1">
+                    Подключение Babel к проекту.
+                </p>
+                <p class="main__p">
+                    Скрипты самого приложения должны находиться ниже, чем скрипты подключения библиотек и Babel.
+                    То есть сначала загружаются библиотеки и сам Babel, а уже потом пишем скрипты приложения.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="46.connecting_babel_in_an_html_file/index.html" class="main__link"
+                            target="_blank">посмотреть пример подключения библиотек и
+                            Babel</a>
+                    </button>
+                </p>
+
+
+
+
+
+
+                <!----- 47. Задание типа для JavaScript кода для корректной трансформации Babel ----->
+                <a name="SETTING_TYPE_FOR_JAVASCRIPT_CODE_FOR_CORRECT_BABEL_TRANSFORMATION"></a>
+                <div class="main__title-1">47. Задание типа для JavaScript кода для корректной трансформации
+                    Babel
+                </div>
+
+                <p class="main__p">
+                    Просто подключение Babel недостаточно для того, чтобы выполнить трансформацию JSX в JavaScipt.
+                    Помимо этого в скрипте самого приложения нужно добавить дополнительный атрибут, который укажет
+                    Babel, что необходимо выполнить трансформацию этого кода, и это атрибут type со значением
+                    text/babel, вот так:
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="47.setting_type_for_javascript_code_for_correct_babel_tarnsformation/01_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть пример скрипта</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    То есть с помощью этого атрибута тега script мы скажем компилятору Babel выполнить трансформацию
+                    кода, который находится внутри этого скрипта, прежде чем выполнять его в веб-браузере.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="47.setting_type_for_javascript_code_for_correct_babel_tarnsformation/02_example/index.html"
+                            class="main__link" target="_blank">посмотреть пример всей страницы html</a>
+                    </button>
+                </p>
+
+
+
+
+
+
+                <!----- 48. Запуск приложения с JSX при подключенном Babel ----->
+                <a name="RUNNING_AN_APPLICATION_WITH_JSX_WITH_BABEL_CONNECTED"></a>
+                <div class="main__title-1">48. Запуск приложения с JSX при подключенном Babel</div>
+                <p class="main__p">
+                    И так у нас подключена библиотека babel-standalone, и давайте просмотрим, успешно ли загружается это
+                    приложение в веб-браузере.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="48.running_an_application_with_jsx_with_babel_connected/index.html" class="main__link"
+                            target="_blank">загрузить приложение в веб-браузере</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Приложение успешно загрузилось, мы видим текст Hello from React. Откроем инструменты разработчика и
+                    посмотрим, есть ли какие ошибки. И мы видим предупреждение:<br>
+                </p>
+                <p class="main__p note">
+                    You are using the in-browser Babel transformer.
+                </p>
+                <p class="main__p">
+                    Мы используем трансформатор Babel непосредственно в веб-браузере. И конечно же это не рекомендуется
+                    делать, рекомендуется выполнять трансформацию JavaScript кода до запуска этого кода в веб-браузерах.
+                    И конечно же это именно и делается тогда, когда приложение готовится к запуску в production.
+                    Трансформация выполняется до того, как передавать JavaScript файл веб-браузеру.
+                </p>
+                <p class="main__p">
+                    В нашем случае главное, что мы добились того, что приложение успешно запустилось.
+                </p>
+                <p class="main__p">
+                    Перейдем на вкладку elements и посмотрим, что-же у нас находится в блоке script. В том месте
+                    приложения, где мы пишем наш код. И все еще видно JSX код в переменной helloWorldHeading. Но этот
+                    JSX код уже непосредственно в веб-браузере трансформируется в JavaScript.
+                </p>
+
+
+
+
+
+
+                <!----- 49. Подведение итогов по проекту с JSX и Babel ----->
+                <a name="SUMMING_UP_THE_PROJECT_WITH_JSX_AND_BABEL"></a>
+                <div class="main__title-1">49. Подведение итогов по проекту с JSX и Babel</div>
+                <p class="main__p">
+                    И так мы смогли успешно запустить код в этом примере, где мы уже использовали JSX синтаксис. Мы
+                    это сделали благодаря поключению библиотеки Babel. Babel отвечает за трансформацию JavaScript кода.
+                    И для того, чтобы Babel мог выполнять трансформацию непосредственно в веб-браузере, необходимо для
+                    тега script указать атрибут type со значением text/babel. И тогда код будет успешно запущен, но вы
+                    увидите предупреждение в веб-браузере.
+                </p>
+                <p class="main__p note">
+                    You are using the in-browser Babel transformer.
+                </p>
+                <p class="main__p">
+                    Вы используете трансформатор Babel непосредственно в веб-браузере. И это делать конечно же не
+                    рекомендуется. Вместо этого вам следует трансформировать код JavaScript до его отправки конечным
+                    клиентам, таким как веб-браузеры.
+                </p>
+
+
+
+
+
+
+                <!----- 50. Обзор сайта c документацией по React ----->
+                <a name="SUMMING_UP_THE_PROJECT_WITH_JSX_AND_BABEL"></a>
+                <div class="main__title-1">50. Обзор сайта c документацией по React</div>
+                <p class="main__subtitle-1">
+                    Официальный сайт по документации React
+                </p>
+                <p class="main__p">
+                    <a href="https://react.dev/" class="main__link" target="_blank">react.dev</a>
+                </p>
+
+                <p class="main__p">
+                    <a href="https://ru.react.dev/learn" class="main__link" target="_blank">https://ru.react.dev/learn -
+                        на русском языке</a>
+                </p>
+
+
+
+
+
+
+
+
+
+
+            </div><!---------------main__wrapper--------------->
+        </div><!--------------------main-------------------->
+
+
+
+
+
+
+        <!----- ASIDE-2 ----->
+        <div class="aside-2 general__area-1">
+            <ul class="aside-2__index-search-list">
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#PROJECT_USING_JSX">40. Проект с использованием JSX</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#WHY_DIDN'T_THE_JSX__CODE_RUN_IN_THE_WEB_BROWSER">41.
+                        Почему код JSX не запустился в веб браузере</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#WHAT_IS_BABEL_FOR">42. Для чего нужен Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#TRANSFORMING_JSX_CODE_WITH_BABEL">43. Трансформация
+                        кода JSX с помощью Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link"
+                        href="#TRYING_TO_CONVERT_JSX_CODE_WITHOUT_A_COMMON_ROOT_TAG">44. Попытка сконвертировать код JSX
+                        без общего корневого тега</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#SUMMARY_OF_BABEL">45. Подведение итогов по Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#CONNECTING_BABEL_IN_AN_HTML_FILE">46. Подключение Babel
+                        в файле HTML</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link"
+                        href="#SETTING_TYPE_FOR_JAVASCRIPT_CODE_FOR_CORRECT_BABEL_TRANSFORMATION">47. Задание типа для
+                        JavaScript кода для корректной трансформации Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link"
+                        href="#RUNNING_AN_APPLICATION_WITH_JSX_WITH_BABEL_CONNECTED">48. Запуск приложения с JSX при
+                        подключенном Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#SUMMING_UP_THE_PROJECT_WITH_JSX_AND_BABEL">49.
+                        Подведение итогов по проекту с JSX и Babel</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#SUMMING_UP_THE_PROJECT_WITH_JSX_AND_BABEL">50. Обзор
+                        сайта c документацией по React
+                    </a>
+                </li>
+            </ul><!--aside-2__index-search-list-->
+        </div><!--aside_2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!----- FOOTER ----->
+        <a name="FOOTER"></a>
+        <div class="footer general__area-1">Footer</div>
+    </div><!--wrapper-->
+
+
+
+</body>
+
+</html>
