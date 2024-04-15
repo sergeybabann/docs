@@ -1,0 +1,7 @@
+const App = () => {
+    return (
+        <div className="app">
+            <button onClick={onButtonClick}>{buttonText}</button>
+        </div>
+    )
+}

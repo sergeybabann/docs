@@ -1,0 +1,5 @@
+const App = (
+    <div className="app">
+        <button onClick="">{buttonText}</button>
+    </div>
+)

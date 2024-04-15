@@ -1,0 +1,8 @@
+const buttonText = 'Click me'
+const App = (
+    <div className="app">
+        <button onClick="">
+            Click me
+        </button>
+    </div>
+)

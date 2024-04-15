@@ -1,0 +1,5 @@
+<div class="app">
+    <button id="my-button" onclick="changeButton('my-button')">
+        Click me
+    </button>
+</div>

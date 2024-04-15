@@ -103,49 +103,628 @@
                 <!----- 51. Проект с React с таким же функционалом как в первом проекте ----->
                 <a name="A_REACT_PROJECT_WITH_THE_SAME_FUNCTIONALITY_AS_IN_THE_FIRST_PROJECT"></a>
                 <div class="main__title-1">51. Проект с React с таким же функционалом как в первом проекте</div>
+                <p class="main__p">
+                    И сейчас давайте создадим еще один пример №5, и в этом 5-ом примере мы реализуем то, что мы
+                    реализовали в 1-ом примере в проекте 01_vanilla-js без использования React, только с помощью
+                    Vanilla.js.
+                </p>
+                <p class="main__p">
+                    В 1-ом примере мы создали кнопку с текстом Click me, и при нажатии на кнопку мы изменяли текст на
+                    Hello from Vanilla JS, а также мы добаляли класс под названием green-btn для элемента myButton,
+                    который мы находили по id. Вспомним этот скрипт:
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="51.a_react_project_with_the_same_functionality_as_in_the_first_project/01_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть код скрипта</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="51.a_react_project_with_the_same_functionality_as_in_the_first_project/01_example/index.html"
+                            class="main__link" target="_blank">посмотреть весь html документ</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Давайте это же реализуем с помощью React, и увидим чем же отличается реализация React от реализации
+                    с помощью Vanilla.js
+                </p>
+
+                <p class="main__p">
+                    Создадим новый проект с названием 05_react_jsx_green_button, скопируем весь код из html документа
+                    проекта 04_project_with_vanilla_js и вставим его в html документ нашего нового проекта. Также
+                    скопируем из html документа проекта 01_vanilla-js блок style, где находятся стили, и вставим в наш
+                    html документ как это полагается для стилей.
+                </p>
+                <p class="main__p">
+                    В скрипте приложния, где мы пишем наш код, удалим всю строку с переменной helloWorldHeading.
+                    Остальные 3 строки остаются, и в них по сути мы выполняем подключение React к реальному DOM в
+                    веб-браузере. Это происходит с помощью библиотеки React-DOM.
+                </p>
+                <p class="main__p">
+                    Мы создаем контейнер, находим элемент по id, в нашем случае id="app". В html разметке у нас есть div
+                    с id="app", и именно внутрь этого div будет помещаться наше приложение React.
+                </p>
+                <p class="main__p">
+                    То есть мы создаем контейнер, далее мы создаем корневой элемент на основании этого контейнера, и
+                    после этого выполняем рендеринг определенного компонента React в этот корневой элемент.
+                </p>
+                <p class="main__p">
+                    В вызове метода render удалим существующий аргумент, по-скольку в этом примере его уже нет, и
+                    добавим кнопку также как мы это делали в проекте 01_vanilla-js.
+                </p>
+
+
+
+
+
 
                 <!----- 52. Создание кнопки с помощью React ----->
                 <a name="CREATING_A_BUTTON_USING_REACT"></a>
                 <div class="main__title-1">52. Создание кнопки с помощью React</div>
+                <p class="main__p">
+                    И так давайте Скопируем код кнопки и вставим в наш проект.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="52.creating_a_button_using_react/01_example/example_code.txt" class="main__link"
+                            target="_blank">копировать и вставить
+                            код кнопки</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Но размещаем код кнопки мы уже в секции script, в скрипте приложения, где мы пишем свой код. Вот
+                    так:
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="52.creating_a_button_using_react/02_example/index.html" class="main__link"
+                            target="_blank">посмотреть весь html
+                            документ</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Присваиваем наш JSX код переменной App, и модифицируем JSX код: обернем наш div(код кнопки) в
+                    круглые скобки.
+                    Вот так:
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="52.creating_a_button_using_react/03_example/code_example.txt" class="main__link"
+                            target="_blank">посмотреть модифицированный код</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    И так, мы создали переменную App и ей мы присвоили код JSX, который с помощью Babel будет
+                    трансформирован в вызов метода createElement объекта React. И здесь в вызове метода render мы
+                    конечно же должны передать App в качестве аргумента.
+                </p>
+                <p class="main__p">
+                    Посмотрим весь html документ
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="52.creating_a_button_using_react/04_example/index.html" class="main__link"
+                            target="_blank">смотреть весь html документ</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    Но это не все, что нам необходимо сделать. Двигаемся дальше.
+                </p>
+
+
+
+
+
 
                 <!----- 53. Почему в JSX нужно использовать className вместо class ----->
                 <a name="WHY_IN_JSX_YOU_NEED_TO_USE_CLASSNAME_INSTEAD_OF_CLASS"></a>
                 <div class="main__title-1">53. Почему в JSX нужно использовать className вместо class</div>
+                <p class="main__p">
+                    В нашем JSX коде нам необходимо внести некоторые изменения. При добавлении JSX кода вместо атрибута
+                    class для компонента React(потому, что div - это компонент, button - это компонент, хотя они и
+                    встроенные) мы должны использовать className. Это все потому, что JSX это надстройка над
+                    JavaScript. А в JavaScript в DOM API классы добавляются элементам с помощью className.
+                </p>
+                <p class="main__p">
+                    Причина, почему используется className в том, что мы работаем здесь с JavaScript, а не с DOM API,
+                    как это делается в Vanilla.js. Потому вместо class мы должны использовать className, если вы хотите
+                    указать какие-то классы для определенных компонентов.
+                </p>
+                <p class="main__p">
+                    И посмотрим пример кода с использованием className
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="53.why_in_jsx_you_need_to_use_classname_instead_of_class/01_example/example_code.txt"
+                            class="main__link" target="_blank">пример кода с className</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="53.why_in_jsx_you_need_to_use_classname_instead_of_class/01_example/index.html"
+                            class="main__link" target="_blank">посмотреть весь html документ</a>
+                    </button>
+                </p>
+
+
+
+
 
                 <!----- 54. Свойства для кнопки в React ----->
                 <a name="PROPERTIES_FOR_A_BUTTON_IN_REACT"></a>
                 <div class="main__title-1">54. Свойства для кнопки в React</div>
+                <p class="main__p">
+                    Далее у нас внутри div находится кнопка, id у нее my-button, но сейчас на id уже не нужно, и мы
+                    удалем id. И вместо onclick маленькими буквами мы должны написать camelCase нотацию. Вот так:
+                    onClick. Потому, что именно такой подход используется для формирования названий свойств для
+                    компонентов в React.
+                </p>
+                <p class="main__p">
+                    Кроме этого удалим вызов функции, потому, что мы это делали в Vanilla.js, а сейчас мы это все
+                    переделаем с помощью React.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="54.properties_for_a_button_in_react/01_example/example_code.txt" class="main__link"
+                            target="_blank">посмотреть пример кода onClick</a>
+                    </button>
+                </p>
+
+
+
+
+
+
 
                 <!----- 55. Перенос JavaScript кода в отдельный файл ----->
                 <a name="TRANSFERRING_JAVASCRIPT_CODE_TO_A_SEPARATE_FILE"></a>
                 <div class="main__title-1">55. Перенос JavaScript кода в отдельный файл</div>
+                <p class="main__p">
+                    Вынесем наш JavaScript код в отдельный файл, а в html документе добавим ссылку на объект.
+                    В нашем проекте создаем файл script.js и помещаем в него код из html документа. Смотрим примеры:
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="55.transferring_javascript_code_to_a_separate_file/01_example/index.html"
+                            class="main__link" target="_blank">пример index.html</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="55.transferring_javascript_code_to_a_separate_file/01_example/script.js"
+                            class="main__link" target="_blank">пример script.js</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    И так теперь мы имеем внешний javascript файл.
+                </p>
+
+
+
+
+
 
                 <!----- 56. Запуск проекта React с помощью Live Server ----->
                 <a name="RUNNING_A_REACT_PROJECT_USING_LIVE_SERVER"></a>
                 <div class="main__title-1">56. Запуск проекта React с помощью Live Server</div>
+                <p class="main__p">
+                    Давайте попробуем запустить этот проект 05_react_jsx_green_button с помощью LiveServer
+                </p>
+                <p class="main__p">
+                    Для того, чтобы установить пакет npm live-server в проект локально, нужно запустить определенную
+                    команду в терминале. Перейдем по ссылке
+                    <button>
+                        <a href="https://www.npmjs.com/package/live-server" class="main__link"
+                            target="_blank">www.npmjs.com/package/live-server</a>
+                    </button> и посмотрим доступные команды. На официальном сайте npm есть команда, позволяющая
+                    установить пакет в проект локально. Вот эта команда: npm i live-server
+                </p>
+                <p class="main__p">
+                    Существует возможность запуска определенного npm пакета однократно с помощью npx. И этим мы сейчас и
+                    воспользуемся.
+                </p>
+
+                <p class="main__p">
+                    Мы должны запустить определенную команду в терминале, находясь выше на одну директорию от корневого
+                    каталога проекта, который собираемся запустить при помощи npx. В данном случае из директории
+                    react-projects_user. Запускаем необходимую команду: npx live-server --open=05_react_jsx_green_button
+                    И проект запустился в веб-браузере.
+                </p>
+
+                <p class="main__p">
+                    Откроем console в веб-браузере, и здесьесть пару ошибок, а также предупреждение.
+                </p>
+                <p class="main__p">
+                    Это предупреждение мы уже видели ранее:
+                </p>
+                <p class="main__p note">
+                    You are using the in-browser Babel transformer. Be sure to precompile your scripts for production
+                </p>
+                <p class="main__p">
+                    Мы все еще используем Babel для трансформации JSX в JavaScript непосредственно в веб-браузере,
+                    потому мы это предупреждение можем проигнорировать.
+                </p>
+                <p class="main__p">
+                    Далее есть ошибка:
+                </p>
+                <p class="main__p danger">
+                    Failed to load resource: the server responded with a status of 404 (Not Found)
+                </p>
+                <p class="main__p">
+                    И эта ошибка касается того, что любой веб-браузер при подключении к веб-странице запрашивает
+                    favicon. Это иконка, которая показана возле заголовка страницы в самом верху над поиском. Но так как
+                    в нашем проекте иконки нет, то веб-сервер отвечает: 404 (Not Found). То есть такая иконка не
+                    найдена. Поэтому эту ошибку мы можем также проигнорировать.
+                </p>
+                <p class="main__p">
+                    Кроме этого мы видим еще одну ошибку, которая помечена как Warning.
+                </p>
+                <p class="main__p danger">
+                    Warning: Expected `onClick` listener to be a function, instead got a value of `string` type.
+                </p>
+                <p class="main__p">
+                    Эта ошибка возникает потому, что в файле script.js для свойства onClick мы не указали функцию, а
+                    указали просто пустую строку. Но скоро мы это исправим.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/01_example/index.html" class="main__link"
+                            target="_blank">смотреть index.html</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/01_example/script.js" class="main__link"
+                            target="_blank">смотреть script.js</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    И так приложение React успешно запустилось, но при нажатии на кнопку Сlick me у нас появляется еще
+                    одна ошибка. Причину которой мы только что обсудили. Для onClick="" мы не привязали какую-то
+                    функцию, которая будет вызываться при нажатии на кнопку.
+                </p>
+                <p class="main__p danger">
+                    Uncaught TypeError: func.apply is not a function
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/02_example/index.html" class="main__link"
+                            target="_blank">смотреть index.html</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/02_example/script.js" class="main__link"
+                            target="_blank">смотреть script.js</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    Теперь давайте расширим фунционал нашего приложения React так, чтобы при нажатии на кнопку менялся
+                    текст на кнопке, а также добавлялся стиль. Так, как мы это делали в 1-ом примере.
+                </p>
+                <p class="main__p">
+                    В данный момент у нас есть переменная App, и этой переменной присвоен JSX код. Перейдем на вкладку
+                    elements в веб-браузере и посморим, что-же у нас находится внутри div с id="app"
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/03_example/index.html" class="main__link"
+                            target="_blank">смотреть index.html</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="56.running_a_react_project_using_live_server/03_example/script.js" class="main__link"
+                            target="_blank">смотреть script.js</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Внутри div c id="app" появился div с классом app. Внутри const App в коде мы добавили div с
+                    className="app", а div данном случае название встроенного в React компонента, которому мы передаем
+                    свойство className. И при добавлении этого div непосредственно в реальный дом ему будет добавлен
+                    класс app, что мы и видим во вкладке elements веб-браузера.
+                </p>
+                <p class="main__p">
+                    Также внутри этого div в JSX есть кнопка(button), и соответственно в html документе появился html
+                    элемент с тегом button, и на кнопке есть текст Click me. При чем обработчик onclick для этой кнопки
+                    здесь отсутствует.
+                </p>
+
+
+
+
+
 
                 <!----- 57. Использование JavaScript в коде JSX ----->
                 <a name="USING_JAVASCRIPT_IN_JSX_CODE"></a>
                 <div class="main__title-1">57. Использование JavaScript в коде JSX</div>
+                <p class="main__p">
+                    Теперь давайте подумаем как при нажатии на эту кнопку можем изменять вот этот текст,
+                    который находится между открывающим JSX тегом button и закрывающим JSX тегом button.
+                </p>
+                <p class="main__p">
+                    В файле script.js добавим новую переменную const buttonText, и значение для этой переменной будет
+                    текст Click me.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="57.using_javascript_in_jsx_code/01_example/example_code.txt" class="main__link"
+                            target="_blank">посмотреть переменную buttonText</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Так как мы написали только что JavaScript код, то используем здесь одинарные
+                    кавычки. А для значений свойств, которые передаются в компонент, мы будем использовать
+                    двойные кавычки, также это происходит для обозначения атрибутов html тегов.
+                </p>
+
+                <p class="main__p">
+                    Итак, мы создали переменную buttonText. Как же мы теперь можем получить доступ к значению этой
+                    переменной в коде JSX? Очень просто - с помощью пары фигурных скобок. Каждый раз, когда вы хотите
+                    использовать JavaScript в JSX, вы должны добавлять пару фигурных скобок. И внутри этих скобок вы
+                    можете написать абсолютно любое выражение JavaScript. А выражение всегда возвращает определенное
+                    значение, потому мы здесь можем написать просто: buttonText
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="57.using_javascript_in_jsx_code/02_example/example_code.txt" class="main__link"
+                            target="_blank">посмотреть пример</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Сохраняем код, и проверим что-же изменилось в веб-браузере?
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="57.using_javascript_in_jsx_code/03_example/index.html" class="main__link"
+                            target="_blank">запустить пример</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Итак, ничего не изменилось. Мы все еще видим кнопку с текстом Click me. Во вкладке console мы видим
+                    те же ошибки что и ранее, и мы можем пока их проигнорировать. Перейдем в elements, чтобы убедиться,
+                    что текст для кнопки корректно появился в html разметке между тегами button непосредственно в
+                    реальном DOM, и мы это видим.
+                </p>
+
+                <p class="main__p">
+                    Изменим значение переменной buttonText в JavaScript, например напишем Click me please, вместо Click
+                    me, и посмотрим результат. И текст на кнопке изменился.
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="57.using_javascript_in_jsx_code/04_example/index.html" class="main__link"
+                            target="_blank">посмотретть результат</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    То есть это работает корректно. Мы теперь можем получать доступ к значениям переменных JavaScript,
+                    например, используя пару фигурных скобок, непосредственно в JSX.
+                </p>
+
+
+
+
+
 
                 <!----- 58. Добавление обработчика при нажатии на кнопку ----->
                 <a name="ADDING_A_HUNDLER_WHEN_A_BUTTON_IS_CLICKED"></a>
                 <div class="main__title-1">58. Добавление обработчика при нажатии на кнопку</div>
+                <p class="main__p">
+                    Теперь наша задача изменить значение переменной buttonText на другое, когда мы нажимаем на кнопку.
+                    Для этого объявим теперь переменную buttonText с помощью let, потому что теперь мы будем присваивать
+                    новое значение этой переменной. И мы это должны сделать в функции, которая вызовется при нажатии на
+                    кнопку.
+                </p>
+                <p class="main__p">
+                    Здесь уже у нас есть свойство onClick. Здесь вместо пары двойных кавычек мы теперь можем добавить
+                    код JavaScript. И здесь мы можем вызвать определенную функцию. При этом мы можем объявить эту
+                    функцию ранее, либо же написать ее непосредственно здесь.
+                </p>
+                <p class="main__p">
+                    Давайте создадим анонимную функцию непосредственно здесь, и воспользуемся синтаксисом стрелочных
+                    функций. Пара круглыйх скобок, далее стрелка, и здесь в этой стрелочной функции мы на данный момент
+                    хотим просто присвоить новое значение переменной buttonText.
+                </p>
+                <p class="main__p">
+                    В таком случае мы можем без тела функции просто написать buttonText, затем знак присваивания, и
+                    текст Hello from React. То есть это новое значение для переменной buttonText.
+                </p>
+                <p class="main__p">
+                    Вот вся функция, которая будет вызвана при нажатии на кнопку:
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="58.adding_a_hundler_when_a_button_is_clicked/01_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть функцию, которая будет вызвана</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="58.adding_a_hundler_when_a_button_is_clicked/02_example/script.js" class="main__link"
+                            target="_blank">посмотреть пример кода</a>
+                    </button>
+                </p>
+
+                <p class="main__p">
+                    <button>
+                        <a href="58.adding_a_hundler_when_a_button_is_clicked/02_example/index.html" class="main__link"
+                            target="_blank">запустить код</a>
+                    </button>
+                </p>
+
+
+
+
+
 
                 <!----- 59. Проверка замены текста на кнопке при нажатии ----->
                 <a name="CHECKING_THE_REPLACEMENT_OF_TEXT_ON_A_BUTTON_WHEN_CLICKED"></a>
                 <div class="main__title-1">59. Проверка замены текста на кнопке при нажатии</div>
+                <p class="main__p">
+                    Итак, еще раз запустим приложение.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="59.checkinng_the_replacement_of_text_on_a_button_when_cklicked/01_example/index.html"
+                            class="main__link" target="_blank">запустить приложение</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Заходим в console веб-браузера. Смотрим. Ошибка, которая касалась того,
+                    что у нас не было привязки функции к обработчику onclick исчезла, потому что в button onClick мы уже
+                    добавили функцию. И теперь давайте попробуем нажать на кнопку Click me please. Нажимаем на кнопку и
+                    ничего не происходит, текст на кнопке не изменяется.
+                </p>
+
+                <p class="main__p">
+                    При этом мы можем попробовать вывести в консоль значение переменной buttonText, после изменения
+                    значения здесь в функции. Для этого вынесем функцию в JavaScript код. Создадим функцию и назовем ее
+                    onButtonClick, присвоим ей стрелочную функцию, которую мы собственно и выносим из JSX кода. И как мы
+                    с вами и планировали вынесем в консоль значение переменной buttonText. И в этой функции происходит
+                    присваивание нового значения buttonText
+                </p>
+
+                <p class="main__p">
+                    Кроме этого нам необходимо указать название этой функции в переменной App в JSX, как значение для
+                    обработчика событий нажатия на кнопку. И пишем ее между фигурными скобками. И эта функция будет
+                    вызвана при нажатии на кнопку.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="59.checkinng_the_replacement_of_text_on_a_button_when_cklicked/02_example/script.js"
+                            class="main__link" target="_blank">посмотреть пример функции</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Запустим получившийся код
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="59.checkinng_the_replacement_of_text_on_a_button_when_cklicked/02_example/index.html"
+                            class="main__link" target="_blank">запустить код</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Заходим в console веб-браузера и нажимаем на кнопку и мы видим, что функция вызывается. При каждом
+                    новом нажатии на кнопку мы видим увеличение чисел, это новый вывод в консоли, с новым значением для
+                    переменной buttonText. Следовательно, во-первых функция вызывается корректно, во-вторых новое
+                    значение переменной buttonText корректно присваивается, и в консоли мы значение это видим.
+                </p>
+                <p class="main__p note">
+                    Но на кнопке ничего не изменяется, хотя в переменной App в JSX мы обращаемся к переменной buttonText
+                </p>
+
+
+
+
+
 
                 <!----- 60. Перенос кода JSX в функциональный компонент React ----->
                 <a name="MOVING_JSX_CODE_TO_A_REACT_FUNCTIONAL_COMPONENT"></a>
                 <div class="main__title-1">60. Перенос кода JSX в функциональный компонент React</div>
+                <p class="main__p">Так вот для того, чтобы в React это все начало работать корректно, и чтобы на кнопке
+                    мы увидели корректный текст, который мы меняем при нажатии на кнопку, часть кода нашего скрипта мы
+                    должны перенести в одну функцию. А именно в функциональный компонент, который будет возвращать наш
+                    JSX. Также нам будет необходимо довавить состояние этого компонента.
+                </p>
+                <p class="main__p">
+                    Итак приступим по порядку. Сначала создадим функциональный компонент, в который мы и перенесем
+                    необходимый код. Вместо присваивания JSX кода переменной App, мы здесь присвоим ей стрелочную
+                    функцию. Так как функциональный компонент должен возвращать JSX, мы здесь пишем return и вставляем
+                    обратно наш JSX.
+                </p>
+                <p class="main__p">
+                    Теперь у нас есть фунциональный компонент, который возвращает JSX код.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="60.moving_jsx_code_to_a_react_functional_component/01_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть функциональный компонент</a>
+                    </button>
+                </p>
 
+                <p class="main__p">
+                    И теперь для того, чтобы мы корректно могли отобразить этот компонент в пользовательском интерфейсе,
+                    вместо названия переменной в вызове метода render, мы должны также указать JSX код. Открывающий тег,
+                    далее название компонента, и после названия компонента мы должны добавить пробел и слэш для
+                    того, чтобы сделать этот JSX тег самозакрывающимся. Вот так:
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="60.moving_jsx_code_to_a_react_functional_component/02_example/example_code.txt"
+                            class="main__link" target="_blank">посмотреть</a>
+                    </button>
+                </p>
 
+                <p class="main__p">
+                    Напоминаю о том, что все пользовательские компоненты должны начинаться с заглаавной буквы. Именно
+                    так React понимает, что вы хотите добавить пользовательский компонент, а не встроеный. Такой,
+                    например, как div , либо button. То есть здесь мы хотим отобразить в интерфейсе наш собственный
+                    компонент. А создали мы наш компонент с помощью синтаксиса функциональных компонентов.
+                </p>
 
+                <p class="main__p">
+                    Итак, кроме этого мы должны в эту функцию const App перенести переменные.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="60.moving_jsx_code_to_a_react_functional_component/03_example/script.js"
+                            class="main__link" target="_blank">посмотреть весь код в файле script.js</a>
+                    </button>
+                </p>
 
+                <p class="main__p">
+                    Давайте посмотрим как работает приложение сейчас.
+                </p>
 
+                <p class="main__p">
+                    <button>
+                        <a href="60.moving_jsx_code_to_a_react_functional_component/04_example/index.html"
+                            class="main__link" target="_blank">запустить приложение</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Нажимаем на кнопку, и снова текст на кнопке не меняется. А это происходит из-за того, что значение
+                    переменной buttonText мы изменяем внутри этой функции. И React никак не может отследить то, что
+                    происходит внутри функции.
+                </p>
 
+                <p class="main__p">
+                    В самом верху добавим еще один console.log и в нем напишем просто (Called). Это будет означать, что
+                    функция была вызвана. Сохраним изменения и запустим приложение.
+                </p>
 
+                <p class="main__p">
+                    <button>
+                        <a href="60.moving_jsx_code_to_a_react_functional_component/05_example/index.html"
+                            class="main__link" target="_blank">запустить приложение</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Заходим в console и видим, что функция была вызвана. Нажимаем на кнопку, видно вывод Hello from
+                    React, но не видно, что функция еще раз вызывалась. Это означает, что функция App была вызвана
+                    однократно и вызвал ее React, для того чтобы получить JSX код, который мы из этой функции вернули.
+                    Далее обработать его в виртуальном DOM и перенести в реальный DOM. И все! На этом работа React
+                    закончилась.
+                </p>
+                <p class="main__p">
+                    То, что мы изменяем значение переменной buttonText внутри функции при нажатии на кнопку, никак не
+                    влияет на перерисовку этого компонента в интерфейсе. Потому что для того, чтобы перерисовать
+                    компонент в интерфейсе, необходимо вызвать еще раз эту функцию. Так работает React.
+                </p>
 
 
 
