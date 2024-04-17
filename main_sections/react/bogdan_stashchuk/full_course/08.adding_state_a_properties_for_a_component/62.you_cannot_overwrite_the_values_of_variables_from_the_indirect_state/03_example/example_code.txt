@@ -1,0 +1,3 @@
+const onButtonClick = () => {
+        buttonText = 'Hello from React'  
+}

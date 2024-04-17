@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Теория. Что такое React.</title>
+    <link rel="stylesheet" href="../../../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../../../css/vars.css">
+    <link rel="stylesheet" href="../../../../../css/main.css">
+    <link rel="stylesheet" href="../../../../../css/header.css">
+    <link rel="stylesheet" href="../../../../../css/content.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_1.css">
+    <link rel="stylesheet" href="../../../../../css/sidebar_2.css">
+    <link rel="stylesheet" href="../../../../../css/footer.css">
+    <link rel="stylesheet" href="../../../../../css/templates.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!----- HEADER ----->
+        <div class="header general__area-1">
+            <a name="HEADER"></a>
+            <div class="header__space">
+                <div class="header__descr">
+                    <h1 class="header__h1">
+                        Обучающий<br> курс
+                    </h1>
+                    <span class="header__descr-1">Полный курс React
+                    </span>
+                    <ul class="header__descr-2">
+                        <li>Источник: Udemy</li>
+                        <li>Автор: Владилен Минин</li>
+                        <li>Спецификация: React</li>
+                    </ul>
+                </div><!--tutorial__descr-->
+                <ul class="header__navmenu-list">
+                    <li class="header__navmenu-item">
+                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../../../react.html" class="header__navmenu-link">Курсы React</a>
+                    </li>
+                    <li class="header__navmenu-item">
+                        <a href="../course.html" class="header__navmenu-link">Главная
+                            страница курса</a>
+                    </li>
+                </ul>
+            </div><!--header__space-->
+        </div><!--header-->
+
+
+
+
+        <!----- ASIDE-1 ----->
+        <div class="aside-1 general__area-1">
+            <ul class="aside-1__index-search-list">
+                <li class="aside-1__index-search-item">
+                    <a class="aside-1__index-search-link" href="#">1 Теория. Что такое React.</a>
+                </li>
+            </ul><!--aside-1__index-search-list-->
+        </div><!--aside-1-->
+
+
+
+
+
+
+        <!----- CONTENT ----->
+        <div class="main general__area-1">
+            <h2 class="main__h2">1 Теория. Что такое React.</h2>
+            <div class="main__wrapper">
+
+                <!----- 1.01 Что такое React ----->
+                <a name="1.01"></a>
+                <div class="main__title-1">1.01 Что такое React.</div>
+                <p class="main__p">
+                    React - это библиотека JavaScript, которая позволяет строить какие-либо веб-приложения и конкретно
+                    то, что запускается у вас в веб-браузере. React позволяет строить сложные и
+                    реактивные пользовательские интерфейсы. Все элементы, которые есть в React они делятся на
+                    компоненты.
+                </p>
+
+                <!----- 1.02 Как работает React ----->
+                <a name="1.02"></a>
+                <div class="main__title-1">1.02 Как работает React.</div>
+                <p class="main__p">
+                    Воспользуемся одним из простых вариантов установки React на локальный компьютер. Скопируем код c
+                    официального веб-сайта React и вставим в наш html.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="1.02/01_example/index.html" class="main__link" target="_blank">пример кода установки
+                            React в html</a>
+                    </button>
+                </p>
+                <p class="main__subtitle-1">
+                    Разберем подробнее скопированный код.
+                </p>
+                <p class="main__p">
+                    Это обычный html файл, где у нас есть подключение 3-ех разных скриптов. Само ядро React состоит из
+                    2-ух библиотек, которые здесь подключаются через CDN.
+                </p>
+                <p class="main__p">
+                    1-ый скрипт - это библиотека React,
+                    версия 16, development - не минифицированный код. 1-ый скрипт - это сам React.
+                </p>
+                <p class="main__p">
+                    2-ой скрипт - это библиотека React-DOM, версия 16.
+                </p>
+                <p class="main__p">
+                    Эти 2 библиотеки как раз и составляют ядро всего приложения React.
+                </p>
+                <p class="main__p">
+                    3-ий скрипт это подключение Babel.
+                </p>
+                <p class="main__p">
+                    Далее присутствует скрипт, который описывает все наше приложение.
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="1.02/02_example/example_code.txt" class="main__link" target="_blank">посмотреть
+                            скрипт</a>
+                    </button>
+                </p>
+                <p class="main__p">
+                    Здесь можно увидеть одну маленькую особенность. Значение атрибута type у тега script - это
+                    "type/babel". Это говорит библиотеке о том, что перед тем как нам нужно будет запустить данный
+                    скрипт, нам необходимо будет его скомпилировать. Компиляция будет по сути из JSX в JavaScript.
+                </p>
+                <p class="main__p">
+                    Что делает данное приложение: Оно получает div с id="root" с помощью стандартной js функции
+                    document.elementById('root'), и в него кладет содержимое, которое мы описываем прямо внутри
+                    JavaScript, и у нас здесь заголовок h1 с текстом. Если мы поменяем текст этого заголовка, то он
+                    изменится и в веб-браузере. Это и есть минимальная настройка React.
+                </p>
+
+
+
+
+
+
+                <!----- 1.03 Что такое компоненты ----->
+                <a name="1.03"></a>
+                <div class="main__title-1">1.03 Что такое компоненты</div>
+                <p class="main__p">
+
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="" class="main__link" target="_blank">кнопка</a>
+                    </button>
+                </p>
+
+
+
+
+
+
+                <!----- 1.04 Create React App ----->
+                <a name="1.04"></a>
+                <div class="main__title-1">1.04 Create React App</div>
+                <p class="main__p">
+
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="" class="main__link" target="_blank">кнопка</a>
+                    </button>
+                </p>
+
+
+
+
+
+
+                <!----- 1.05 Обзор приложения. ----->
+                <a name="1.05"></a>
+                <div class="main__title-1">1.05 Обзор приложения.</div>
+                <p class="main__p">
+
+                </p>
+                <p class="main__p">
+                    <button>
+                        <a href="" class="main__link" target="_blank">кнопка</a>
+                    </button>
+                </p>
+
+
+            </div><!---------------main__wrapper--------------->
+        </div><!--------------------main-------------------->
+
+
+
+
+
+
+        <!----- ASIDE-2 ----->
+        <div class="aside-2 general__area-1">
+            <ul class="aside-2__index-search-list">
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#1.01">1.01 Что такое React.</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#1.02">1.02 Как работает React.</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#1.03">1.03 Что такое компоненты.</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#1.04">1.04 Create React App</a>
+                </li>
+                <li class="aside-2__index-search-item">
+                    <a class="aside-2__index-search-link" href="#1.05">1.05 Обзор приложения.</a>
+                </li>
+            </ul><!--aside-2__index-search-list-->
+        </div><!--aside_2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!----- FOOTER ----->
+        <a name="FOOTER"></a>
+        <div class="footer general__area-1">Footer</div>
+    </div><!--wrapper-->
+
+
+
+</body>
+
+</html>
