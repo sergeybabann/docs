@@ -1,0 +1,12 @@
+    const App = (
+            <div>
+                <Car name="Ford Focus" year="2017" />,
+                <Car name="Audi A8" year="2015" />,
+                <Car name="Mazda 3" year="2010" />
+            </div>
+        )
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )

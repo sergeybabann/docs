@@ -1,0 +1,8 @@
+        function Car() {
+            return (
+                <div className="car">
+                    <h3>Audi A8</h3>
+                    <p>Year: <strong>2015</strong></p>
+                </div>
+            )
+        }

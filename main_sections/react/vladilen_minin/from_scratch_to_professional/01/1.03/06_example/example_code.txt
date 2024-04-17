@@ -1,0 +1,4 @@
+    ReactDOM.render(
+            <Car name="Ford" year="2016" />,
+            document.querySelector('#root')
+        )
