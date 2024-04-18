@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .car {
+            display: inline-block;
+            border: 2px solid #ccc;
+            box-shadow: 2px 2px 1px #eee;
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+    <!--
+    <div class="car">
+        <h3>Ford Focus</h3>
+        <p>Year: <strong>2017</strong></p>
+    </div>
+
+    <div class="car">
+        <h3>Audi A8</h3>
+        <p>Year: <strong>2015</strong></p>
+    </div>
+    
+    <div class="car">
+        <h3>Mazda 3</h3>
+        <p>Year: <strong>2010</strong></p>
+    </div>
+-->
+
+    <script type="text/babel">
+        function Car(props) {
+            return (
+                <div className="car">
+                    <h3>{props.name}</h3>
+                    <p>Year: <strong>{props.year}</strong></p>
+                </div>
+            )
+        }
+
+        const App = (
+            <div>
+                <Car name="Ford Focus" year="2017" />
+                <Car name="Audi A8" year="2015" />
+                <Car name="Mazda 3" year="2010" />
+            </div>
+        )
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+
+
+
+
+        /*
+                function MyApp() {
+                    return <h1>Hello, world!</h1>;
+                }
+        
+                const container = document.getElementById('root');
+                const root = ReactDOM.createRoot(container);
+                root.render(<MyApp />);
+        */
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+</body>
+
+</html>
