@@ -37,7 +37,7 @@
                 </div><!--tutorial__descr-->
                 <ul class="header__navmenu-list">
                     <li class="header__navmenu-item">
-                        <a href="../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
+                        <a href="../../../../../index.html" class="header__navmenu-link">Главная страница сайта</a>
                     </li>
                     <li class="header__navmenu-item">
                         <a href="../../../javascript.html" class="header__navmenu-link">Курсы JavaScript</a>
@@ -72,7 +72,7 @@
                     <a class="aside-1__index-search-link" href="../04_objects/04.html">4 Объекты</a>
                 </li>
                 <li class="aside-1__index-search-item">
-                    <a class="aside-1__index-search-link" href="#">5 Мутация объектов</a>
+                    <a class="aside-1__index-search-link" href="../05_mutation_object/05.html">5 Мутация объектов</a>
                 </li>
                 <li class="aside-1__index-search-item">
                     <a class="aside-1__index-search-link" href="#">6 Функции</a>
@@ -840,6 +840,112 @@
                 <div class="main__title-1">
                     Колбэк функции
                 </div>
+                <a name="CALLBACK_FUNCTIONS_01"></a>
+                <p class="main__subtitle-1">
+                    Папка 01. Посмотрим на пример. Здесть у нас есть 2 функции:
+                </p>
+                <pre>
+                    <code>
+                        function anotherFunction() {
+                            //...действия
+                        }
+                        
+                        function fnWithCallBack(callbackFunction) {
+                            callbackFunction()
+                        }
+                        
+                        fnWithCallBack(anotherFunction)
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    В одной функции нет параметров, а в другой функции есть 1 параметр. И мы подразумеваем, что
+                    значением этого параметра, при вызове этой функции, будет другая функция. В теле функции с
+                    параметром мы вызываем эту функцию обычным образом используя круглые скобки. Вот так:
+                </p>
+                <pre>
+                    <code>
+                        function fnWithCallBack(callbackFunction) {
+                            callbackFunction()
+                        }
+                    </code>
+                </pre>
+                <p class="main__p note">
+                    callback функия - это функция, которая вызывает внутри себя другую функцию.
+                </p>
+                <p class="main__p">
+                    Когда мы создали функцию, в теле которой вызывается другая функция, мы можем вызвать эту фунцкию и
+                    передать ей другую функцию. И аргументом этой функции является другая функция. Вот так:
+                </p>
+                <pre>
+                    <code>
+                        fnWithCallBack(anotherFunction)
+                    </code>
+                </pre>
+                <p class="main__p note">
+                    Смысл callback функции в том, что она вызывается внутри другой функции. Вот и все!
+                </p>
+                <p class="main__p">
+                    И конечно без вызова функции fnWithCallBack, функция anotherFunction не вызывется. Потому, что
+                    вызывается она только внутри функции fnWithCallBack.
+                </p>
+                <p class="main__p note">
+                    В данном примере функция anotherFunction - это callback функция. Она передается как агрумент в
+                    другую функкцию.
+                </p>
+
+                <a name="CALLBACK_FUNCTIONS_02"></a>
+                <p class="main__subtitle-1">
+                    Папка 02. Рассмотрим другой пример
+                </p>
+                <pre>
+                    <code>
+                        function printMyName() {
+                            console.log('Bogdan')
+                        }
+                        
+                        setTimeout(printMyName, 1000)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Есть функция, которая называется printMyName. У нее нет параметров, но есть вывод в консоль.
+                    И далее мы вызываем функцию setTimeout. Эта функция встроена в JavaScript, то есть она доступна по
+                    умолчанию, как один из методов глобального объекта window в браузере либо global в Nodejs.
+                </p>
+                <p class="main__p">
+                    Так вот, эта встроенная функция внутри себя вызывает функцию, которая передана как 1-ый аргумент. И
+                    мы нигде не вызываем эту функцию printMyName, потому что она вызывется внутри функции setTimeout.
+                </p>
+                <p class="main__p">
+                    В функцию setTimeout передаем 2 аргумента. 1-ый - это название функции, 2-ой - это число в
+                    миллисекундах. И setTimeout работает таким образом, что она вызывает callback функцию printMyName,
+                    через определенное время. В данном примере через 1000 миллисекунд, либо 1 секунду. Вот так работает
+                    callback функция.
+                </p>
+                <p class="main__p">
+                    И у нас здесь происходит то, что текст вызова concole.log мы увидим в консоли через 1 секунду.
+                    И запустим этот код в терминале.
+                </p>
+
+                <p class="main__p">
+                    А теперь попробуем сделать следующее. Добавим еще один вызов в консоль для более явного
+                    отслеживания.
+                </p>
+                <pre>
+                    <code>
+                        function printMyName() {
+                            console.log('Bogdan')
+                        }
+                        
+                        console.log('Start')
+
+                        setTimeout(printMyName, 1000)
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Можно поиграться с временем интервала. Если навести курсор на название встроенной функции, то вы
+                    увидите какие аргументы ожидает эта функция.
+                </p>
 
 
 
@@ -851,6 +957,20 @@
                 <div class="main__title-1">
                     Правила работы с функциями
                 </div>
+                <p class="main__p">
+                <ul class="main__list">
+                    <li class="main__list-item">Называйте функции исходя из задач. Чтобы было понятно что функция
+                        делает.</li>
+                    <li class="main__list-item">Одна функция должна выполнять одну задачу.</li>
+                    <li class="main__list-item">Не рекомендуется изменять внешние относительно функции переменные. То
+                        есть, если функция работает с объектами, то внутри функции создавайте копии этих объектов и
+                        меняйте их, не меняя при этом оригинальные объекты, которые были переданы как значение
+                        аргументов. Иными словами функция должна быть ЧИСТОЙ. То есть чистая фунция работает только с
+                        переменными, которые были объявлены внутри самой функции. И она не меняет внешние переменные,
+                        даже те, которые переданы как аргументы этой функции. Такая функция называется - Чистая функция.
+                    </li>
+                </ul>
+                </p>
 
 
 
@@ -920,6 +1040,14 @@
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#CALLBACK_FUNCTIONS">Колбэк функции</a>
+                    <ul>
+                        <li><a class="aside-2__index-search-link" href="#CALLBACK_FUNCTIONS_01">Папка 01.
+                            </a>
+                        </li>
+                        <li><a class="aside-2__index-search-link" href="#CALLBACK_FUNCTIONS_02">Папка 02.
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#ROLES_FOR_WORKING_WITH_FUNCTIONS">Правила работы с

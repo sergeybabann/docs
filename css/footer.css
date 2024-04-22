@@ -2,3 +2,28 @@
   grid-column-start: 1;
   grid-column-end: -1;
 }
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.footer__section1 {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 7;
+  padding: 0;
+  gap: 20px;
+  padding: 10px;
+  /* background-color: green; */
+}
+
+.footer__section2 {
+  display: flex;
+  grid-column-start: 7;
+  grid-column-end: -1;
+  padding: 0;
+  gap: 20px;
+  padding: 10px;
+  /* background-color: red; */
+}

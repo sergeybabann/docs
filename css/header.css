@@ -17,7 +17,7 @@
   align-items: start;
   justify-content: end;
   align-content: center;
-  grid-column: 7/-1;
+  grid-column: 8/-1;
   list-style: none;
   border-radius: 3px;
   padding: 0;
@@ -25,6 +25,7 @@
   height: 70px;
   gap: 10px;
   padding: 10px 20px;
+  /* background-color: red; */
 }
 
 .header__navmenu-item {
@@ -53,10 +54,11 @@
 .header__descr {
   display: flex;
   grid-column-start: 1;
-  grid-column-end: 7;
+  grid-column-end: 8;
   padding: 0;
   gap: 20px;
   padding: 10px;
+  /* background-color: green; */
 }
 
 .header__descr .header__h1,
@@ -75,6 +77,8 @@
   font-size: 20px;
   display: flex;
   justify-content: start;
+  max-width: 70%;
+  /* background-color: orange; */
 }
 
 .header__descr-2 {
