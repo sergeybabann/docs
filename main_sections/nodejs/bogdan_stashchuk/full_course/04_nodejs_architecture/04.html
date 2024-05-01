@@ -156,28 +156,215 @@
                     действия. NodeJS может выполнять только одну операцию в каждый момент времени, и пока эта операция
                     выполняется, другие операции ожидают своей очереди.
                 </p>
+                <p class="main__p">
+                    Например, если в NodeJS вы решили записать много данных в один файл, и начали запись, это все
+                    выполняется в одном потоке. Все остальные запросы и задачи ожидают, пока вы не закончите запись в
+                    этот большой файл.
+                </p>
 
 
 
 
                 <!----- Блокирующие и неблокирующие операции ----->
                 <a name="0.02"></a>
-                <div class="main__title-1">2 Блокирующие и неблокирующие операции</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
+                <div class="main__title-1">Блокирующие и неблокирующие операции</div>
+                <p class="main__subtitle-1">Обработка многопоточных запросов</p>
+                <p class="main__p">Обработка многопоточности в NodeJS происходит благодаря асинхронным неблокирующим
+                    операциям. И для этого существует LibUV. И благодаря этому в NodeJS можно выполнять различные
+                    операции ввода-вывода паралельно.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Блокирующая операция
+                </p>
+                <p class="main__p">
+                    Предположим, что у нас есть сервер NodeJS, на нем запущен процесс NodeJS, и в рамках этого процесса
+                    у нас работает 1 поток, в рамках которого и выполняется весь код. И допустим у нас есть база данных,
+                    к которой сервер посылает запросы. Напрмиер, от клиента на сервер приходит http-запрос. Клиент
+                    запрашивает какие-то данные. Для того, чтобы сформировать ответ, серверу необходимо отправить запрос
+                    в базу данных.
+                </p>
+                <p class="main__p">
+                    После получения http-запроса от клиента, поток на сервере блокируется. Отправляется запрос в базу
+                    данных, например, на чтение данных. Зачастую, база данных находится на другом сервере, и получение
+                    ответа от базы данных занимает определенное время. Пока сервер ожидает ответа от базы данных, код в
+                    потоке далее не выполняется, потому что сейчас ожидается ответ от базы данных.
+                </p>
+                <p class="main__p">
+                    Когда мы получили на сервере ответ от базы данных, только тогда поток разблокируется, и становится
+                    доступным для выполнения других задач.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Неблокирующая операция
+                </p>
+                <p class="main__p">
+                    Получаем http-запрос от клиента, обрабатываем его в потоке, при этом мы отправляем запрос на
+                    чтение в базу данных, но поток при этом не блокируется. И мы можем на сервере выполнять другие
+                    задачи, пока мы ожидаем ответа от сервера. Операция чтения выполняется в фоновом режиме, при этом
+                    другие операции продолжают выполняться в потоке. В единственном потоке, который доступен в NodeJS.
+                </p>
+                <p class="main__p">
+                    И когда мы получили результат из базы данных, мы его обрабатываем и отправляем ответ клиенту.
+                </p>
+                <p class="main__p note">
+                    Возникает вопрос, как же, в таком случае, мы помним, скажем так, о запросе, который был послан в
+                    базу данных, и корректно обрабатываем результат, когда мы его получили от сервера? То есть как это
+                    работает, если мы поток не блокируем? Если мы не ожидаем от сервера ответа в рамках одного потока.
+                </p>
+                <p class="main__p">
+                    Прежде чем отвечать на этот вопрос посмотрим на примеры:
+                </p>
+
+                <!----- Папка 01. ----->
+                <p class="main__subtitle-1">
+                    Папка 01. Пример Блокирующей операции
+                </p>
                 <pre>
                     <code>
-                        code
+                        const fs = require('fs')
+
+                        const data = fs.readFileSync('./test.txt', 'utf8')
+                        console.log('File reading finished')
+                        
+                        console.log('Continue...')    
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
+                <p class="main__p">
+                    В этом примере выполняется чтение из файла. Мы импортируем модуль fs, используя функцию require:
+                </p>
+                <pre>
+                    <code>
+                        const fs = require('fs')  
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И далее мы вызываем метод readFileSync:
+                </p>
+                <pre>
+                    <code>
+                        const data = fs.readFileSync('./test.txt', 'utf8')
+                    </code>
+                </pre>
+                <p class="main__p">
+                    То есть мы выполняем операцию чтения файла под названием test.txt в блокирующем формате.
+                    То есть получается, что пока мы читаем файл на этой строке, код далее не выполняется. И только когда
+                    мы закончили операцию чтения файла, и присвоили результат переменной data, мы продолжаем выполнение
+                    кода.
+                </p>
+                <p class="main__p">
+                    И только после окончания чтения файла вы увидите в терминале вывод: File reading finished<br>
+                    И потом увидите вывод: Continue
+                </p>
+                <p class="main__p">
+                    То есть в этом примере оба вывода в консоль выполняются после окончания операции чтения файла.
+                </p>
+                <p class="main__p">
+                    То есть получается, что чтение файла на этой строке...
+                </p>
+                <pre>
+                    <code>
+                        const data = fs.readFileSync('./test.txt', 'utf8')
+                    </code>
+                </pre>
+                <p class="main__p">
+                    ...блокирует выполнение других частей кода, и другие операции не выполняются.
+                </p>
+                <p class="main__p">
+                    Это блокирующая операция в NodeJS. И выполнять такую работу с файлами в синхронном режиме вы можете
+                    благодаря встроенному модулю fs.<br>
+                    fs - модуль по работе с файлами в NodeJS.
+                </p>
+
+                <!----- Папка 02. ----->
+                <p class="main__subtitle-1">
+                    Папка 02. Пример Неблокирующей операции
+                </p>
+                <pre>
+                    <code>
+                        const fs = require('fs')
+                        fs.readFile('./test.txt', 'utf8', (err, data) => {
+                            if (!err) {
+                                console.log('File reading finished')
+                            }
+                        })
+                        
+                        console.log('Continue...') // выполняется до окончания чтения файла
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    В данном случае вместо метода readFileSync мы вызываем метод readFile - чтение файла.
+                    Этот метод работает в неблокирующем стиле.
+                </p>
+                <p class="main__p">
+                    На этой строке мы указываем название файла - test.txt, кодировку - utf8, и 3-им аргументом мы
+                    передаем callback функцию - (err, data). Эта callback функция имеет 2 параметра: 1) ошибка 2)
+                    данные:
+                </p>
+                <pre>
+                    <code>
+                        fs.readFile('./test.txt', 'utf8', (err, data) => {
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Так вот, эта callback функция будет вызвана по окончанию чтения из файла.
+                </p>
+
+                <p class="main__p">
+                    То есть когда мы закончим операцию чтения из файла: fs.readFile('./test.txt',<br>
+                    будет автоматически вызвана эта функция: (err, data)<br>
+                    и данные, которые мы прочли из файла будут переданы 2-ым аргументом. 2-ой аргумент data
+                </p>
+                <p class="main__p">
+                    При этом, если возникла ошибка, то передастся ошибка в качестве значения для 1-ого параметра. 1-ый
+                    параметр err
+                </p>
+                <p class="main__p">
+                    И здесь в этой callback функции мы проверяем:<br>
+                    Если ошибки нет, то тогда мы выводим в консоль текст: File reading finished
+                </p>
+                <pre>
+                    <code>
+                        if (!err) {
+                            console.log('File reading finished')
+                        }
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    И получается, что в таком случае код на последней строке...
+                </p>
+                <pre>
+                    <code>
+                        console.log('Continue...') // выполняется до окончания чтения файла
+                    </code>
+                </pre>
+                <p class="main__p">
+                    ...будет выполнен до окончания чтения файла.
+                </p>
+
+                <p class="main__p">
+                    То есть вызывается функция readFile, мы начинаем процесс чтения из файла, и все, забываем об этом
+                    запросе, и продолжаем выполнение кода. А вот, когда операция чтения из файла завершится, будет
+                    автоматически вызвана вот эта функция:
+                </p>
+                <pre>
+                    <code>
+                        if (!err) {
+                            console.log('File reading finished')
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    И код в этой функции будет выполнен так, как мы с вами обсудили. Но это уже произойдет после вывода
+                    в терминал текста Continue.
+                </p>
+
+
+
+
+
 
 
 
@@ -186,197 +373,68 @@
 
                 <!----- 3 Libuv с циклом событий и пулом потоков ----->
                 <a name="0.03"></a>
-                <div class="main__title-1">3 Libuv с циклом событий и пулом потоков</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
+                <div class="main__title-1">LIBUV с циклом событий и пулом потоков</div>
+                <p class="main__subtitle-1">Что позволяет выполнять в NodeJS операции асинхронно, вне основного потока?
+                </p>
+                <p class="main__p note">
+                    Выполние в NodeJS операций асинхронно, вне основного потока, возможно благодаря библиотеке LIBUV.
+                    Именно библиотека LIBUV обеспечивает поддержку асинхронных неблокирующих операций.
+                </p>
+                <p class="main__subtitle-1">
+                    Асинхронная операция
+                </p>
+                <p class="main__p note">
+                    Асинхронная операция - это операция, в которой мы получаем результат операции через какое-то время.
+                </p>
 
+                <p class="main__p">
+                    Например, мы отправили какой-либо запрос в базу данных и ожидаем ответа. Ответ может прийти через 3
+                    миллисекунды, через 2 секунды, или вообще не прийти. Мы не знаем когда придет ответ от базы данных.
+                </p>
 
+                <p class="main__p">
+                    Второй пример. Мы допустим отправляем DNS запрос, для того чтобы по доменному имени получить
+                    IP-адрес удаленного сервера. Такие операции называются асинхронными. Мы начинаем какое-то действие,
+                    отправляем запрос, либо же начинаем запись в файл, но не знаем когда эта операция завершится.
+                </p>
 
+                <p class="main__subtitle-1">
+                    Неблокирующая операция
+                </p>
 
+                <p class="main__p note">
+                    Неблокирующая операция - это операция, которая не блокирует основной единственный поток в NodeJS.
+                </p>
+                <p class="main__p note">
+                    Задача разработчика состоит планировать код так, чтобы вы выполняли все операции неблокирующим
+                    образом. То есть писать код так, чтобы все асинхронные операции выполнялись без блокирования
+                    основного потока.
+                </p>
 
+                <p class="main__subtitle-1">
+                    LIBUV
+                </p>
+                <p class="main__p">
+                    В LIBUV есть 2 основные составляющие части.
+                </p>
+                <p class="main__p">
+                    1) Event loop - цикл событий
+                </p>
+                <p class="main__p">
+                    2) Thread pool - пул потоков
+                </p>
+                <p class="main__p">
+                    Event loop. С помощью цикла событий в LIBUV в NODEJS можно выполнять асинхронные операции. И в
+                    LIBUV этот
+                    функционал реализован с помощью callback функции. У каждого события есть соответствующая callback
+                    функция, которая вызывается в какой-то момент в будущем после того, как мы закончили определенное
+                    действие. Например, закончили запись в файл, либо же получили ответ от сервера и т.д.
+                </p>
 
-                <!-----  ----->
-                <a name="0.04"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.05"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.06"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.07"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.08"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.09"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-                <!-----  ----->
-                <a name="0.10"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p">Текст</p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item">1</li>
-                    <li class="main__list-item">2</li>
-                    <li class="main__list-item">3</li>
-                    <li class="main__list-item">4</li>
-                    <li class="main__list-item">5</li>
-                    <li class="main__list-item">6</li>
-                </ul>
-
-
-
-
-
-
-
+                <p class="main__p">
+                    Thread pool. Пул потоков используется для обработки блокирующих операций. Тех операций, которые
+                    нельзя выполнить в асинхронном формате.
+                </p>
 
             </div><!---------------main__wrapper--------------->
         </div><!--------------------main-------------------->
@@ -397,27 +455,6 @@
                 </li>
                 <li class="aside-2__index-search-item">
                     <a class="aside-2__index-search-link" href="#0.03">Libuv с циклом событий и пулом потоков</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.04">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.05">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.06">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.07">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.08">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.09">Пункт меню</a>
-                </li>
-                <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#0.10">Пункт меню</a>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
