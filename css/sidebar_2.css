@@ -12,6 +12,7 @@
   left: 1410px;
   top: 102px;
   width: 458px;
+  z-index: 0;
 }
 
 .aside-2__index-search-list {

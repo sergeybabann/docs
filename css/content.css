@@ -8,6 +8,9 @@
   background-color: rgba(245, 245, 245, 10);
   margin-bottom: 1000px;
   padding: 10px 10px;
+  top: 102px;
+  margin-left: 15px;
+  position: relative;
 }
 
 .main__2 {

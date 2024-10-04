@@ -31,7 +31,8 @@ code {
   max-width: 1063px;
 }
 
-ul, ol {
+ul,
+ol {
   line-height: 23px;
 }
 
@@ -49,4 +50,9 @@ li {
 .general__area-1 {
   border: 1px solid #c0c0c0;
   background-color: rgba(245, 245, 245, 10);
+}
+
+/* ----- Отступ для якорей при скролле -----*/
+:target {
+  scroll-margin-top: 102px;
 }

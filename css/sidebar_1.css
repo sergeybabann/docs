@@ -1,15 +1,19 @@
 .wrapper__aside-1 {
-  position: relative;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
+
 .aside-1 {
   display: grid;
   grid-column-start: 1;
   grid-column-end: 3;
   background-color: rgb(220, 220, 220, 0.7);
-  top: 105;
-  position: fixed;
+  position: relative;
   top: 102px;
   width: 302px;
+  min-height: 100vh;
+  z-index: 0;
 }
 
 .aside-1__index-search-list {

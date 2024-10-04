@@ -1,29 +1,43 @@
 .footer {
   grid-column-start: 1;
   grid-column-end: -1;
+  background-color: #000;
+  z-index: 1;
+  padding: 60px;
+}
+
+.footer__section-general > ul {
+  color: #fff;
+  list-style: none;
+}
+
+.footer__section-general > ul > li {
+  line-height: 35px;
 }
 
 .footer__wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
 }
 
 .footer__section1 {
   display: flex;
   grid-column-start: 1;
-  grid-column-end: 7;
-  padding: 0;
-  gap: 20px;
-  padding: 10px;
+  grid-column-end: 5;
   /* background-color: green; */
 }
 
 .footer__section2 {
   display: flex;
-  grid-column-start: 7;
+  grid-column-start: 5;
+  grid-column-end: 9;
+  /* background-color: blue; */
+}
+
+.footer__section3 {
+  display: flex;
+  grid-column-start: 9;
   grid-column-end: -1;
-  padding: 0;
-  gap: 20px;
-  padding: 10px;
   /* background-color: red; */
 }
