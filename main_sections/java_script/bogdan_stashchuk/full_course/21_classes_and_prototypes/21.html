@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00</title>
+    <title>21 Классы и прототипы</title>
     <link rel="stylesheet" href="../../../../../css/normalize.css">
     <link rel="stylesheet" href="../../../../../css/vars.css">
     <link rel="stylesheet" href="../../../../../css/main.css">
@@ -69,11 +69,182 @@
 
         <!----- CONTENT ----->
         <div class="main general__area-1">
-            <h2 class="main__h2">1 Введение</h2>
+            <h2 class="main__h2">21 Классы и прототипы</h2>
             <div class="main__wrapper">
 
+                <!----- Введение в классы и прототипы ----->
+                <a name="21.01"></a>
+                <div class="main__title-1">Введение в классы и прототипы</div>
+                <p class="main__subtitle-1">Что позволяют делать классы?</p>
+                <p class="main__p">Классы позволяют создавать прототипы для объектов.
+                </p>
+                <p class="main__p">Допустим есть производство автомобилей, и на этом производстве можно создавать
+                    различные модели, разных цветов, разной длины и ширины, с разными двигателями. И на этом
+                    производстве можно создать любой экземпляр автомобиля. И этому производству можно дать, например,
+                    такие параметры такие, как цвет машины, мощность двигателя, и производство создаст экземпляр
+                    автомобиля и отдаст его покупателю.</p>
+                <p class="main__p">
+                    Конкретный экземпляр будет иметь собственные свойства такие, как цвет и остальные характеристики. И
+                    кроме этого, такой экземпляр будет наследовать все методы автомобиля такие, как ехать, поворачивать,
+                    останавливаться и так далее.
+                </p>
+                <p class="main__p">
+                    На основании прототипов создаются экземпляры. С одного прототипа (заготовки) можно создать много
+                    экземпляров объекта. И все экземпляры будут независимы друг от друга, и каждый экземпляр может иметь
+                    свои собственные свойства и методы. Каждый экземпляримеет свои собственные свойства и методы,
+                    которые привязаны только к конкретному экземпляру.
+                </p>
+                <p class="main__p">Экземпляры наследуют методы и свойства прототипов. То есть могут быть собственные
+                    методы, а могут быть унаследованные методы.</p>
+
+
+
+
+
+
+
+                <!----- Примеры класса ----->
+                <a name="21.02"></a>
+                <div class="main__title-1">Примеры класса</div>
+                <p class="main__subtitle-1">В JavaScript понятие классов это всего лишь синтаксическая надстройка над
+                    функциями и объектами.</p>
+                <p class="main__p">На самом деле экземпляры классов в JavaScript создаются с помощью вызова функции.
+                    Класс - это шаблон для создания экземпляров класса.
+                </p>
+                <p class="main__p">В примере ниже есть класс, который называется Comment. Между фигурными скобками
+                    находится все, что касается конкретного класса. А там находятся свойства и методы. В данном примере
+                    есть 2 метода такие, как constructor и upvote. Эти методы похожи на методы в объектах, синтаксис
+                    такой же. Идет название метода, далее в скобках находятся опциональные параметры, и потом тело
+                    конкретного метода.</p>
+
+                <p class="main__p">
+                    Что здесь важно отметить? В этом классе есть переменная this, это специальная переменная, которая
+                    указывает на экземпляр класса. Такой класс - это всего лишь шаблон для создания новых объектов. И
+                    когда вы будете создавать новый экземпляр такого класса, то this автоматически будет ссылаться на
+                    новый экземпляр. И ссылаясь на конкретный экземпляр класса, вы можете соответственно внутри класса
+                    (внутри методов и свойств класса) менять собственные свойства и методы конкретного экземпляра.
+                </p>
+                <pre>
+                    <code>
+                        class Comment {
+                            constructor(text) {
+                        this.text = text
+                        this.votesQty = 0
+                            }
+                        upvote() {
+                            this.votesQty += 1
+                            }
+                        }
+                    </code>
+                </pre>
+                <p class="main__p">
+                    В методе constructor есть 2 присваивания.
+                </p>
+                <pre>
+                    <code>
+                        this.text = text
+                        this.votesQty = 0
+                    </code>
+                </pre>
+                <p class="main__p">В методе constructor есть 1 параметр (text)</p>
+                <p class="main__p">
+                    При вызове такого метода, который называется constructor мы передаем значение для параметра (text)
+                <pre>
+                    <code>
+                        constructor(text)
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Далее внутри этого конструктора мы конкретному экземпляру этого класса Comment
+                    добавляем свойство text
+                </p>
+                <pre>
+                    <code>
+                        this.text
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    И значение этого свойства text будет значение параметра text, которое было передано в качестве
+                    аргумента в вызове этого метода.
+                </p>
+                <pre>
+                    <code>
+                        this.text = text
+                    </code>
+                </pre>
+                <p class="main__p">
+                    То есть у нового экземпляра этого класса появится собственное свойство text с каким то текстовым
+                    значением, которое мы передали в вызове этой функции constructor
+                </p>
+                <p class="main__p">
+                    Таким же образом мы добавили свойство votesQty, и справа от знака присваивания стоит цифра 0, почему
+                    0? Конструктор вызывается только тогда, когда вы создаете новый экземпляр конкретного объекта.
+                </p>
+                <pre>
+                    <code>
+                        this.votesQty = 0
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Мы хотим создать новый комментарий с каким то текстом, и у этого комментария будет определенное
+                    количество голосов. То есть можно будет голосовать за этот комментарий, и можно будет
+                    повышать количество голосов. Когда мы создаем новый экземпляр комментария, у него не будет еще
+                    голосов. Соответственно начальное количесвто голосов 0. Потому и в конструкторе мы это указываем
+                    путем создания нового свойства votesQty и добавлением начального значения этому свойству. То есть
+                    начальное количество голосов у каждого комментария будет 0.
+                </p>
+
+                <p class="main__p">
+                    Далее идет метод upvote<br>
+                    Это функция, и внутри этой функции мы увеличиваем значение свойства votesQty, и также обращаемся к
+                    конкретному экземпляру комментария (класса комментария) - this, берем его свойство votesQty и
+                    увеличиваем это значение на 1, используя оператор +=<br>
+                </p>
+                <pre>
+                    <code>
+                        upvote() {
+                            this.votesQty += 1
+                            }
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Можно также написать другой вариант присваивания:
+                </p>
+
+                <pre>
+                    <code>
+                        this.votesQty = this.votesQty + 1
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Теперь после создания экземпляра класса можно будет увеличивать количесвто голосов
+                    для конкретного комментария, который является экземпляром класса комментарий, путем вызова метода
+                    upvote, и этот метод находится на уровне класса. Он не будет присвоен как отдельный метод
+                    конкретного экземпляра этого комментария, этого класса комментарий. Но он будет наследоваться всеми
+                    экземплярами этого класса комментарий.
+                </p>
+                <p class="main__p">
+
+                </p>
+
+                <ul class="main__list">
+                    <li class="main__list-item"></li>
+                    <li class="main__list-item"></li>
+                    <li class="main__list-item"></li>
+                    <li class="main__list-item"></li>
+                    <li class="main__list-item"></li>
+                </ul>
+
+
+
+
+
+
                 <!----- ----->
-                <a name=".01"></a>
+                <a name="21.03"></a>
                 <div class="main__title-1"></div>
                 <p class="main__subtitle-1"></p>
                 <p class="main__p"></p>
@@ -96,7 +267,7 @@
 
 
                 <!----- ----->
-                <a name=".02"></a>
+                <a name="21.04"></a>
                 <div class="main__title-1"></div>
                 <p class="main__subtitle-1"></p>
                 <p class="main__p"></p>
@@ -119,7 +290,7 @@
 
 
                 <!----- ----->
-                <a name=".03"></a>
+                <a name="21.05"></a>
                 <div class="main__title-1"></div>
                 <p class="main__subtitle-1"></p>
                 <p class="main__p"></p>
@@ -142,53 +313,7 @@
 
 
                 <!----- ----->
-                <a name=".04"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
-
-
-
-
-
-
-                <!----- ----->
-                <a name=".05"></a>
-                <div class="main__title-1"></div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
-
-
-
-
-
-
-                <!----- ----->
-                <a name=".06"></a>
+                <a name="21.06"></a>
                 <div class="main__title-1"></div>
                 <p class="main__subtitle-1"></p>
                 <p class="main__p"></p>
@@ -312,34 +437,34 @@
         <div class="aside-2 general__area-1">
             <ul class="aside-2__index-search-list">
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.01">1</a>
+                    <a class="aside-2__index-search-link" href="#21.01">Введение в классы и прототипы</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.02">2</a>
+                    <a class="aside-2__index-search-link" href="#21.02">Примеры класса</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.03">3</a>
+                    <a class="aside-2__index-search-link" href="#21.03">3</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.04">4</a>
+                    <a class="aside-2__index-search-link" href="#21.04">4</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.05">5</a>
+                    <a class="aside-2__index-search-link" href="#21.05">5</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.06">6</a>
+                    <a class="aside-2__index-search-link" href="#21.06">6</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.07">7</a>
+                    <a class="aside-2__index-search-link" href="#21.07">7</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.08">8</a>
+                    <a class="aside-2__index-search-link" href="#21.08">8</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.09">9</a>
+                    <a class="aside-2__index-search-link" href="#21.09">9</a>
                 </li>
                 <li class="aside-2__index-search-item">
-                    <a class="aside-2__index-search-link" href="#.10">10</a>
+                    <a class="aside-2__index-search-link" href="#21.10">10</a>
                 </li>
             </ul><!--aside-2__index-search-list-->
         </div><!--aside_2-->
