@@ -238,19 +238,166 @@
                 <a name="21.03"></a>
                 <div class="main__title-1">Создание экземпляров класса</div>
                 <p class="main__subtitle-1">Как создать новый экземпляр такого класса комментарий?</p>
-                <p class="main__p"></p>
+                <p class="main__p">Создать новый экземпляр класса очень просто, используя ключевое слово
+                    <strong>new</strong>
+                </p>
+                <p class="main__p">
+                    new - это префиксный унарный оператор.
+                </p>
+                <p class="main__p">
+                    Мы создаем новую перменную, которая назывется firstComment<br>
+                    После знака присваивания стоит синтаксис new Comment, здесь Comment написан также как и в именовании
+                    класса Comment, с большой буквы. Далее в скобках идет вызов функции, в скобках стоит значение для
+                    параметра text, который находится в классе в скобках после метода constructor.
+                </p>
+
+                <p class="main__subtitle-1">Папка 01</p>
                 <pre>
                     <code>
-                        code
+                        class Comment { // класс Comment
+                            constructor(text) {
+                                this.text = text
+                                this.votesQty = 0
+                            }
+
+                            upvote() {
+                                this.votesQty += 1
+                            }
+                        }
                     </code>
                 </pre>
+
+                <pre>
+                    <code>
+    const firstComment = new Comment('First comment') // новая переменная
+                    </code>
+                </pre>
+                <p class="main__p">
+                    С помощью такого синтаксиса - new Comment('First comment') вызывается конструктор с 2-мя this,
+                    конструктор это функция, которая создает новый экземпляр объекта.
+                </p>
+
+                <p class="main__p">
+                    Для того, чтобы создать новый экземпляр объекта мы должны передать текстовое значение ('First
+                    comment') для свойства text, которое стоит сразу после this в конструкторе - this.text, для
+                    конкретного экземпляра класса комментарий.
+                </p>
+
+                <p class="main__p">
+                    И в итоге такая функция конструктор вернет новый объект. И этот новый объект будет наследовать все
+                    методы класса комментарий. И комментарий будет прототипом для такого экземпляра.
+                </p>
+
+                <p class="main__subtitle-1">
+                    Папка 02. Свои собственные свойства
+                </p>
+
+                <p class="main__p">
+                    После создания нового экземпляра класса комментарий у переменной firstComment появятся свои
+                    собственные свойства.
+                </p>
+
+                <pre>
+                    <code>
+                        class Comment { // класс Comment
+                            constructor(text) {
+                                this.text = text
+                                this.votesQty = 0
+                            }
+                        
+                            upvote() {
+                                this.votesQty += 1
+                            }
+                        }
+                        
+                        const firstComment = new Comment('First comment') // новая переменная
+                        
+                        console.log(firstComment)
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Выведем в консоль console.log(firstComment) и посмотрим на структуру. Развернем Comment и посмотрим.
+                    У этого объекта есть собственные свойства - это текст и количество голосов.
+                </p>
+
                 <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
+                    <li class="main__list-item">text: 'First comment'</li>
+                    <li class="main__list-item">votesQty: 0</li>
                 </ul>
+
+                <p class="main__p">
+                    Это те свойства, которые мы добавили к конкретному экземпляру объекта в конструкторе.
+                    Это собственные свойства этого конкретного объекта firstComment, который является
+                    экземпляром класса Comment
+                </p>
+                <pre>
+                    <code>
+    const firstComment = new Comment('First comment') // экземпляр класса Comment
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Здесь в этом примере вызова console.log(firstComment) в консоли браузера значение свойства text
+                    будет First comment,
+                    text: 'First comment' - это то, что мы передали в вызове конструктора:
+                </p>
+
+                <pre>
+                    <code>
+    const firstComment = new Comment('First comment') // вызов конструктора
+                    </code>
+                </pre>
+
+                <p class="main__p">и начальное количество голосов 0, votesQty: 0<br>
+                    То есть пока еще функция upvote не вызывалась. И обратите внимание, что метода upvote у объекта
+                    firstComment нет. Но если раскрыть значение свойства prototype, которое находится между 2-мя
+                    квадратными скобками (в выводе в консоли веб-браузера), здесь вы найдете метод upvote. То есть этот
+                    метод находится на уровне класса Comment. И этот метод наследуется всеми экземплярами этого класса
+                    Comment
+                </p>
+
+                <p class="main__p">
+                    Соответственно можно вызывать такой метод как метод переменной firstComment. То есть получается что
+                    эти 2 свойства</p>
+
+                <ul class="main__list">
+                    <li class="main__list-item">text: "First comment"</li>
+                    <li class="main__list-item">votesQty: 0</li>
+                </ul>
+
+                <p class="main__p">
+                    - собственные свойства объекта firstComment, а вот метод upvote является
+                    унаследованным методом с родительского класса Comment. То есть нет необходимости добавлять метод
+                    upvote каждому экземпляру класса Comment. Достаточно просто унаследовать такой метод всеми
+                    экземплярами конкретного класса. Поэтому в выводе консоли браузера метод upvote виден на уровне
+                    прототипа.
+                </p>
+
+
+                <p class="main__subtitle-1">Папка 03. Что такое наследование по цепочке?</p>
+                <p class="main__p">
+                    Если после создания переменной firstComment, в консоли написать firstComment и поставить после нее
+                    точку - firstComment. , то вы увидите все возможные методы и свойства, которые доступны для
+                    использования на уровне объекта firstComment.
+                </p>
+
+                <p class="main__p">
+                    Так вот здесь вы увидите собственные свойства такие, как text и votesQty. Далее на уровне
+                    родительского класса Comment вы увидите, что доступны такие методы, как constructor и upvote.
+                    То есть можно вызвать upvote на уровне этого объекта firstComment, потому что upvote наследуется
+                    всеми экземплярами класса Comment.
+                </p>
+
+                <p class="main__p">
+                    Кроме этого вы видите в списке методы объекта. Почему они здесь видны? Потому, что комментарий
+                    наследует все методы и свойства объекта. А объект - это класс, который присутствует в JavaScript по
+                    умолчанию, и любые объекты JavaScript наследуют все методы этого родительского корневого класса
+                    Объект.
+                </p>
+
+
+
 
 
 
