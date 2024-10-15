@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>00</title>
+    <title>19 Циклы</title>
     <link rel="stylesheet" href="../../../../../css/normalize.css">
     <link rel="stylesheet" href="../../../../../css/vars.css">
     <link rel="stylesheet" href="../../../../../css/main.css">
@@ -330,135 +330,204 @@
                 <!----- Цикл while ----->
                 <a name="19.04"></a>
                 <div class="main__title-1">Цикл while</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
+                <p class="main__subtitle-1">Цикл while позволяет выполнять блок кода, пока условие правдиво.</p>
+                <p class="main__p">Цикл while начинается с зарезервированного слова while, с него начинается инструкция.
+                    Далее в круглых скобах находится условие, и цикл выполняется до тех пор, пока это условие правдиво.
+                    А если условие ложно, блок инструкций, находящийся между фигурными скобками не выполнится ни разу.
+                    Мы выйдем сразу же из цикла, даже не заходя в него.
+                </p>
                 <pre>
+                    <code>
+                        // цикл while
+
+                        let i = 0 
+                        while( i < 5) {
+                            console.log(i)
+                            i++
+                        }                        
+                    </code>
+                </pre>
+
+                <p class="main__p">
+                    Из за этой особенности этого цикла, что мы проверяем правдивость условия, мы можем находиться в
+                    цикле бесконечно. То есть, если условие будет бесконечно правдиво, вы постоянно будете находиться в
+                    цикле, и из него никогда не выйдете. И такого необходимо избегать!!!
+                </p>
+
+                <p class="main__p">
+                    Разберем пример. В этом примере будет видно, что мы должны будем менять по сути условие
+                    в самом цикле.
+                </p>
+                <pre>
+                    <code>
+                        // цикл while
+
+                        let i = 0 
+                        while( i < 5) {
+                            console.log(i)
+                            i++
+                        }  
+                    </code>
+                </pre>
+                <p class="main__p">
+                    Переменной i присвоено значение 0. Далее идет цикл. В этом цикле есть условие, где (i < 5 ),
+                        оставшееся это блок в самом условии while </p>
+
+                        <p class="main__p">
+                            Когда условие правдиво, мы заходим в цикл и выполняем этот блок:
+                        </p>
+
+                        <pre>
+                            <code>
+                            console.log(i)
+                            i++
+                            </code>
+                        </pre>
+                        <p class="main__p">
+                            Результатом выполения данного цикла в выводе в консоли браузера мы увидим цифры от 0 до 4.
+                            Нужно обратить внимание на то, что мы меняем здесь переменную i при помощи i++ внутри цикла,
+                            тем самым влияя на его условие (i < 5) </p>
+                                <p class="main__p">
+                                    И когда i станет 5, это условие уже станет ложно, и мы выйдем из цикла. Потому мы не
+                                    видим 5 здесь в консоли.
+                                </p>
+                                <p class="main__p">
+                                    То есть получается, что в цикле for вы в одной из начальных инструкций указываете
+                                    как изменять переменную, которая влияет на количество циклов. Здесь же мы внутри
+                                    цикла должны сами контролировать условие.
+                                </p>
+                                <p class="main__p">
+                                    Иначе, если не будет этой строки i++, то цикл будет выполняться в данном примере
+                                    бесконечно. Мы изменяем переменную, которая влияет на условие.
+                                </p>
+
+                                <p class="main__subtitle-1">Папка 02. Бесконечный цикл</p>
+
+                                <pre>
+                                    <code>
+                                        // бесконечный цикл 
+
+                                        let i = 0 
+                                        while( i < 5) {
+                                            console.log(i)
+                                        }                                        
+                                    </code>
+                                </pre>
+
+
+
+
+
+
+                                <!----- Цикл do while ----->
+                                <a name="19.05"></a>
+                                <div class="main__title-1">Цикл do while</div>
+                                <p class="main__subtitle-1"></p>
+                                <p class="main__p"></p>
+                                <pre>
                     <code>
                         code
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
+                                <ul class="main__list">
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                </ul>
 
 
 
 
 
 
-                <!----- Цикл do while ----->
-                <a name="19.05"></a>
-                <div class="main__title-1">Цикл do while</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
+                                <!----- Цикл for in ----->
+                                <a name="19.06"></a>
+                                <div class="main__title-1">Цикл for in</div>
+                                <p class="main__subtitle-1"></p>
+                                <p class="main__p"></p>
+                                <pre>
                     <code>
                         code
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
+                                <ul class="main__list">
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                </ul>
 
 
 
 
 
 
-                <!----- Цикл for in ----->
-                <a name="19.06"></a>
-                <div class="main__title-1">Цикл for in</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
+                                <!----- Методы keys и values для объектов ----->
+                                <a name="19.07"></a>
+                                <div class="main__title-1">Методы keys и values для объектов</div>
+                                <p class="main__subtitle-1"></p>
+                                <p class="main__p"></p>
+                                <pre>
                     <code>
                         code
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
+                                <ul class="main__list">
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                </ul>
 
 
 
 
 
 
-                <!----- Методы keys и values для объектов ----->
-                <a name="19.07"></a>
-                <div class="main__title-1">Методы keys и values для объектов</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
+                                <!----- Цикл for in для массивов----->
+                                <a name="19.08"></a>
+                                <div class="main__title-1">Цикл for in для массивов</div>
+                                <p class="main__subtitle-1"></p>
+                                <p class="main__p"></p>
+                                <pre>
                     <code>
                         code
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
+                                <ul class="main__list">
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                </ul>
 
 
 
 
 
 
-                <!----- Цикл for in для массивов----->
-                <a name="19.08"></a>
-                <div class="main__title-1">Цикл for in для массивов</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
+                                <!----- Цикл for of ----->
+                                <a name="19.09"></a>
+                                <div class="main__title-1">Цикл for of</div>
+                                <p class="main__subtitle-1"></p>
+                                <p class="main__p"></p>
+                                <pre>
                     <code>
                         code
                     </code>
                 </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
-
-
-
-
-
-
-                <!----- Цикл for of ----->
-                <a name="19.09"></a>
-                <div class="main__title-1">Цикл for of</div>
-                <p class="main__subtitle-1"></p>
-                <p class="main__p"></p>
-                <pre>
-                    <code>
-                        code
-                    </code>
-                </pre>
-                <ul class="main__list">
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                    <li class="main__list-item"></li>
-                </ul>
+                                <ul class="main__list">
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                    <li class="main__list-item"></li>
+                                </ul>
 
             </div><!---------------main__wrapper--------------->
         </div><!--------------------main-------------------->

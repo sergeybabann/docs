@@ -1,17 +1,19 @@
-/*.wrapper__aside-2 {
-  position: relative;
+.wrapper__aside-2 {
+  position: fixed;
+  overflow-y: scroll left;
+  overflow-x: scroll;
+  left: 1410px;
 }
-*/
 
 .aside-2 {
   display: grid;
   grid-column-start: 10;
   grid-column-end: -1;
   background-color: rgb(220, 220, 220, 0.7);
-  position: fixed;
-  left: 1410px;
+  position: relative;
   top: 102px;
-  width: 458px;
+  min-height: 100vh;
+  width: 440px;
   z-index: 0;
 }
 
