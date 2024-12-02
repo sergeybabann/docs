@@ -18,8 +18,9 @@
 }
 
 .aside-2__index-search-list {
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
+  flex-direction: column;
+  /* grid-auto-flow: row; */
   justify-items: start;
   align-items: start;
   justify-content: start;
@@ -31,13 +32,19 @@
 }
 
 .aside-2__index-search-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   color: #000;
+  background-color: rgba(162, 205, 90, 0.5);
 }
 
 .aside-2__index-search-link {
   text-decoration: none;
   color: #000;
   font-size: 20px;
+  width: 100%;
+  display: block;
 }
 
 .aside-2__index-search-link:hover {
