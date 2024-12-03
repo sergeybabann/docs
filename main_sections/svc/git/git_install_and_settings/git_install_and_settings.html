@@ -13,7 +13,8 @@
     <section class="main">
         <h1>Установка и настройки git</h1>
 
-        <p>команды git:<br>
+
+        <h3>Работа с файлом .gitconfig</h3>
         <ul>
             <li>git config --global user.name "Sergey Babanov"</li>
             ИЛИ
@@ -21,12 +22,35 @@
             <li>git config --global user.email "sergeybabann@yandex.ru"</li>
         </ul>
 
+
         <ul>
             <li>git config --list</li>
             <li></li>
         </ul>
 
-        </p>
+        <h3>Работа с директорией</h3>
+        <ul>
+            <li>ls - посмотреть все файлы и папки в директории</li>
+            <li>ls -A - посмотреть все файлы папки в директории, а также скрытые</li>
+        </ul>
+
+        <h3>Работа с коммитами</h3>
+        <ul>
+            <li>git log - посмотреть список коммитов</li>
+            <li>git log --oneline - посмотреть список коммитов</li>
+            <li>git commit -a - эта команда включает в индекс всех измененных отслеживаемых файлов (но не новых)</li>
+            <li>git commit -am 'текст комментария' - это тоже самое что и -a , но можно добавить комментарий</li>
+        </ul>
+
+        <h3>Работа с состоянием</h3>
+        <ul>
+            <li>git status</li>
+            <li>git status -s</li>
+            <li>git diff - просмотр состояние изменения рабочей папки</li>
+        </ul>
+
+
+
         <p>Флаг --global делает настройки глобально, для всех пользователей</p>
     </section><!--main-->
 </body>
